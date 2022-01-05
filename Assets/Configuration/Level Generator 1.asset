@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 658395a18f46441f8a2b4b4ae93a9168, type: 3}
+  m_Name: Level Generator 1
+  m_EditorClassIdentifier: 
+  chunks:
+  - {fileID: 8406682308277941804, guid: db76fd5312adf437892454bf1bdd1071, type: 3}
+  - {fileID: 8406682308277941804, guid: 6373e3eef1c174ea69c18bdc50636a1f, type: 3}
+  - {fileID: 8406682308277941804, guid: cff56a1a393fb4a958befae5d4e80054, type: 3}
+  - {fileID: 8406682308277941804, guid: dd7959ef7966442bf8df2ef5863c1547, type: 3}
+  - {fileID: 8406682308277941804, guid: e2891704e382c41dd8066eaf7fa7f06e, type: 3}
+  chunkWidth: 8
+  amountOfChunks: 4
