@@ -121,8 +121,10 @@ namespace Code.Views
             for (var i = 0; i < _chunks.Count; i++)
             {
                 var chunk = _chunks[i];
+                var offset = (levelGenerator.Width * 0.5f - levelGenerator.StartChunkWidth * 0.5f);
+                var initialposition = offset + initialChunk.transform.position.x + levelGenerator.StartChunkWidth;
                 chunk.transform.position =
-                    new Vector3(7.5f + initialChunk.transform.position.x + levelGenerator.StartChunkWidth  + (i *  levelGenerator.Width) , chunkStartPositionVertical);
+                    new Vector3(initialposition + (i * levelGenerator.Width) , chunkStartPositionVertical);
                 chunk.GetComponent<ChunkContainerView>().Id = i;
             }
         }
