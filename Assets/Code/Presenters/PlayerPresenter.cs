@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Code.Views;
 using UniRx;
 
@@ -35,6 +36,11 @@ namespace Code.Presenters
             else if(_isGrounded) _view.Jump(power * 0.8f, power * 0.2f);
             
             
+        }
+
+        public void DieSmashed()
+        {
+            _view.DieSmashed().Subscribe(_ => _gamePlayView.Finish());
         }
 
         private void SetGrounded(bool isGrounded)

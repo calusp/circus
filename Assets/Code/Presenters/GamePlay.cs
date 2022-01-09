@@ -21,12 +21,18 @@ namespace Code.Presenters
             _gameFinished = gameFinished;
             _view.GamePlayStart = GamePlayStart;
             _view.GamePlayFinish = GamePlayFinish;
-            _view.AttachTo = AttachTo;
+            _view.AttachToActionable = AttachTo;
+            _view.AttachToHazard = AttachTo;
         }
 
         private void AttachTo(Actionable actionable)
         {
             actionable.Attach(_playerPresenter);
+        }
+        
+        private void AttachTo(Hazard hazard)
+        {
+            hazard.Attach(_playerPresenter);
         }
 
         private void GamePlayFinish()
@@ -43,5 +49,11 @@ namespace Code.Presenters
             _playerPresenter = new PlayerPresenter(playerView, actionActivated, _view);
             _view.CreateChunks();
         }
+    }
+
+    public interface Hazard
+    {
+        void Execute();
+        void Attach(PlayerPresenter playerPresenter);
     }
 }

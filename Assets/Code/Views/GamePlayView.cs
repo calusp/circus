@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using Code.Presenters;
 using Code.ScriptableObjects;
 using UniRx;
 using UniRx.Triggers;
@@ -14,7 +15,8 @@ namespace Code.Views
         public Action<PlayerInput, PlayerView> GamePlayStart { get; set; }
         public Action GamePlayFinish { get; set; }
         public Action<float> MovePlayer { get; set; }
-        public Action<Actionable>AttachTo { get; set; }
+        public Action<Actionable>AttachToActionable { get; set; }
+        public Action<Hazard>AttachToHazard { get; set; }
         
         [SerializeField] private PlayerInput playerInput;
         [SerializeField] private PlayerView playerView;
@@ -134,8 +136,10 @@ namespace Code.Views
         {
             var go = Instantiate(levelGenerator.GetChunk(), container.transform);
             container.GetComponent<ChunkContainerView>().Chunk = go.GetComponent<ChunkView>();
-            if (container.GetComponent<ChunkContainerView>().Chunk.HasActionable())
-                AttachTo(container.GetComponent<ChunkContainerView>().Chunk.Actionable);
+            if (container.GetComponent<ChunkContainerView>().Chunk.HasActionable)
+                AttachToActionable(container.GetComponent<ChunkContainerView>().Chunk.Actionable);
+            if (container.GetComponent<ChunkContainerView>().Chunk.HasHazard)
+                AttachToHazard(container.GetComponent<ChunkContainerView>().Chunk.Hazard);
         }
 
         private void UpdateGameplayForChunk(GameObject chunk)

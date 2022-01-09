@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using UniRx;
 using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
@@ -31,22 +33,35 @@ namespace Code.Views
 
         private void CheckGrounded(Vector3 position)
         {
-            var hits = new List<RaycastHit2D>
-            {
-                Physics2D.Raycast(new Vector2(position.x - 0.5f, position.y), Vector2.down, 1, 1 << 9),
-                Physics2D.Raycast(new Vector2(position.x, position.y), Vector2.down, 1, 1 << 9),
-                Physics2D.Raycast(new Vector2(position.x + 0.5f, position.y), Vector2.down, 1, 1 << 9)
-            };
+            List<RaycastHit2D> hits = CreateRays(position);
             hits.ForEach(hit => Debug.DrawRay(hit.centroid, Vector3.down));
             var isSteppedOnSomething = hits.Any(hit => hit.collider && hit.distance < 0.52f);
             IsGrounded(isSteppedOnSomething);
             if (!isSteppedOnSomething) return;
             if (ColliderHasActionable(hits))
-                hits.First(hit =>hit.collider && hit.collider.GetComponent<Actionable>() != null).collider
+                hits.First(hit => hit.collider && hit.collider.GetComponent<Actionable>() != null).collider
                     .GetComponent<Actionable>()
                     .Execute();
 
         }
+
+        public IObservable<Unit> DieSmashed()
+        {
+            return Die().ToObservable();
+        }
+
+        IEnumerator Die()
+        {
+            Debug.Log("Player died");
+            yield return null;
+        }
+
+        private static List<RaycastHit2D> CreateRays(Vector3 position) =>new List<RaycastHit2D>()
+        {
+                Physics2D.Raycast(new Vector2(position.x - 0.5f, position.y), Vector2.down, 1, 1 << 9),
+                Physics2D.Raycast(new Vector2(position.x, position.y), Vector2.down, 1, 1 << 9),
+                Physics2D.Raycast(new Vector2(position.x + 0.5f, position.y), Vector2.down, 1, 1 << 9)
+          };
 
         private  bool ColliderHasActionable(IEnumerable<RaycastHit2D> hits) => 
             hits.Any(hit => hit.collider && hit.collider.GetComponent<Actionable>() != null);
