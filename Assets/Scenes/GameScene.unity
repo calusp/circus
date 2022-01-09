@@ -799,6 +799,11 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 7380024617113190540, guid: 5b300161c27021248b5b0e120ee00e17,
+        type: 3}
+      propertyPath: chunkStartPositionHorizontal
+      value: -6.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7380024617113190541, guid: 5b300161c27021248b5b0e120ee00e17,
         type: 3}
       propertyPath: m_RootOrder

@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chunks:
   - {fileID: 4802201239233765730, guid: 73328c11382ba414f8617914cdbced85, type: 3}
+  startChunk: {fileID: 262850490566902269, guid: afeca3d7db06e48d88ec49a7679d9491,
+    type: 3}
+  startChunkWith: 5
   chunkWidth: 20
   amountOfChunks: 2
