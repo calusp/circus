@@ -12,7 +12,7 @@ namespace Code.Views
 {
     public class GamePlayView : MonoBehaviour
     {
-        public Action<PlayerInput, PlayerView> GamePlayStart { get; set; }
+        public Action<PlayerInput, PlayerView, CameraView> GamePlayStart { get; set; }
         public Action GamePlayFinish { get; set; }
         public Action<float> MovePlayer { get; set; }
         public Action<Actionable>AttachToActionable { get; set; }
