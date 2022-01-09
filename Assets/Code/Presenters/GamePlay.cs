@@ -7,22 +7,23 @@ namespace Code.Presenters
 {
     public class GamePlay
     {
-        private readonly GamePlayView _view;
+        private readonly GamePlayView _gamePlayView;
         private readonly ISubject<Unit> _gameStarted;
         private readonly ISubject<Unit> _gameFinished;
         private PlayerPresenter _playerPresenter;
+        private CameraPresenter _cameraPresenter;
         private PlayerInputPresenter _playerInputPresenter;
 
         public GamePlay(GamePlayView view, ISubject<Unit> gameStarted, ISubject<Unit> gameFinished)
         {
-            _view = view;
+            _gamePlayView = view;
             _gameStarted = gameStarted;
-            _gameStarted.Subscribe(_ => _view.Initialize());
+            _gameStarted.Subscribe(_ => _gamePlayView.Initialize());
             _gameFinished = gameFinished;
-            _view.GamePlayStart = GamePlayStart;
-            _view.GamePlayFinish = GamePlayFinish;
-            _view.AttachToActionable = AttachTo;
-            _view.AttachToHazard = AttachTo;
+            _gamePlayView.GamePlayStart = GamePlayStart;
+            _gamePlayView.GamePlayFinish = GamePlayFinish;
+            _gamePlayView.AttachToActionable = AttachTo;
+            _gamePlayView.AttachToHazard = AttachTo;
         }
 
         private void AttachTo(Actionable actionable)
@@ -42,12 +43,13 @@ namespace Code.Presenters
             _gameFinished.OnNext(Unit.Default);
         }
 
-        private void GamePlayStart(PlayerInput playerInput, PlayerView playerView)
+        private void GamePlayStart(PlayerInput playerInput, PlayerView playerView, CameraView cameraView)
         {
             var actionActivated = new Subject<float>();
             _playerInputPresenter = new PlayerInputPresenter(playerInput, actionActivated);
-            _playerPresenter = new PlayerPresenter(playerView, actionActivated, _view);
-            _view.CreateChunks();
+            _playerPresenter = new PlayerPresenter(playerView, actionActivated, _gamePlayView);
+            _cameraPresenter = new CameraPresenter(playerView, cameraView, _gamePlayView);
+            _gamePlayView.CreateChunks();
         }
     }
 
