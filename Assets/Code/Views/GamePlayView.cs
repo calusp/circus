@@ -114,15 +114,27 @@ namespace Code.Views
 
         public void CreateChunks()
         {
+            var initialChunk =  CreateFirstChunk();
+
             _chunks = Enumerable.Range(0, levelGenerator.AmountOfChunks)
                 .Select(_ => InitializeChunkContainersWithFirstChunks()).ToList();
             for (var i = 0; i < _chunks.Count; i++)
             {
                 var chunk = _chunks[i];
                 chunk.transform.position =
-                    new Vector3(chunkStartPositionHorizontal + (i * levelGenerator.Width), chunkStartPositionVertical);
+                    new Vector3(7.5f + initialChunk.transform.position.x + levelGenerator.StartChunkWidth  + (i *  levelGenerator.Width) , chunkStartPositionVertical);
                 chunk.GetComponent<ChunkContainerView>().Id = i;
             }
+        }
+
+        private GameObject CreateFirstChunk()
+        {
+            var container = Instantiate(chunkContainer, transform);
+            var initialChunk = Instantiate(levelGenerator.StartChunk, container.transform);
+            container.GetComponent<ChunkContainerView>().Chunk = initialChunk.GetComponent<ChunkView>();
+            container.transform.position =
+                    new Vector3(chunkStartPositionHorizontal, chunkStartPositionVertical);
+            return container;
         }
 
         private GameObject InitializeChunkContainersWithFirstChunks()

@@ -17,7 +17,7 @@ namespace Code.Views
         [SerializeField] private Vector3 startPosition;
         private float _newPlayerPositionXAxis;
 
-        public void Start()
+        public void Awake()
         {
             Reset();
         }
@@ -79,6 +79,7 @@ namespace Code.Views
         public void Reset()
         {
             transform.position = startPosition;
+
         }
 
         public void Move(float amount)
