@@ -50,7 +50,7 @@ namespace Code.Presenters
 
         public void Dismiss()
         {
-            _view.Reset();
+            _view.Init();
         }
 
         private void SetOnTrampoline(bool isOnTrampoline)
@@ -70,6 +70,11 @@ namespace Code.Presenters
                 SetOnTrampoline(false);
                 _view.Jump(1 * 0.8f, 1 * 0.5f);
             }
+        }
+
+        public void Initialize()
+        {
+            _view.Init();
         }
     }
 }

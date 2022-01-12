@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 399836477408652766}
   - component: {fileID: -4373551076322862761}
   m_Layer: 9
-  m_Name: BaseChunkSize8
+  m_Name: BaseChunkSize8 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

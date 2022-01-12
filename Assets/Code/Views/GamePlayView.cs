@@ -15,6 +15,7 @@ namespace Code.Views
         public Action<PlayerInput, PlayerView, CameraView> GamePlayStart { get; set; }
         public Action GamePlayFinish { get; set; }
         public Action<float> MovePlayer { get; set; }
+        public Action<float> MoveCamera { get; set; }
         public Action<Actionable>AttachToActionable { get; set; }
         public Action<Hazard>AttachToHazard { get; set; }
         
@@ -23,11 +24,9 @@ namespace Code.Views
         [SerializeField] private LevelGenerator levelGenerator;
         [SerializeField] private float chunkStartPositionHorizontal = -6.5f;
         [SerializeField] private float chunkStartPositionVertical = 0f;
-        [SerializeField] private Camera mainCamera;
         [SerializeField] private GameObject chunkContainer;
         [SerializeField] private CameraView cameraView;
         [Range(0.0f, 10f), SerializeField] private float moveHorizontalValue;
-        private float _newCameraPositionXAxis;
         private List<GameObject> _chunks;
         private int _previousChunk;
         private PlayerView playerGo;
@@ -45,7 +44,6 @@ namespace Code.Views
         {
             gameObject.SetActive(false);
             ClearChunks();
-            mainCamera.transform.position = new Vector3(0, 0, -10);
             Destroy(playerGo.gameObject);
             GamePlayFinish();
         }
@@ -57,20 +55,18 @@ namespace Code.Views
 
         private void Update()
         {
-            var cameraPosition = mainCamera.transform.position;
             var moveAmount = moveHorizontalValue * Time.deltaTime;
             MovePlayer(moveAmount);
-            _newCameraPositionXAxis =  cameraPosition.x + moveAmount * 1.1f;
+            MoveCamera(moveAmount * 1.1f);
             if (HasPlayerCollidedHorizontally(playerGo.transform.position.x)) 
                 Finish();
         } 
 
         private bool HasPlayerCollidedHorizontally(float position) => 
-            HasCollidedWithEndOfCamera(position, position+0.5f, _newCameraPositionXAxis - 17.5f * 0.5f);
+            HasCollidedWithEndOfCamera(position, position+0.5f, cameraView.NextPositionOnAxisX - 17.5f * 0.5f);
 
         private void FixedUpdate()
         {
-            MoveCamera();
             if (HasCameraGotANewChunk()) return;
             UpdateGameplayForChunk(chunk: _chunks[_previousChunk]);
             _previousChunk = CurrentCameraChunk().GetComponent<ChunkContainerView>().Id;
@@ -79,24 +75,16 @@ namespace Code.Views
         private bool HasCameraGotANewChunk() =>
             _previousChunk == CurrentCameraChunk().GetComponent<ChunkContainerView>().Id;
 
-        private void MoveCamera()
-        {
-            var mainCameraTransform = mainCamera.transform;
-            var cameraPosition = mainCameraTransform.position;
-            mainCameraTransform.position = new Vector3(_newCameraPositionXAxis, cameraPosition.y, cameraPosition.z);
-        }
 
-        private GameObject CurrentCameraChunk()
-        {
-            return _chunks.Any(HasCollided) ? _chunks.FirstOrDefault(HasCollided) : _chunks.First();
-        }    
+        private GameObject CurrentCameraChunk() =>
+            _chunks.Any(HasCollided) ? _chunks.FirstOrDefault(HasCollided) : _chunks.First();
 
         private bool HasCollided(GameObject chunk)
         {
             var chunkPosition = chunk.transform.position;
             var chunkMinX = chunkPosition.x - levelGenerator.Width * 0.5f;
             var chunkMaxX = chunkPosition.x + levelGenerator.Width * 0.5f;
-            var cameraMinX = _newCameraPositionXAxis - 17.5f * 0.5f;
+            var cameraMinX = cameraView.NextPositionOnAxisX - 17.5f * 0.5f;
             return HasCollidedWithEndOfCamera(chunkMinX, chunkMaxX, cameraMinX);
         }
 
@@ -108,7 +96,6 @@ namespace Code.Views
 
         private void SetUp()
         {
-            _newCameraPositionXAxis = mainCamera.transform.position.x;
             gameObject.SetActive(true);
             _previousChunk = 0;
         }

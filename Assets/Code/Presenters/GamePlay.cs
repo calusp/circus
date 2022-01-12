@@ -49,6 +49,8 @@ namespace Code.Presenters
             _playerInputPresenter = new PlayerInputPresenter(playerInput, actionActivated);
             _playerPresenter = new PlayerPresenter(playerView, actionActivated, _gamePlayView);
             _cameraPresenter = new CameraPresenter(playerView, cameraView, _gamePlayView);
+            _playerPresenter.Initialize();
+            _cameraPresenter.Initialize();
             _gamePlayView.CreateChunks();
         }
     }

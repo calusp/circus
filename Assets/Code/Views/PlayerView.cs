@@ -19,7 +19,7 @@ namespace Code.Views
 
         public void Awake()
         {
-            Reset();
+            Init();
         }
 
         public Action<bool> IsGrounded { get; set; }
@@ -76,10 +76,10 @@ namespace Code.Views
              transform.position = new Vector2(_newPlayerPositionXAxis, transform.position.y);
         }
 
-        public void Reset()
+        public void Init()
         {
+            _newPlayerPositionXAxis = startPosition.x;
             transform.position = startPosition;
-
         }
 
         public void Move(float amount)
