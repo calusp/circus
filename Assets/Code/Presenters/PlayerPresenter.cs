@@ -33,9 +33,11 @@ namespace Code.Presenters
         private  void ActivateAction(float power)
         {
             if (_isOnTrampoline) _jumpedFromTrampoline = true;
-            else if(_isGrounded) _view.Jump(power * 0.8f, power * 0.2f);
-            
-            
+            else if(_isGrounded)
+            {
+                _view.Jump(power * 0.8f, power * 0.2f);
+                _jumpedFromTrampoline = false;
+            }
         }
 
         public void DieSmashed()
@@ -67,7 +69,7 @@ namespace Code.Presenters
             }
             else
             {
-                SetOnTrampoline(false);
+                SetOnTrampoline(false);        
                 _view.Jump(1 * 0.8f, 1 * 0.5f);
             }
         }

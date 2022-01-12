@@ -26,11 +26,7 @@ namespace Code.Views
                 startAccumulate = false;
                 if(_acc >0) Action(curve.Evaluate(_acc));
                 _acc = 0;
-            }
-            
-           
-            
-            
+            }    
         }
     }
 }
