@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Code.ScriptableObjects;
 using Code.Views;
 using UniRx;
 
@@ -10,16 +11,18 @@ namespace Code.Presenters
         private readonly PlayerView _view;
         private readonly ISubject<float> _actionActivated;
         private readonly GamePlayView _gamePlayView;
+        private readonly GameConfiguration gameConfiguration;
         private bool _isGrounded;
         private bool _isOnTrampoline;
         private bool _jumpedFromTrampoline;
 
-        public PlayerPresenter(PlayerView view, ISubject<float> actionActivated, GamePlayView gamePlayView)
+        public PlayerPresenter(PlayerView view, ISubject<float> actionActivated, GamePlayView gamePlayView, GameConfiguration gameConfiguration)
         {
             _view = view;
             _view.IsGrounded = SetGrounded;
             _actionActivated = actionActivated;
             _gamePlayView = gamePlayView;
+            this.gameConfiguration = gameConfiguration;
             _gamePlayView.MovePlayer = Move;
             _actionActivated.Subscribe(ActivateAction);
         }
@@ -35,7 +38,7 @@ namespace Code.Presenters
             if (_isOnTrampoline) _jumpedFromTrampoline = true;
             else if(_isGrounded)
             {
-                _view.Jump(power * 0.8f, power * 0.2f);
+                _view.Jump(power * gameConfiguration.JumpForce.x, power * gameConfiguration.JumpForce.y);
                 _jumpedFromTrampoline = false;
             }
         }
@@ -70,7 +73,7 @@ namespace Code.Presenters
             else
             {
                 SetOnTrampoline(false);        
-                _view.Jump(1 * 0.8f, 1 * 0.5f);
+                _view.Jump(gameConfiguration.TrampolineForce.x, gameConfiguration.TrampolineForce.y);
             }
         }
 

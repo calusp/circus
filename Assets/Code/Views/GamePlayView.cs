@@ -26,14 +26,18 @@ namespace Code.Views
         [SerializeField] private float chunkStartPositionVertical = 0f;
         [SerializeField] private GameObject chunkContainer;
         [SerializeField] private CameraView cameraView;
-        [Range(0.0f, 10f), SerializeField] private float moveHorizontalValue;
+        [SerializeField] private DisplayableData displayableData;
         private List<GameObject> _chunks;
         private int _previousChunk;
         private PlayerView playerGo;
+        private GameConfiguration _configuration;
+        private float _increments = 0;
+
         public List<Actionable> Actionables { get; private set; }
 
-        public void Initialize()
+        public void Initialize(GameConfiguration configuration)
         {
+            _configuration = configuration;
             Actionables = new List<Actionable>();
             SetUp();
             playerGo = Instantiate(playerView, transform);
@@ -55,9 +59,12 @@ namespace Code.Views
 
         private void Update()
         {
-            var moveAmount = moveHorizontalValue * Time.deltaTime;
-            MovePlayer(moveAmount);
-            MoveCamera(moveAmount * 1.1f);
+            float playerSpeed = _configuration.PlayerSpeed + _configuration.IncrementalRatio * _increments;
+            float cameraSpeed = _configuration.CameraSpeed + _configuration.IncrementalRatio * _increments;
+            if (displayableData.DistanceTravelled > _configuration.DistanceCap * (_increments + 1))
+                _increments++;
+            MovePlayer(playerSpeed * Time.deltaTime);
+            MoveCamera(cameraSpeed * Time.deltaTime);
             if (HasPlayerCollidedHorizontally(playerGo.transform.position.x)) 
                 Finish();
         } 

@@ -46,6 +46,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -208,3 +209,4 @@ MonoBehaviour:
   body: {fileID: 5408317043186296260}
   jumpForce: {x: 5, y: 10}
   startPosition: {x: -6.5, y: -3.38, z: 0}
+  displyableData: {fileID: 11400000, guid: b81ead8f0e9c1f54dbd52b182cc64f4e, type: 2}

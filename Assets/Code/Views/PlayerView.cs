@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Code.ScriptableObjects;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace Code.Views
         [SerializeField] private Rigidbody2D body;
         [SerializeField] private Vector2 jumpForce;
         [SerializeField] private Vector3 startPosition;
+        [SerializeField] private DisplayableData displyableData;
         private float _newPlayerPositionXAxis;
 
         public void Awake()
@@ -23,6 +25,7 @@ namespace Code.Views
         }
 
         public Action<bool> IsGrounded { get; set; }
+        public float DistanceTravelled { get; private set; }
 
         public void Jump(float powerX, float powerY)
         {
@@ -73,11 +76,13 @@ namespace Code.Views
 
         private void FixedUpdate()
         {
-             transform.position = new Vector2(_newPlayerPositionXAxis, transform.position.y);
+            transform.position = new Vector2(_newPlayerPositionXAxis, transform.position.y);
+            displyableData.DistanceTravelled = Mathf.Abs( transform.position.x - startPosition.x);
         }
 
         public void Init()
         {
+            displyableData.DistanceTravelled = 0;
             _newPlayerPositionXAxis = startPosition.x;
             transform.position = startPosition;
         }
@@ -85,6 +90,7 @@ namespace Code.Views
         public void Move(float amount)
         {
             _newPlayerPositionXAxis = transform.position.x + amount;
+
         }
     }
 }
