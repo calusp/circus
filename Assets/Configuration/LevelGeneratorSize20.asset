@@ -16,6 +16,6 @@ MonoBehaviour:
   - {fileID: 4802201239233765730, guid: 73328c11382ba414f8617914cdbced85, type: 3}
   startChunk: {fileID: 6836957550042104575, guid: 8d3eba9d68e6da8488fd8758bdaa5c8a,
     type: 3}
-  startChunkWith: 8
+  startChunkWith: 4
   chunkWidth: 20
   amountOfChunks: 2

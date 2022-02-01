@@ -8,6 +8,7 @@ namespace Code.Views
     public class CameraView : MonoBehaviour
     {
         private Camera _camera;
+        private Vector3 _startPosition;
 
         public float NextPositionOnAxisX { get; private set; }
         public Action<float> SetUpdatedCameraBounds { get;  set; }
@@ -15,7 +16,7 @@ namespace Code.Views
 
         public void Finish()
         {
-            transform.position = new Vector3(0, 0, -10);
+            transform.position = _startPosition;
         }
 
         // Use this for initialization
@@ -26,7 +27,7 @@ namespace Code.Views
 
         public void Reset()
         {
-            transform.position = new Vector3(0, 0, -10);
+            _startPosition = transform.position;
         }
 
         // Update is called once per frame

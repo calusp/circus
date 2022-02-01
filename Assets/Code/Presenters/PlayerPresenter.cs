@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Code.ScriptableObjects;
 using Code.Views;
 using UniRx;
+using UnityEngine;
 
 namespace Code.Presenters
 {
@@ -10,11 +11,15 @@ namespace Code.Presenters
     {
         private readonly PlayerView _view;
         private readonly ISubject<float> _actionActivated;
+
+      
         private readonly GamePlayView _gamePlayView;
         private readonly GameConfiguration gameConfiguration;
         private bool _isGrounded;
         private bool _isOnTrampoline;
         private bool _jumpedFromTrampoline;
+        private bool _isInCannon;
+        private bool _launchedFromCannon;
 
         public PlayerPresenter(PlayerView view, ISubject<float> actionActivated, GamePlayView gamePlayView, GameConfiguration gameConfiguration)
         {
@@ -29,13 +34,14 @@ namespace Code.Presenters
 
         private void Move(float amount)
         {
-            if(!_isOnTrampoline)
+            if(!_isOnTrampoline && !_isInCannon)
                 _view.Move(amount);
         }
 
         private  void ActivateAction(float power)
         {
             if (_isOnTrampoline) _jumpedFromTrampoline = true;
+            else if (_isInCannon) _launchedFromCannon = true;
             else if(_isGrounded)
             {
                 _view.Jump(power * gameConfiguration.JumpForce.x, power * gameConfiguration.JumpForce.y);
@@ -81,5 +87,17 @@ namespace Code.Presenters
         {
             _view.Init();
         }
+
+        public void EnterCannon(Vector2 cannon)
+        {
+            _view.GetPlayerInCannon(cannon);
+            _isInCannon = true;
+        }
+
+        public void LaunchFromCannon()
+        {
+            _view.Jump(gameConfiguration.TrampolineForce.x, gameConfiguration.TrampolineForce.y);
+        }
+
     }
 }

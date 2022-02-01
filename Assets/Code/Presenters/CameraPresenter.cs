@@ -22,7 +22,6 @@ namespace Code.Presenters
         public void Initialize()
         {
             _cameraView.Reset();
-
         }
 
         private void Move(float moveAmount)

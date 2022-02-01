@@ -10,10 +10,12 @@ namespace Code.ScriptableObjects
         [SerializeField, Range(0, 50)] float cameraSpeed = 3;
         [SerializeField, Range(0, 50)] float incrementalRatio = 3;
         [SerializeField, Range(0, 50)] float distanceCap = 3;
+        [SerializeField, Range(0, 50)] private float cannonSpeed;
 
         [Header("Power Values, keep it below 2")]
         [SerializeField] Vector2 jumpForce;
         [SerializeField] Vector2 trampoolineForce;
+        [SerializeField] Vector2 cannonForce;
 
         public float PlayerSpeed => playerSpeed;
         public float CameraSpeed => cameraSpeed;
@@ -22,5 +24,6 @@ namespace Code.ScriptableObjects
         public Vector2 JumpForce => jumpForce;
         public Vector2 TrampolineForce => trampoolineForce;
 
+        public float CannonSpeed => cannonSpeed;
     }
 }

@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be40eed903736a548829b3132b4979e3, type: 3}
   m_Name: Game Configuration
   m_EditorClassIdentifier: 
-  playerSpeed: 4
-  cameraSpeed: 4
+  playerSpeed: 0.5
+  cameraSpeed: 0.5
   incrementalRatio: 0.66
   distanceCap: 5
+  cannonSpeed: 2
   jumpForce: {x: 0.8, y: 0.2}
   trampoolineForce: {x: 0.8, y: 0.5}
+  cannonForce: {x: 0.8, y: 0.5}

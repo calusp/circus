@@ -14,6 +14,12 @@ namespace Code.Views
     public class PlayerView : MonoBehaviour
     {
         [SerializeField] private Rigidbody2D body;
+
+        internal void GetPlayerInCannon(Vector2 cannon)
+        {
+            throw new NotImplementedException();
+        }
+
         [SerializeField] private Vector2 jumpForce;
         [SerializeField] private Vector3 startPosition;
         [SerializeField] private DisplayableData displyableData;
