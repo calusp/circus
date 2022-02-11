@@ -16,8 +16,7 @@ namespace Code.Views
         public override void Attach(PlayerPresenter playerPresenter)
         {
             _playerPresenter = playerPresenter;
-        }
-        
+        }   
     }
     
 }

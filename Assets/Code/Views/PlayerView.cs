@@ -3,55 +3,88 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
 using UniRx;
 using UnityEngine;
-using Vector2 = UnityEngine.Vector2;
-using Vector3 = UnityEngine.Vector3;
 
 namespace Code.Views
 {
     public class PlayerView : MonoBehaviour
     {
+        private readonly int EnterCannonTrigger = Animator.StringToHash("enteringCannon");
+        private readonly int WalkTrigger = Animator.StringToHash("walking");
         [SerializeField] private Rigidbody2D body;
-
-        internal void GetPlayerInCannon(Vector2 cannon)
-        {
-            throw new NotImplementedException();
-        }
-
+        [SerializeField] private Animator animator;
         [SerializeField] private Vector2 jumpForce;
         [SerializeField] private Vector3 startPosition;
         [SerializeField] private DisplayableData displyableData;
         private float _newPlayerPositionXAxis;
+        private readonly LayerMask layerMask = 1 << 9;
+        public Vector2 offset;
+        private bool _jumped;
+        private float _previousVelocityOnY;
+
+        public Action<bool> IsGrounded { get; set; }
+        public float DistanceTravelled { get; private set; }
+        public bool IsInsideCannon { get; set; }
 
         public void Awake()
         {
             Init();
         }
 
-        public Action<bool> IsGrounded { get; set; }
-        public float DistanceTravelled { get; private set; }
+        public void GetPlayerInCannon(Vector2 cannon, Quaternion rotation)
+        {
+            transform.position = cannon;
+            transform.rotation = rotation;
+            body.simulated = false;
+            SetEnteringCannon();
+        }
+
+        public void SetEnteringCannon()
+        {
+            animator.ResetTrigger(WalkTrigger);
+            animator.SetTrigger(EnterCannonTrigger);
+        }
 
         public void Jump(float powerX, float powerY)
         {
+            body.simulated = true;
             body.velocity = Vector2.zero;
             body.AddForce(new Vector2(jumpForce.x * powerX, jumpForce.y * (1 + powerY)),
                 ForceMode2D.Impulse);
+            _jumped = true;
+
         }
 
-        private void CheckGrounded(Vector3 position)
+        public void Init()
         {
-            List<RaycastHit2D> hits = CreateRays(position);
-            hits.ForEach(hit => Debug.DrawRay(hit.centroid, Vector3.down));
-            var isSteppedOnSomething = hits.Any(hit => hit.collider && hit.distance < 0.52f);
-            IsGrounded(isSteppedOnSomething);
-            if (!isSteppedOnSomething) return;
-            if (ColliderHasActionable(hits))
-                hits.First(hit => hit.collider && hit.collider.GetComponent<Actionable>() != null).collider
-                    .GetComponent<Actionable>()
-                    .Execute();
+            displyableData.DistanceTravelled = 0;
+            _newPlayerPositionXAxis = startPosition.x;
+            transform.position = startPosition;
+        }
 
+        public void Move(float amount)
+        {
+            _newPlayerPositionXAxis = transform.position.x + amount;
+        }
+
+        public bool StopMovement { get; set; }
+
+        public void RestartMovement()
+        {
+            _newPlayerPositionXAxis = transform.position.x;
+            StopMovement = false;
+        }
+
+        public void UpdatePlayerInCannon(Vector3 position, Quaternion rotation)
+        {
+            transform.rotation = rotation;
+            transform.position = position;
+        }
+
+        public void SetWalking()
+        {
+            animator.SetTrigger(WalkTrigger);
         }
 
         public IObservable<Unit> DieSmashed()
@@ -65,38 +98,56 @@ namespace Code.Views
             yield return null;
         }
 
-        private static List<RaycastHit2D> CreateRays(Vector3 position) =>new List<RaycastHit2D>()
+        private List<RaycastHit2D> CreateRays(Vector3 position) => new List<RaycastHit2D>()
         {
-                Physics2D.Raycast(new Vector2(position.x - 0.5f, position.y), Vector2.down, 1, 1 << 9),
-                Physics2D.Raycast(new Vector2(position.x, position.y), Vector2.down, 1, 1 << 9),
-                Physics2D.Raycast(new Vector2(position.x + 0.5f, position.y), Vector2.down, 1, 1 << 9)
-          };
+            Physics2D.Raycast(new Vector2(position.x - 0.5f, position.y), Vector2.down, 0.51f, layerMask),
+            Physics2D.Raycast(new Vector2(position.x, position.y), Vector2.down,  0.51f,layerMask),
+            Physics2D.Raycast(new Vector2(position.x + 0.5f, position.y), Vector2.down,  0.51f, layerMask)
+        };
 
-        private  bool ColliderHasActionable(IEnumerable<RaycastHit2D> hits) => 
+        private bool ColliderHasActionable(IEnumerable<RaycastHit2D> hits) =>
             hits.Any(hit => hit.collider && hit.collider.GetComponent<Actionable>() != null);
 
         private void Update()
         {
-            CheckGrounded(transform.position);
+            List<RaycastHit2D> hits = CreateRays(transform.position);
+
+            bool isGrounded = CheckGrounded(hits);
+            IsGrounded(isGrounded);
+            if (isGrounded && !StopMovement)
+                SetWalking();
+
+            CheckCollisionWithActivable(hits);
         }
 
         private void FixedUpdate()
         {
+            if (StopMovement) return;
+
+            if (transform.position.y < _previousVelocityOnY)
+                transform.rotation = Quaternion.identity;
+
+            _previousVelocityOnY = transform.position.y;
+
+
+
             transform.position = new Vector2(_newPlayerPositionXAxis, transform.position.y);
-            displyableData.DistanceTravelled = Mathf.Abs( transform.position.x - startPosition.x);
+            displyableData.DistanceTravelled = Mathf.Abs(transform.position.x - startPosition.x);
         }
 
-        public void Init()
+        private bool CheckGrounded(List<RaycastHit2D> hits)
         {
-            displyableData.DistanceTravelled = 0;
-            _newPlayerPositionXAxis = startPosition.x;
-            transform.position = startPosition;
+            hits.ForEach(hit => Debug.DrawRay(hit.centroid, Vector3.down));
+            var isSteppedOnSomething = hits.Any(hit => hit.collider && hit.distance < 0.35f);
+            return isSteppedOnSomething;
         }
 
-        public void Move(float amount)
+        private void CheckCollisionWithActivable(List<RaycastHit2D> hits)
         {
-            _newPlayerPositionXAxis = transform.position.x + amount;
-
+            if (ColliderHasActionable(hits))
+                hits.First(hit => hit.collider && hit.collider.GetComponent<Actionable>() != null).collider
+                    .GetComponent<Actionable>()
+                    .Execute();
         }
     }
 }

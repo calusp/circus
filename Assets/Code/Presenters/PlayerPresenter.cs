@@ -12,7 +12,7 @@ namespace Code.Presenters
         private readonly PlayerView _view;
         private readonly ISubject<float> _actionActivated;
 
-      
+
         private readonly GamePlayView _gamePlayView;
         private readonly GameConfiguration gameConfiguration;
         private bool _isGrounded;
@@ -34,17 +34,18 @@ namespace Code.Presenters
 
         private void Move(float amount)
         {
-            if(!_isOnTrampoline && !_isInCannon)
+            if (!_isOnTrampoline && !_isInCannon)
                 _view.Move(amount);
         }
 
-        private  void ActivateAction(float power)
+        private void ActivateAction(float power)
         {
             if (_isOnTrampoline) _jumpedFromTrampoline = true;
-            else if (_isInCannon) _launchedFromCannon = true;
-            else if(_isGrounded)
+            else if (_isInCannon) LaunchFromCannon();
+            else if (_isGrounded)
             {
-                _view.Jump(power * gameConfiguration.JumpForce.x, power * gameConfiguration.JumpForce.y);
+                _view
+                    .Jump(power * gameConfiguration.JumpForce.x, power * gameConfiguration.JumpForce.y);
                 _jumpedFromTrampoline = false;
             }
         }
@@ -52,6 +53,12 @@ namespace Code.Presenters
         public void DieSmashed()
         {
             _view.DieSmashed().Subscribe(_ => _gamePlayView.Finish());
+        }
+
+        public void UpdatePlayerRotation(Vector3 position, Quaternion rotation)
+        {
+            if (_isInCannon)
+                _view.UpdatePlayerInCannon(position, rotation);
         }
 
         private void SetGrounded(bool isGrounded)
@@ -74,11 +81,11 @@ namespace Code.Presenters
             if (!_jumpedFromTrampoline)
             {
                 SetOnTrampoline(true);
-                _view.Jump(0,0);
+                _view.Jump(0, 0);
             }
             else
             {
-                SetOnTrampoline(false);        
+                SetOnTrampoline(false);
                 _view.Jump(gameConfiguration.TrampolineForce.x, gameConfiguration.TrampolineForce.y);
             }
         }
@@ -86,17 +93,27 @@ namespace Code.Presenters
         public void Initialize()
         {
             _view.Init();
+            SetGrounded(true);
         }
 
-        public void EnterCannon(Vector2 cannon)
+        public void EnterCannon(Vector2 cannon, Quaternion rotation)
         {
-            _view.GetPlayerInCannon(cannon);
+            if (_launchedFromCannon)
+            {
+                _isInCannon = false;
+                return;
+            }
+            if (_isInCannon) return;
+            _view.StopMovement = true;
+            _view.GetPlayerInCannon(cannon, rotation);
             _isInCannon = true;
         }
 
         public void LaunchFromCannon()
         {
-            _view.Jump(gameConfiguration.TrampolineForce.x, gameConfiguration.TrampolineForce.y);
+            _isInCannon = false;
+            _view.Jump(gameConfiguration.TrampolineForce.x * _view.transform.position.normalized.x, gameConfiguration.TrampolineForce.y * _view.transform.position.normalized.y);
+            _view.RestartMovement();
         }
 
     }
