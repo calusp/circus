@@ -1,19 +1,18 @@
-﻿using Code.Presenters;
+
+using Code.Presenters;
 using Code.ScriptableObjects;
-using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Code.Views
 {
-    [RequireComponent(typeof(BoxCollider2D))]
-    public class CannonView : BaseActionableView
+    public class TrapeceView : BaseActionableView
     {
-        public Transform innerCannon;
+        public Transform moveJoint;
 
-
-        [SerializeField] private float maxRotationZ;
-        [SerializeField] private float minRotationZ;
+        [SerializeField, Range(-1,1)] private float maxRotationZ = 0.3f;
+        [SerializeField, Range(-1, 1)] private float minRotationZ = 0.3f ;
         [SerializeField] private GameConfiguration gameConfiguration;
         [SerializeField] private Transform playerSpot;
 
@@ -23,7 +22,7 @@ namespace Code.Views
         private void Start()
         {
             // transform.rotation.Set(transform.rotation.x, transform.rotation.y, minRotaionZ, transform.rotation.w);
-            direction = 1;
+            direction = -1;
             _trigger = GetComponent<BoxCollider2D>();
             _trigger.isTrigger = true;
         }
@@ -39,16 +38,18 @@ namespace Code.Views
 
         private void FixedUpdate()
         {
-            float moveAmount = Time.fixedDeltaTime * gameConfiguration.CannonSpeed * 100;
-            if (innerCannon.rotation.z >= Quaternion.Euler(0, 0, maxRotationZ - moveAmount).z)
+            float moveAmount = Time.fixedDeltaTime * gameConfiguration.TrapeceSpeed;
+            moveJoint.rotation = new Quaternion(0,
+               0,
+               moveJoint.rotation.z + moveAmount * direction,1
+               );
+
+            if (moveJoint.rotation.z >= maxRotationZ)
                 direction = -1;
-            if (innerCannon.rotation.z <= Quaternion.Euler(0, 0, minRotationZ - moveAmount).z)
+            if (moveJoint.rotation.z < minRotationZ)
                 direction = 1;
 
-            innerCannon.rotation = Quaternion.Euler(0,
-                0,
-                innerCannon.rotation.eulerAngles.z + moveAmount * direction
-                );
+           
             _playerPresenter.UpdatePlayerRotation(playerSpot.position, playerSpot.rotation);
         }
 
@@ -56,9 +57,8 @@ namespace Code.Views
         {
             if (collision.gameObject.name.Contains("Player"))
             {
-                _playerPresenter.EnterCannon(playerSpot.position,playerSpot.rotation);
+                _playerPresenter.EnterCannon(playerSpot.position, playerSpot.rotation);
             }
         }
-
     }
 }

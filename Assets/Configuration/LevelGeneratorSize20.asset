@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: LevelGeneratorSize20
   m_EditorClassIdentifier: 
   chunks:
-  - {fileID: 4802201239233765730, guid: 0ab00bdbdfc88de4cb902e26ff8ae9d5, type: 3}
+  - {fileID: 6074857501932128413, guid: cae8b0d3f6484164da81e72191ebd8a5, type: 3}
+  - {fileID: 4802201239233765730, guid: 73328c11382ba414f8617914cdbced85, type: 3}
   startChunk: {fileID: 6836957550042104575, guid: 8d3eba9d68e6da8488fd8758bdaa5c8a,
     type: 3}
   startChunkWith: 4

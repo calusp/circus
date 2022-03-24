@@ -1,0 +1,792 @@
+fileFormatVersion: 2
+guid: 75b88b2ba33d13144a3a4d2e290bd104
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3076096798877086680
+    second: SpSh-UItransp_0
+  - first:
+      213: 662814410873449089
+    second: SpSh-UItransp_1
+  - first:
+      213: -7084953542868665403
+    second: SpSh-UItransp_2
+  - first:
+      213: -6183015060062805360
+    second: SpSh-UItransp_3
+  - first:
+      213: -562387018957358450
+    second: SpSh-UItransp_4
+  - first:
+      213: -590489200618345510
+    second: SpSh-UItransp_5
+  - first:
+      213: -2377370304322997539
+    second: SpSh-UItransp_6
+  - first:
+      213: 107330047034402014
+    second: SpSh-UItransp_7
+  - first:
+      213: 1122764716068589771
+    second: SpSh-UItransp_8
+  - first:
+      213: -1842081987084983578
+    second: SpSh-UItransp_9
+  - first:
+      213: -527344503921908707
+    second: SpSh-UItransp_10
+  - first:
+      213: -2657918689974540381
+    second: SpSh-UItransp_11
+  - first:
+      213: -5088637546879515861
+    second: SpSh-UItransp_12
+  - first:
+      213: -5982294337471265683
+    second: SpSh-UItransp_13
+  - first:
+      213: -2534298303336687252
+    second: SpSh-UItransp_14
+  - first:
+      213: 6320201385057633988
+    second: SpSh-UItransp_15
+  - first:
+      213: 5036455312695222813
+    second: SpSh-UItransp_16
+  - first:
+      213: 8319968007467684
+    second: SpSh-UItransp_17
+  - first:
+      213: -5789236685019639946
+    second: SpSh-UItransp_18
+  - first:
+      213: 1836205610306385687
+    second: SpSh-UItransp_19
+  - first:
+      213: -1366869912952443642
+    second: SpSh-UItransp_20
+  - first:
+      213: 160595366366285417
+    second: SpSh-UItransp_21
+  - first:
+      213: -3230611156845554049
+    second: SpSh-UItransp_22
+  - first:
+      213: 2013211993624802771
+    second: SpSh-UItransp_23
+  - first:
+      213: -4472024270984401371
+    second: SpSh-UItransp_24
+  - first:
+      213: 1700692531961731784
+    second: SpSh-UItransp_25
+  - first:
+      213: -5279314203840678879
+    second: SpSh-UItransp_26
+  - first:
+      213: 7931913230996089086
+    second: SpSh-UItransp_27
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpSh-UItransp_0
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 788
+        width: 120
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d3f8cf9dbd70ba20800000000000000
+      internalID: 3076096798877086680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UItransp_1
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 790
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18a2f18e13ac23900800000000000000
+      internalID: 662814410873449089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UItransp_2
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 790
+        width: 104
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cbfa2b5a403dad90800000000000000
+      internalID: -7084953542868665403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UItransp_3
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 790
+        width: 104
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 092e018df84813aa0800000000000000
+      internalID: -6183015060062805360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UItransp_4
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 797
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8a71c46cfff138f0800000000000000
+      internalID: -562387018957358450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UItransp_5
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 912
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adb607953392ec7f0800000000000000
+      internalID: -590489200618345510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UItransp_6
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 632
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd2f347dd42e10fd0800000000000000
+      internalID: -2377370304322997539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UItransp_7
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 633
+        width: 120
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed4263feb105d7100800000000000000
+      internalID: 107330047034402014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UItransp_8
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 634
+        width: 104
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc05c938f8cd49f00800000000000000
+      internalID: 1122764716068589771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UItransp_9
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 634
+        width: 104
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e267a8413c9f66e0800000000000000
+      internalID: -1842081987084983578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UItransp_10
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 635
+        width: 66
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d14ea79b7fe7ea8f0800000000000000
+      internalID: -527344503921908707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UItransp_11
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 516
+        width: 121
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a72232a80d2d1bd0800000000000000
+      internalID: -2657918689974540381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UItransp_12
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 727
+        width: 78
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b230883ac178169b0800000000000000
+      internalID: -5088637546879515861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UItransp_13
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 692
+        width: 97
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d64c131eefe9afca0800000000000000
+      internalID: -5982294337471265683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UItransp_14
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 637
+        width: 80
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c69ddb2de1d54dcd0800000000000000
+      internalID: -2534298303336687252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UItransp_15
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 538
+        width: 126
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c6ca418cadd5b750800000000000000
+      internalID: 6320201385057633988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UItransp_16
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 570
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d12e3503c6515e540800000000000000
+      internalID: 5036455312695222813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UItransp_17
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 542
+        width: 128
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a2b0a187fe8d1000800000000000000
+      internalID: 8319968007467684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UItransp_18
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 483
+        width: 72
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67f8ebc58ef78afa0800000000000000
+      internalID: -5789236685019639946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UItransp_19
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 590
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71734e026438b7910800000000000000
+      internalID: 1836205610306385687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UItransp_20
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 542
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60dec406e07e70de0800000000000000
+      internalID: -1366869912952443642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UItransp_21
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 551
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96e06d482ac8a3200800000000000000
+      internalID: 160595366366285417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UItransp_22
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 554
+        width: 78
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f769ec4f4409a23d0800000000000000
+      internalID: -3230611156845554049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UItransp_23
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 481
+        width: 115
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d5ff8944ad50fb10800000000000000
+      internalID: 2013211993624802771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UItransp_24
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 508
+        width: 97
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52eac0d8e9d20f1c0800000000000000
+      internalID: -4472024270984401371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UItransp_25
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 450
+        width: 120
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ca1dbfd8d21a9710800000000000000
+      internalID: 1700692531961731784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UItransp_26
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 305
+        width: 101
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 124f66ed3bb1cb6b0800000000000000
+      internalID: -5279314203840678879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UItransp_27
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 305
+        width: 101
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef82ebafe01d31e60800000000000000
+      internalID: 7931913230996089086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
