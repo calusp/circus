@@ -20,6 +20,8 @@ namespace Code.Presenters
         private bool _jumpedFromTrampoline;
         private bool _isInCannon;
         private bool _launchedFromCannon;
+        private bool _isInTrapece;
+        private bool _launchedFromTrapece;
 
         public PlayerPresenter(PlayerView view, ISubject<float> actionActivated, GamePlayView gamePlayView, GameConfiguration gameConfiguration)
         {
@@ -42,6 +44,7 @@ namespace Code.Presenters
         {
             if (_isOnTrampoline) _jumpedFromTrampoline = true;
             else if (_isInCannon) LaunchFromCannon();
+            else if (_isInTrapece) LaunchFromTrapece();
             else if (_isGrounded)
             {
                 _view
@@ -50,6 +53,7 @@ namespace Code.Presenters
             }
         }
 
+
         public void DieSmashed()
         {
             _view.DieSmashed().Subscribe(_ => _gamePlayView.Finish());
@@ -57,10 +61,11 @@ namespace Code.Presenters
 
         public void UpdatePlayerRotation(Vector3 position, Quaternion rotation)
         {
-            if (_isInCannon)
+            if (_isInCannon || _isInTrapece)
                 _view.UpdatePlayerInCannon(position, rotation);
         }
 
+   
         private void SetGrounded(bool isGrounded)
         {
             _isGrounded = isGrounded;
@@ -109,12 +114,34 @@ namespace Code.Presenters
             _isInCannon = true;
         }
 
-        public void LaunchFromCannon()
+        private void LaunchFromCannon()
         {
+            //usar cannon force
             _isInCannon = false;
             _view.Jump(gameConfiguration.TrampolineForce.x * _view.transform.position.normalized.x, gameConfiguration.TrampolineForce.y * _view.transform.position.normalized.y);
             _view.RestartMovement();
         }
+
+        public void EnterTrapece(Vector3 trapeceSpot)
+        {
+            if(_launchedFromTrapece)
+            {
+                _isInTrapece = false;
+                return;
+            }
+            _view.GetInTrapece(trapeceSpot);
+            _view.StopMovement = true;
+            _isInTrapece = true;
+        }
+
+        private void LaunchFromTrapece()
+        {
+            //usar trapece direction
+            _isInTrapece = false;
+            _view.Jump(gameConfiguration.TrampolineForce.x * _view.transform.position.normalized.x, gameConfiguration.TrampolineForce.y * _view.transform.position.normalized.y);
+            _view.RestartMovement();
+        }
+
 
     }
 }

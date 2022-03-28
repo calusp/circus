@@ -12,6 +12,7 @@ namespace Code.Views
     {
         private readonly int EnterCannonTrigger = Animator.StringToHash("enteringCannon");
         private readonly int WalkTrigger = Animator.StringToHash("walking");
+        private readonly int EnterTrapeceTrigger = Animator.StringToHash("enteringTrapece");
         [SerializeField] private Rigidbody2D body;
         [SerializeField] private Animator animator;
         [SerializeField] private Vector2 jumpForce;
@@ -68,7 +69,21 @@ namespace Code.Views
             _newPlayerPositionXAxis = transform.position.x + amount;
         }
 
+        public void GetInTrapece(Vector3 trapeceSpot)
+        {
+            transform.position = trapeceSpot;
+            body.simulated = false;
+            SetEnteringTrapece();
+        }
+
+        private void SetEnteringTrapece()
+        {
+            animator.ResetTrigger(WalkTrigger);
+            animator.SetTrigger(EnterTrapeceTrigger);
+        }
+
         public bool StopMovement { get; set; }
+        
 
         public void RestartMovement()
         {

@@ -9,8 +9,6 @@ namespace Code.Views
 {
     public class TrapeceView : BaseActionableView
     {
-        public Transform moveJoint;
-
         [SerializeField, Range(-1,1)] private float maxRotationZ = 0.3f;
         [SerializeField, Range(-1, 1)] private float minRotationZ = 0.3f ;
         [SerializeField] private GameConfiguration gameConfiguration;
@@ -19,6 +17,8 @@ namespace Code.Views
         private int direction;
         private PlayerPresenter _playerPresenter;
         private BoxCollider2D _trigger;
+        private bool _startBounce = false;
+
         private void Start()
         {
             // transform.rotation.Set(transform.rotation.x, transform.rotation.y, minRotaionZ, transform.rotation.w);
@@ -38,15 +38,16 @@ namespace Code.Views
 
         private void FixedUpdate()
         {
+            if (!_startBounce) return;
             float moveAmount = Time.fixedDeltaTime * gameConfiguration.TrapeceSpeed;
-            moveJoint.rotation = new Quaternion(0,
+            transform.rotation = new Quaternion(0,
                0,
-               moveJoint.rotation.z + moveAmount * direction,1
+               transform.rotation.z + moveAmount * direction,1
                );
 
-            if (moveJoint.rotation.z >= maxRotationZ)
+            if (transform.rotation.z >= maxRotationZ)
                 direction = -1;
-            if (moveJoint.rotation.z < minRotationZ)
+            if (transform.rotation.z < minRotationZ)
                 direction = 1;
 
            
@@ -57,7 +58,9 @@ namespace Code.Views
         {
             if (collision.gameObject.name.Contains("Player"))
             {
-                _playerPresenter.EnterCannon(playerSpot.position, playerSpot.rotation);
+                _playerPresenter.EnterTrapece(playerSpot.position);
+                _trigger.enabled = false;
+                _startBounce = true;
             }
         }
     }
