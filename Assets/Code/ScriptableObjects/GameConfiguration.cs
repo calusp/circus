@@ -11,13 +11,13 @@ namespace Code.ScriptableObjects
         [SerializeField, Range(0, 50)] float incrementalRatio = 3;
         [SerializeField, Range(0, 50)] float distanceCap = 3;
         [SerializeField, Range(0, 50)] float cannonSpeed;
-        [SerializeField, Range(0, 50)] float trapeceSpeed;
+        [SerializeField, Range(0, 1)] float trapeceSpeed;
 
         [Header("Power Values, keep it below 2")]
         [SerializeField] Vector2 jumpForce;
         [SerializeField] Vector2 trampoolineForce;
         [SerializeField] Vector2 cannonForce;
-        
+        [SerializeField] SeesawBallConfiguration seesawBallConfiguration;
 
         public float PlayerSpeed => playerSpeed;
         public float CameraSpeed => cameraSpeed;
@@ -29,5 +29,7 @@ namespace Code.ScriptableObjects
         public float CannonSpeed => cannonSpeed;
 
         public float TrapeceSpeed => trapeceSpeed;
+
+        public SeesawBallConfiguration SeesawBallConfiguration => seesawBallConfiguration;
     }
 }

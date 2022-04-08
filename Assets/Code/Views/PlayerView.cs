@@ -25,6 +25,7 @@ namespace Code.Views
         private float _previousVelocityOnY;
 
         public Action<bool> IsGrounded { get; set; }
+        public Action DieFromSmash { get; set; }
         public float DistanceTravelled { get; private set; }
         public bool IsInsideCannon { get; set; }
 
@@ -59,7 +60,7 @@ namespace Code.Views
 
         public void Init()
         {
-            displyableData.DistanceTravelled = 0;
+            displyableData.Content = 0;
             _newPlayerPositionXAxis = startPosition.x;
             transform.position = startPosition;
         }
@@ -107,6 +108,7 @@ namespace Code.Views
             return Die().ToObservable();
         }
 
+
         IEnumerator Die()
         {
             Debug.Log("Player died");
@@ -137,6 +139,7 @@ namespace Code.Views
 
         private void FixedUpdate()
         {
+
             if (StopMovement) return;
 
             if (transform.position.y < _previousVelocityOnY)
@@ -147,7 +150,9 @@ namespace Code.Views
 
 
             transform.position = new Vector2(_newPlayerPositionXAxis, transform.position.y);
-            displyableData.DistanceTravelled = Mathf.Abs(transform.position.x - startPosition.x);
+            displyableData.Content = Mathf.Abs(transform.position.x - startPosition.x);
+
+           
         }
 
         private bool CheckGrounded(List<RaycastHit2D> hits)

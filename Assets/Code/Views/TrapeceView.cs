@@ -10,9 +10,11 @@ namespace Code.Views
     public class TrapeceView : BaseActionableView
     {
         [SerializeField, Range(-1,1)] private float maxRotationZ = 0.3f;
-        [SerializeField, Range(-1, 1)] private float minRotationZ = 0.3f ;
+        [SerializeField, Range(-1, 1)] private float minRotationZ = 0.3f;
         [SerializeField] private GameConfiguration gameConfiguration;
         [SerializeField] private Transform playerSpot;
+
+        public Vector3 PlayerJumpDirection => playerSpot.position.normalized;
 
         private int direction;
         private PlayerPresenter _playerPresenter;
@@ -28,7 +30,7 @@ namespace Code.Views
         }
         public override void Execute()
         {
-            //_playerPresenter.LaunchFromCannon();
+            return;
         }
 
         public override void Attach(PlayerPresenter playerPresenter)
@@ -39,15 +41,14 @@ namespace Code.Views
         private void FixedUpdate()
         {
             if (!_startBounce) return;
-            float moveAmount = Time.fixedDeltaTime * gameConfiguration.TrapeceSpeed;
-            transform.rotation = new Quaternion(0,
-               0,
-               transform.rotation.z + moveAmount * direction,1
-               );
+            transform.rotation = direction == 1 ?
+               Quaternion.LerpUnclamped(transform.rotation, new Quaternion(0, 0, maxRotationZ, 1), gameConfiguration.TrapeceSpeed) :
+               Quaternion.LerpUnclamped(transform.rotation, new Quaternion(0, 0, minRotationZ, 1), gameConfiguration.TrapeceSpeed);
 
-            if (transform.rotation.z >= maxRotationZ)
+
+            if (transform.rotation.z >= maxRotationZ - gameConfiguration.TrapeceSpeed)
                 direction = -1;
-            if (transform.rotation.z < minRotationZ)
+            if (transform.rotation.z < minRotationZ + gameConfiguration.TrapeceSpeed)
                 direction = 1;
 
            

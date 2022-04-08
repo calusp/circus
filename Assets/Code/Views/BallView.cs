@@ -1,4 +1,5 @@
 ﻿using Code.Presenters;
+using Code.ScriptableObjects;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,23 +9,32 @@ namespace Code.Views
 {
     [RequireComponent(typeof(Collider2D))]
     [RequireComponent(typeof(Rigidbody2D))]
-    public class Smash : BaseHazardView
+    public class BallView : BaseHazardView
     {
         private Collider2D _collider;
         private Rigidbody2D _rigidBody;
+        private SeesawBallConfiguration seesawBallConfiguratoin;
         private PlayerPresenter _playerPresenter;
+        private float timeToDieAcc;
+        [SerializeField] GameConfiguration gameConfiguration;
 
         // Use this for initialization
         void Start()
         {
             _collider = GetComponent<Collider2D>();
             _rigidBody = GetComponent<Rigidbody2D>();
+            seesawBallConfiguratoin = gameConfiguration.SeesawBallConfiguration;
+            _rigidBody.AddRelativeForce(seesawBallConfiguratoin.throwForce, ForceMode2D.Impulse);
+            timeToDieAcc = 0;
         }
 
         // Update is called once per frame
         void Update()
         {
             CheckHits(transform.position);
+            timeToDieAcc += Time.deltaTime;
+            if (timeToDieAcc >= seesawBallConfiguratoin.ballTimeToLive)
+                DestroyImmediate(gameObject,false); 
         }
 
         private void CheckHits(Vector3 position)
@@ -42,7 +52,7 @@ namespace Code.Views
             {
                 Debug.Log("Player Hit from top.");
                 enabled = false;
-                _playerPresenter.DieSmashed();
+                verticalHits.First(hit => hit.collider && hit.distance < _collider.bounds.size.x * 0.5f).collider.GetComponent<PlayerView>().DieFromSmash();
             }
         }
         private void HitSomethingRight(Vector3 position)
@@ -54,7 +64,8 @@ namespace Code.Views
             {
                 Debug.Log("Player Hit from the back.");
                 enabled = false;
-                _playerPresenter.DieSmashed();
+                hits.First(hit => hit.collider && hit.distance < _collider.bounds.size.x * 0.5f).collider.GetComponent<PlayerView>().DieFromSmash();
+                //_playerPresenter.DieSmashed();
             }
         }
 

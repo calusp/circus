@@ -32,6 +32,7 @@ namespace Code.Presenters
             this.gameConfiguration = gameConfiguration;
             _gamePlayView.MovePlayer = Move;
             _actionActivated.Subscribe(ActivateAction);
+            _view.DieFromSmash = DieSmashed;
         }
 
         private void Move(float amount)
@@ -136,9 +137,10 @@ namespace Code.Presenters
 
         private void LaunchFromTrapece()
         {
-            //usar trapece direction
             _isInTrapece = false;
-            _view.Jump(gameConfiguration.TrampolineForce.x * _view.transform.position.normalized.x, gameConfiguration.TrampolineForce.y * _view.transform.position.normalized.y);
+            _view.Jump(
+                gameConfiguration.TrampolineForce.x * _view.transform.position.normalized.x * Mathf.Sign(_view.transform.rotation.z),
+                gameConfiguration.TrampolineForce.y * _view.transform.position.normalized.y);
             _view.RestartMovement();
         }
 

@@ -61,7 +61,7 @@ namespace Code.Views
         {
             float playerSpeed = _configuration.PlayerSpeed + _configuration.IncrementalRatio * _increments;
             float cameraSpeed = _configuration.CameraSpeed + _configuration.IncrementalRatio * _increments;
-            if (displayableData.DistanceTravelled > _configuration.DistanceCap * (_increments + 1))
+            if (displayableData.Content > _configuration.DistanceCap * (_increments + 1))
                 _increments++;
             MovePlayer(playerSpeed * Time.deltaTime);
             MoveCamera(cameraSpeed * Time.deltaTime);
