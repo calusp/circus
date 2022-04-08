@@ -83,13 +83,6 @@ namespace Code.Views
             Physics2D.Raycast(new Vector2(position.x , position.y+ _collider.bounds.size.y*0.33f), Vector2.right, 1, 1 << 8)
         };
 
-        private List<RaycastHit2D> CreateLeftHorizontalRays(Vector3 position) => new List<RaycastHit2D>()
-        {
-            Physics2D.Raycast(new Vector2(position.x , position.y- _collider.bounds.size.y*0.33f), Vector2.left, 1, 1 << 8),
-            Physics2D.Raycast(new Vector2(position.x, position.y), Vector2.left, 1, 1 << 8),
-            Physics2D.Raycast(new Vector2(position.x , position.y+ _collider.bounds.size.y*0.33f), Vector2.left, 1, 1 << 8)
-        };
-
         public override void Attach(PlayerPresenter playerPresenter)
         {
             _playerPresenter = playerPresenter;
