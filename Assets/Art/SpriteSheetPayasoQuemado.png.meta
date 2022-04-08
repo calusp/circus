@@ -1,7 +1,157 @@
 fileFormatVersion: 2
 guid: 871de29aa5dbc1242aeea7dfe03ea328
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 936923013701365361
+    second: SpriteSheetPayasoQuemado_0
+  - first:
+      213: 8571527507667036626
+    second: SpriteSheetPayasoQuemado_1
+  - first:
+      213: -5438651517278939824
+    second: SpriteSheetPayasoQuemado_2
+  - first:
+      213: 6714968160010067764
+    second: SpriteSheetPayasoQuemado_3
+  - first:
+      213: 7049451314815690867
+    second: SpriteSheetPayasoQuemado_4
+  - first:
+      213: -3533687932878250156
+    second: SpriteSheetPayasoQuemado_5
+  - first:
+      213: -3706340013287123057
+    second: SpriteSheetPayasoQuemado_6
+  - first:
+      213: -1025592380047882172
+    second: SpriteSheetPayasoQuemado_7
+  - first:
+      213: 487620134096900777
+    second: SpriteSheetPayasoQuemado_8
+  - first:
+      213: 8842408305485097054
+    second: SpriteSheetPayasoQuemado_9
+  - first:
+      213: 271291786739536606
+    second: SpriteSheetPayasoQuemado_10
+  - first:
+      213: 8256516806840966777
+    second: SpriteSheetPayasoQuemado_11
+  - first:
+      213: -7794823989327859874
+    second: SpriteSheetPayasoQuemado_12
+  - first:
+      213: -3514871233793612044
+    second: SpriteSheetPayasoQuemado_13
+  - first:
+      213: 1534226703766698986
+    second: SpriteSheetPayasoQuemado_14
+  - first:
+      213: 4568224730163262586
+    second: SpriteSheetPayasoQuemado_15
+  - first:
+      213: 6360365093645399590
+    second: SpriteSheetPayasoQuemado_16
+  - first:
+      213: -1972211548415791713
+    second: SpriteSheetPayasoQuemado_17
+  - first:
+      213: -2355661877825923491
+    second: SpriteSheetPayasoQuemado_18
+  - first:
+      213: -4035225285240724823
+    second: SpriteSheetPayasoQuemado_19
+  - first:
+      213: -4399636692638214087
+    second: SpriteSheetPayasoQuemado_20
+  - first:
+      213: 8922111179104575524
+    second: SpriteSheetPayasoQuemado_21
+  - first:
+      213: -1814986613037892572
+    second: SpriteSheetPayasoQuemado_22
+  - first:
+      213: -2596820905430672274
+    second: SpriteSheetPayasoQuemado_23
+  - first:
+      213: 2377587572990551014
+    second: SpriteSheetPayasoQuemado_24
+  - first:
+      213: -258929823336847664
+    second: SpriteSheetPayasoQuemado_25
+  - first:
+      213: -1669630818196209162
+    second: SpriteSheetPayasoQuemado_26
+  - first:
+      213: 5555166138630504038
+    second: SpriteSheetPayasoQuemado_27
+  - first:
+      213: -7714541865464847818
+    second: SpriteSheetPayasoQuemado_28
+  - first:
+      213: 5054006676194189615
+    second: SpriteSheetPayasoQuemado_29
+  - first:
+      213: 4652947858817431072
+    second: SpriteSheetPayasoQuemado_30
+  - first:
+      213: 1057288026366504699
+    second: SpriteSheetPayasoQuemado_31
+  - first:
+      213: 6421913633541976186
+    second: SpriteSheetPayasoQuemado_32
+  - first:
+      213: -7948148908512769426
+    second: SpriteSheetPayasoQuemado_33
+  - first:
+      213: 5710710575831100971
+    second: SpriteSheetPayasoQuemado_34
+  - first:
+      213: 853540052827725998
+    second: SpriteSheetPayasoQuemado_35
+  - first:
+      213: -1392555255383182068
+    second: SpriteSheetPayasoQuemado_36
+  - first:
+      213: -5411234834258159298
+    second: SpriteSheetPayasoQuemado_37
+  - first:
+      213: -8605899987014174257
+    second: SpriteSheetPayasoQuemado_38
+  - first:
+      213: -4098383838707092205
+    second: SpriteSheetPayasoQuemado_39
+  - first:
+      213: 5981380063779807283
+    second: SpriteSheetPayasoQuemado_40
+  - first:
+      213: 6586366404417654614
+    second: SpriteSheetPayasoQuemado_41
+  - first:
+      213: -8876071574133446134
+    second: SpriteSheetPayasoQuemado_42
+  - first:
+      213: 413048724744267738
+    second: SpriteSheetPayasoQuemado_43
+  - first:
+      213: -4999857131827977059
+    second: SpriteSheetPayasoQuemado_44
+  - first:
+      213: 7887097791789003026
+    second: SpriteSheetPayasoQuemado_45
+  - first:
+      213: 5372318386417398596
+    second: SpriteSheetPayasoQuemado_46
+  - first:
+      213: 9152271928372587711
+    second: SpriteSheetPayasoQuemado_47
+  - first:
+      213: -2693884571204587759
+    second: SpriteSheetPayasoQuemado_48
+  - first:
+      213: -8367038833917739383
+    second: SpriteSheetPayasoQuemado_49
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +182,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -41,9 +191,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -65,10 +215,34 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -77,7 +251,1057 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 894
+        width: 44
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17eee85548e900d00800000000000000
+      internalID: 936923013701365361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_1
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 897
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d9abf4bade24f670800000000000000
+      internalID: 8571527507667036626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_2
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 894
+        width: 44
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 055137f92470684b0800000000000000
+      internalID: -5438651517278939824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_3
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 897
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43f557fc6fb503d50800000000000000
+      internalID: 6714968160010067764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_4
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 897
+        width: 35
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 378eff80f9ea4d160800000000000000
+      internalID: 7049451314815690867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_5
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 897
+        width: 36
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45f15bd1c81d5fec0800000000000000
+      internalID: -3533687932878250156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_6
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 897
+        width: 43
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f87543b156f609cc0800000000000000
+      internalID: -3706340013287123057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_7
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 769
+        width: 38
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44806e60a2d54c1f0800000000000000
+      internalID: -1025592380047882172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_8
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 769
+        width: 39
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a29c2eadef54c600800000000000000
+      internalID: 487620134096900777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_9
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 769
+        width: 37
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e582767318b86ba70800000000000000
+      internalID: 8842408305485097054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_10
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 769
+        width: 33
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed257135172d3c300800000000000000
+      internalID: 271291786739536606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_11
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 767
+        width: 51
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97e5cc97a4a059270800000000000000
+      internalID: 8256516806840966777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_12
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 769
+        width: 50
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5f6b6561e833d390800000000000000
+      internalID: -7794823989327859874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_13
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 769
+        width: 55
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f62e764c3ba83fc0800000000000000
+      internalID: -3514871233793612044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_14
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 641
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aebbee2fe0baa4510800000000000000
+      internalID: 1534226703766698986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_15
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 641
+        width: 33
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7439874038956f30800000000000000
+      internalID: 4568224730163262586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_16
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 640
+        width: 50
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6263780aa5e844850800000000000000
+      internalID: 6360365093645399590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_17
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 641
+        width: 55
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9de0c2cb0c41a4e0800000000000000
+      internalID: -1972211548415791713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_18
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 641
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d569141c0020f4fd0800000000000000
+      internalID: -2355661877825923491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_19
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 641
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a26d8c8bfffff7c0800000000000000
+      internalID: -4035225285240724823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_20
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 641
+        width: 41
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93856820db951f2c0800000000000000
+      internalID: -4399636692638214087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_21
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 641
+        width: 33
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 420e11598d4b1db70800000000000000
+      internalID: 8922111179104575524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_22
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 513
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42c79c9aa4fdfc6e0800000000000000
+      internalID: -1814986613037892572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_23
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 512
+        width: 63
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6c1f72252d36fbd0800000000000000
+      internalID: -2596820905430672274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_24
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 512
+        width: 73
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e32c76fc43eef020800000000000000
+      internalID: 2377587572990551014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_25
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 565
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d6a04292b8186cf0800000000000000
+      internalID: -258929823336847664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_26
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 512
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f1ce5fed9744d8e0800000000000000
+      internalID: -1669630818196209162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_27
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 514
+        width: 87
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66e7959ab2ae71d40800000000000000
+      internalID: 5555166138630504038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_28
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 503
+        width: 68
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 632a618fb0170f490800000000000000
+      internalID: -7714541865464847818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_29
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 385
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f21e1037b40732640800000000000000
+      internalID: 5054006676194189615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_30
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 385
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0263a3bdc67929040800000000000000
+      internalID: 4652947858817431072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_31
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 385
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfe69d4bbdd3cae00800000000000000
+      internalID: 1057288026366504699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_32
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 385
+        width: 36
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a70f189cc683f1950800000000000000
+      internalID: 6421913633541976186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_33
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 257
+        width: 33
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6a0036cda082b190800000000000000
+      internalID: -7948148908512769426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_34
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 257
+        width: 68
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2eaa771305804f40800000000000000
+      internalID: 5710710575831100971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_35
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 262
+        width: 83
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea06d52e72268db00800000000000000
+      internalID: 853540052827725998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_36
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 255
+        width: 75
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0538c09f56acace0800000000000000
+      internalID: -1392555255383182068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_37
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 149
+        width: 59
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3992d3969e67e4b0800000000000000
+      internalID: -5411234834258159298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_38
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 146
+        width: 81
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc93b7dce83b19880800000000000000
+      internalID: -8605899987014174257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_39
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 146
+        width: 80
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31579a4ec9d9f17c0800000000000000
+      internalID: -4098383838707092205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_40
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 150
+        width: 52
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 330e2303a71220350800000000000000
+      internalID: 5981380063779807283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_41
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 144
+        width: 52
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65f81e74959776b50800000000000000
+      internalID: 6586366404417654614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_42
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 141
+        width: 44
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0a65d64eebd1d480800000000000000
+      internalID: -8876071574133446134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_43
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 141
+        width: 42
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad76f4170a17bb500800000000000000
+      internalID: 413048724744267738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_44
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 201
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d94a0b1dd60fc9ab0800000000000000
+      internalID: -4999857131827977059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_45
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 121
+        width: 37
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 211f95c67a9947d60800000000000000
+      internalID: 7887097791789003026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_46
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 2
+        width: 37
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44375b2db1f4e8a40800000000000000
+      internalID: 5372318386417398596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_47
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 2
+        width: 37
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbc6d6af3d6630f70800000000000000
+      internalID: 9152271928372587711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_48
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 2
+        width: 37
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11fe17b51466d9ad0800000000000000
+      internalID: -2693884571204587759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetPayasoQuemado_49
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 2
+        width: 37
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98e3f62d28e42eb80800000000000000
+      internalID: -8367038833917739383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

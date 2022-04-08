@@ -13,6 +13,7 @@ namespace Code.Views
         private readonly int EnterCannonTrigger = Animator.StringToHash("enteringCannon");
         private readonly int WalkTrigger = Animator.StringToHash("walking");
         private readonly int EnterTrapeceTrigger = Animator.StringToHash("enteringTrapece");
+        private readonly int DyingSmashed = Animator.StringToHash("dyingSmashed");
         [SerializeField] private Rigidbody2D body;
         [SerializeField] private Animator animator;
         [SerializeField] private Vector2 jumpForce;
@@ -105,14 +106,16 @@ namespace Code.Views
 
         public IObservable<Unit> DieSmashed()
         {
+            animator.ResetTrigger(WalkTrigger);
+            animator.SetTrigger(DyingSmashed);
             return Die().ToObservable();
         }
 
 
         IEnumerator Die()
         {
-            Debug.Log("Player died");
-            yield return null;
+            body.simulated = false;
+            yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0)[0].clip.length);
         }
 
         private List<RaycastHit2D> CreateRays(Vector3 position) => new List<RaycastHit2D>()
