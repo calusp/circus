@@ -18,6 +18,7 @@ namespace Code.ScriptableObjects
         [SerializeField] Vector2 trampoolineForce;
         [SerializeField] Vector2 cannonForce;
         [SerializeField] SeesawBallConfiguration seesawBallConfiguration;
+        [SerializeField] private Vector2 trapeceForce;
 
         public float PlayerSpeed => playerSpeed;
         public float CameraSpeed => cameraSpeed;
@@ -27,9 +28,12 @@ namespace Code.ScriptableObjects
         public Vector2 TrampolineForce => trampoolineForce;
 
         public float CannonSpeed => cannonSpeed;
+        public Vector2 CannonForce => cannonForce;
 
         public float TrapeceSpeed => trapeceSpeed;
-
+        public Vector2 TrapeceForce => trapeceForce;
         public SeesawBallConfiguration SeesawBallConfiguration => seesawBallConfiguration;
+
+        
     }
 }

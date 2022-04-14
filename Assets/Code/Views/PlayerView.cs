@@ -136,6 +136,11 @@ namespace Code.Views
             Physics2D.Raycast(new Vector2(position.x + 0.5f, position.y), Vector2.down,  0.51f, layerMask)
         };
 
+        internal void Jump(object p1, object p2)
+        {
+            throw new NotImplementedException();
+        }
+
         private bool ColliderHasActionable(IEnumerable<RaycastHit2D> hits) =>
             hits.Any(hit => hit.collider && hit.collider.GetComponent<Actionable>() != null);
 
@@ -153,20 +158,12 @@ namespace Code.Views
 
         private void FixedUpdate()
         {
-
             if (StopMovement) return;
 
             if (transform.position.y < _previousVelocityOnY)
                 transform.rotation = Quaternion.identity;
 
             _previousVelocityOnY = transform.position.y;
-
-
-
-            transform.position = new Vector2(_newPlayerPositionXAxis, transform.position.y);
-            displyableData.Content = Mathf.Abs(transform.position.x - startPosition.x);
-
-           
         }
 
         private bool CheckGrounded(List<RaycastHit2D> hits)

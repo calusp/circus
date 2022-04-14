@@ -565,6 +565,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1261777983287136824, guid: a1e062cb74c9da0479014cf3a784c4ef,
         type: 3}
+      propertyPath: distanceData
+      value: 
+      objectReference: {fileID: 11400000, guid: b81ead8f0e9c1f54dbd52b182cc64f4e,
+        type: 2}
+    - target: {fileID: 1261777983287136824, guid: a1e062cb74c9da0479014cf3a784c4ef,
+        type: 3}
       propertyPath: _hasActionable
       value: 1
       objectReference: {fileID: 0}

@@ -108,6 +108,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -4373551076322862761, guid: ed81f5c1e7d36944c853aa37a565b321,
         type: 3}
+      propertyPath: distanceData
+      value: 
+      objectReference: {fileID: 11400000, guid: b81ead8f0e9c1f54dbd52b182cc64f4e,
+        type: 2}
+    - target: {fileID: -4373551076322862761, guid: ed81f5c1e7d36944c853aa37a565b321,
+        type: 3}
       propertyPath: gameConfiguration
       value: 
       objectReference: {fileID: 11400000, guid: e42de6adcfbdb2740a7e8a5d44b47e94,

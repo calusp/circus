@@ -59,12 +59,11 @@ namespace Code.Views
 
         private void Update()
         {
-            float playerSpeed = _configuration.PlayerSpeed + _configuration.IncrementalRatio * _increments;
+            float playerSpeed = _configuration.PlayerSpeed;
             float cameraSpeed = _configuration.CameraSpeed + _configuration.IncrementalRatio * _increments;
             if (displayableData.Content > _configuration.DistanceCap * (_increments + 1))
                 _increments++;
             MovePlayer(playerSpeed * Time.deltaTime);
-            MoveCamera(cameraSpeed * Time.deltaTime);
             if (HasPlayerCollidedHorizontally(playerGo.transform.position.x)) 
                 Finish();
         } 
@@ -72,20 +71,9 @@ namespace Code.Views
         private bool HasPlayerCollidedHorizontally(float position) => 
             HasCollidedWithEndOfCamera(position, position+0.5f, cameraView.NextPositionOnAxisX - 17.5f * 0.5f);
 
-        private bool HasCollided(GameObject chunk)
-        {
-            var chunkPosition = chunk.transform.position;
-            var chunkMinX = chunkPosition.x - levelGenerator.Width * 0.5f;
-            var chunkMaxX = chunkPosition.x + levelGenerator.Width * 0.5f;
-            var cameraMinX = cameraView.NextPositionOnAxisX - 17.5f * 0.5f;
-            return HasCollidedWithEndOfCamera(chunkMinX, chunkMaxX, cameraMinX);
-        }
-
         private bool HasCollidedWithEndOfCamera(float colliderMinX, float colliderMaxX, float cameraMinX) =>
-            colliderMinX <
-            cameraMinX &&
-            colliderMaxX >=
-            cameraMinX;
+            colliderMinX < cameraMinX &&
+            colliderMaxX >= cameraMinX;
 
         private void SetUp()
         {

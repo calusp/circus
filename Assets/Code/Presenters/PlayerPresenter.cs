@@ -147,8 +147,8 @@ namespace Code.Presenters
         {
             _isInTrapece = false;
             _view.Jump(
-                gameConfiguration.TrampolineForce.x * _view.transform.position.normalized.x * Mathf.Sign(_view.transform.rotation.z),
-                gameConfiguration.TrampolineForce.y * _view.transform.position.normalized.y);
+                gameConfiguration.TrapeceForce.x * _view.transform.localPosition.normalized.x * Mathf.Sign(_view.transform.rotation.z),
+                gameConfiguration.TrapeceForce.y * _view.transform.localPosition.normalized.y);
             _view.RestartMovement();
         }
 
