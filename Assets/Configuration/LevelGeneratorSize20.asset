@@ -18,4 +18,4 @@ MonoBehaviour:
     type: 3}
   startChunkWith: 4
   chunkWidth: 20
-  amountOfChunks: 1
+  amountOfChunks: 3

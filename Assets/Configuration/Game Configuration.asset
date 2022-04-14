@@ -18,7 +18,7 @@ MonoBehaviour:
   distanceCap: 5
   cannonSpeed: 2
   trapeceSpeed: 0.061
-  jumpForce: {x: 0.8, y: 0.1}
+  jumpForce: {x: 0.8, y: 2.5}
   trampoolineForce: {x: 0.8, y: 0.5}
   cannonForce: {x: 0.8, y: 0.5}
   seesawBallConfiguration:
