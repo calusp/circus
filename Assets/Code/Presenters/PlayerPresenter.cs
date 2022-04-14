@@ -20,6 +20,9 @@ namespace Code.Presenters
         private bool _jumpedFromTrampoline;
         private bool _isInCannon;
         private bool _launchedFromCannon;
+
+    
+
         private bool _isInTrapece;
         private bool _launchedFromTrapece;
 
@@ -58,6 +61,11 @@ namespace Code.Presenters
         public void DieSmashed()
         {
             _view.DieSmashed().Subscribe(_ => _gamePlayView.Finish());
+        }
+
+        public void DieBurnt()
+        {
+            _view.DieBurnt().Subscribe(_ => _gamePlayView.Finish());
         }
 
         public void UpdatePlayerRotation(Vector3 position, Quaternion rotation)

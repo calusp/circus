@@ -353,7 +353,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!20 &391223717
 Camera:
   m_ObjectHideFlags: 0
@@ -412,24 +412,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420030 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2260258233332389660, guid: 5b300161c27021248b5b0e120ee00e17,
-    type: 3}
-  m_PrefabInstance: {fileID: 7380024616558411426}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b57824ee74842c43af0fc60808ae3b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!20 &519420031 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 7531144896872443562, guid: 5b300161c27021248b5b0e120ee00e17,
-    type: 3}
-  m_PrefabInstance: {fileID: 7380024616558411426}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &576412009
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,96 +1525,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 66760505616359740, guid: 5b300161c27021248b5b0e120ee00e17,
+    - target: {fileID: 2260258233332389660, guid: 5b300161c27021248b5b0e120ee00e17,
         type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 192
-      objectReference: {fileID: 0}
-    - target: {fileID: 66760505616359740, guid: 5b300161c27021248b5b0e120ee00e17,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 192
-      objectReference: {fileID: 0}
-    - target: {fileID: 66760505616359740, guid: 5b300161c27021248b5b0e120ee00e17,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 310
-      objectReference: {fileID: 0}
-    - target: {fileID: 66760505616359740, guid: 5b300161c27021248b5b0e120ee00e17,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -295
-      objectReference: {fileID: 0}
-    - target: {fileID: 1812453516106677487, guid: 5b300161c27021248b5b0e120ee00e17,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -43.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4959595914927748096, guid: 5b300161c27021248b5b0e120ee00e17,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 20.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4959595914927748096, guid: 5b300161c27021248b5b0e120ee00e17,
-        type: 3}
-      propertyPath: m_margin.w
-      value: 8.849327
-      objectReference: {fileID: 0}
-    - target: {fileID: 4959595914927748096, guid: 5b300161c27021248b5b0e120ee00e17,
-        type: 3}
-      propertyPath: m_margin.x
-      value: 6.99292
-      objectReference: {fileID: 0}
-    - target: {fileID: 4959595914927748096, guid: 5b300161c27021248b5b0e120ee00e17,
-        type: 3}
-      propertyPath: m_margin.z
-      value: 7.916931
-      objectReference: {fileID: 0}
-    - target: {fileID: 5637616906204960737, guid: 5b300161c27021248b5b0e120ee00e17,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 22.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5637616906204960737, guid: 5b300161c27021248b5b0e120ee00e17,
-        type: 3}
-      propertyPath: m_margin.w
-      value: 8.063869
-      objectReference: {fileID: 0}
-    - target: {fileID: 5637616906204960737, guid: 5b300161c27021248b5b0e120ee00e17,
-        type: 3}
-      propertyPath: m_margin.x
-      value: 10.05426
-      objectReference: {fileID: 0}
-    - target: {fileID: 5637616906204960737, guid: 5b300161c27021248b5b0e120ee00e17,
-        type: 3}
-      propertyPath: m_margin.y
-      value: -2.7185822
-      objectReference: {fileID: 0}
-    - target: {fileID: 5637616906204960737, guid: 5b300161c27021248b5b0e120ee00e17,
-        type: 3}
-      propertyPath: m_margin.z
-      value: 10.260773
-      objectReference: {fileID: 0}
-    - target: {fileID: 7380024617113190540, guid: 5b300161c27021248b5b0e120ee00e17,
-        type: 3}
-      propertyPath: cameraView
-      value: 
-      objectReference: {fileID: 519420030}
-    - target: {fileID: 7380024617113190540, guid: 5b300161c27021248b5b0e120ee00e17,
-        type: 3}
-      propertyPath: mainCamera
-      value: 
-      objectReference: {fileID: 519420031}
-    - target: {fileID: 7380024617113190540, guid: 5b300161c27021248b5b0e120ee00e17,
-        type: 3}
-      propertyPath: displayableData
-      value: 
-      objectReference: {fileID: 11400000, guid: b81ead8f0e9c1f54dbd52b182cc64f4e,
-        type: 2}
-    - target: {fileID: 7380024617113190540, guid: 5b300161c27021248b5b0e120ee00e17,
-        type: 3}
-      propertyPath: chunkStartPositionHorizontal
-      value: -6.5
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7380024617113190541, guid: 5b300161c27021248b5b0e120ee00e17,
         type: 3}
@@ -1693,31 +1589,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GamePlay
-      objectReference: {fileID: 0}
-    - target: {fileID: 7380024617113190543, guid: 5b300161c27021248b5b0e120ee00e17,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8083903869499473548, guid: 5b300161c27021248b5b0e120ee00e17,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 192
-      objectReference: {fileID: 0}
-    - target: {fileID: 8083903869499473548, guid: 5b300161c27021248b5b0e120ee00e17,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 192
-      objectReference: {fileID: 0}
-    - target: {fileID: 8083903869499473548, guid: 5b300161c27021248b5b0e120ee00e17,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -312
-      objectReference: {fileID: 0}
-    - target: {fileID: 8083903869499473548, guid: 5b300161c27021248b5b0e120ee00e17,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b300161c27021248b5b0e120ee00e17, type: 3}

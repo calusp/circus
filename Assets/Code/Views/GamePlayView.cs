@@ -72,20 +72,6 @@ namespace Code.Views
         private bool HasPlayerCollidedHorizontally(float position) => 
             HasCollidedWithEndOfCamera(position, position+0.5f, cameraView.NextPositionOnAxisX - 17.5f * 0.5f);
 
-        private void FixedUpdate()
-        {
-            if (HasCameraGotANewChunk()) return;
-            UpdateGameplayForChunk(chunk: _chunks[_previousChunk]);
-            _previousChunk = CurrentCameraChunk().GetComponent<ChunkContainerView>().Id;
-        }
-
-        private bool HasCameraGotANewChunk() =>
-            _previousChunk == CurrentCameraChunk().GetComponent<ChunkContainerView>().Id;
-
-
-        private GameObject CurrentCameraChunk() =>
-            _chunks.Any(HasCollided) ? _chunks.FirstOrDefault(HasCollided) : _chunks.First();
-
         private bool HasCollided(GameObject chunk)
         {
             var chunkPosition = chunk.transform.position;

@@ -14,7 +14,6 @@ namespace Code.Views
         private Collider2D _collider;
         private Rigidbody2D _rigidBody;
         private SeesawBallConfiguration seesawBallConfiguratoin;
-        private PlayerPresenter _playerPresenter;
         private float timeToDieAcc;
         [SerializeField] GameConfiguration gameConfiguration;
 
@@ -85,7 +84,6 @@ namespace Code.Views
 
         public override void Attach(PlayerPresenter playerPresenter)
         {
-            _playerPresenter = playerPresenter;
         }
     }
 }

@@ -14,11 +14,14 @@ namespace Code.Views
         private readonly int WalkTrigger = Animator.StringToHash("walking");
         private readonly int EnterTrapeceTrigger = Animator.StringToHash("enteringTrapece");
         private readonly int DyingSmashed = Animator.StringToHash("dyingSmashed");
+        private readonly int DyingBurnt = Animator.StringToHash("dyingBurned");
         [SerializeField] private Rigidbody2D body;
         [SerializeField] private Animator animator;
         [SerializeField] private Vector2 jumpForce;
         [SerializeField] private Vector3 startPosition;
         [SerializeField] private DisplayableData displyableData;
+        [SerializeField] AnimationClip burnt;
+        [SerializeField] AnimationClip smashed;
         private float _newPlayerPositionXAxis;
         private readonly LayerMask layerMask = 1 << 9;
         public Vector2 offset;
@@ -57,6 +60,14 @@ namespace Code.Views
                 ForceMode2D.Impulse);
             _jumped = true;
 
+        }
+
+        public IObservable<Unit> DieBurnt()
+        {
+            animator.ResetTrigger(EnterTrapeceTrigger);
+            animator.ResetTrigger(WalkTrigger);
+            animator.SetTrigger(DyingBurnt);
+            return Die(burnt.length).ToObservable();
         }
 
         public void Init()
@@ -108,14 +119,14 @@ namespace Code.Views
         {
             animator.ResetTrigger(WalkTrigger);
             animator.SetTrigger(DyingSmashed);
-            return Die().ToObservable();
+            body.simulated = false;
+            return Die(smashed.length).ToObservable();
         }
 
 
-        IEnumerator Die()
+        IEnumerator Die(float lenght)
         {
-            body.simulated = false;
-            yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0)[0].clip.length);
+            yield return new WaitForSeconds(lenght);
         }
 
         private List<RaycastHit2D> CreateRays(Vector3 position) => new List<RaycastHit2D>()

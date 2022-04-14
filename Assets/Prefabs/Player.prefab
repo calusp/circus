@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5408317042139485906}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.29, y: 0.315, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5408317042224377617}
@@ -71,7 +71,8 @@ SpriteRenderer:
   m_SortingLayerID: 948371709
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 632768524559316304, guid: c2fb09b776a65eb4bb5bb091b8c7d94e, type: 3}
+  m_Sprite: {fileID: 8571527507667036626, guid: 871de29aa5dbc1242aeea7dfe03ea328,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -209,9 +210,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 5408317043186296260}
   animator: {fileID: 1755568262044993164}
-  jumpForce: {x: 5, y: 10}
+  jumpForce: {x: 2.5, y: 4}
   startPosition: {x: -4.38, y: -3, z: 0}
   displyableData: {fileID: 11400000, guid: b81ead8f0e9c1f54dbd52b182cc64f4e, type: 2}
+  burnt: {fileID: 7400000, guid: dfca25635d38850449ffb31e1f846016, type: 2}
+  smashed: {fileID: 7400000, guid: 6be7e1d134f3d7848979cc7e5e5eee7d, type: 2}
   offset: {x: 0, y: 0}
 --- !u!95 &1755568262044993164
 Animator:
