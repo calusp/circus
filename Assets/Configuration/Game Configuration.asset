@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Game Configuration
   m_EditorClassIdentifier: 
   playerSpeed: 0
-  cameraSpeed: 1.5
+  cameraSpeed: 1.6
   incrementalRatio: 0.1
   distanceCap: 5
   cannonSpeed: 2
@@ -26,3 +26,4 @@ MonoBehaviour:
     throwForce: {x: -10, y: -10}
     ballTimeToLive: 3
   trapeceForce: {x: -3, y: -1}
+  _bagDropDistance: 1
