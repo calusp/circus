@@ -19,27 +19,42 @@ namespace Code.Views
         public Hazard Hazard => _hazardViewView;
         private Transform playerTransform;
         private float prevDistance;
+        private float _increments;
+
         // Start is called before the first frame update
         void Awake()
         {
             playerTransform = GameObject.Find("Player(Clone)").transform;
-            prevDistance = (transform.position.x - width / 2) + (playerTransform.position.x + 5);
+            MoveChunk();
+            prevDistance = (transform.position.x - width / 2) + (playerTransform.position.x + 5) +36.5f;
         }
 
         // Update is called once per frame
         void Update()
         {
-            var position = transform.position;
-            transform.position = Vector3.MoveTowards(
-                position, 
-                new Vector3(position.x - width, position.y, position.z),
-                gameConfiguration.CameraSpeed * Time.deltaTime
-                );
+            MoveChunk();
+            SaveDistanceMoved();
+        }
 
+        private void SaveDistanceMoved()
+        {
             var distance = (transform.position.x - width / 2) + (playerTransform.position.x + 5);
             if (distance > 0)
-                distanceData.Content += Mathf.Abs(prevDistance) - Mathf.Abs( distance) ;
+                distanceData.Content +=Mathf.Clamp(Mathf.Abs(prevDistance) - Mathf.Abs(distance),0,1);
             prevDistance = distance;
+        }
+
+        private void MoveChunk()
+        {
+            var speed = gameConfiguration.CameraSpeed + gameConfiguration.IncrementalRatio * _increments;
+            if (distanceData.Content > gameConfiguration.DistanceCap * (_increments + 1))
+                _increments++;
+            var position = transform.position;
+            transform.position = Vector3.MoveTowards(
+                position,
+                new Vector3(position.x - width, position.y, position.z),
+                speed * Time.deltaTime
+                );
         }
 
         public bool HasActionable => _hasActionable;

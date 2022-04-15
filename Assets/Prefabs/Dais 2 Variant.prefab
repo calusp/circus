@@ -65,7 +65,7 @@ PrefabInstance:
     - target: {fileID: 795174369567711579, guid: 654addeed8cc4bf48849bae86c975767,
         type: 3}
       propertyPath: m_Name
-      value: Dais 2
+      value: Dais 2 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6415633349082277537, guid: 654addeed8cc4bf48849bae86c975767,
         type: 3}

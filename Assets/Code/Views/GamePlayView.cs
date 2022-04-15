@@ -27,6 +27,7 @@ namespace Code.Views
         [SerializeField] private GameObject chunkContainer;
         [SerializeField] private CameraView cameraView;
         [SerializeField] private DisplayableData displayableData;
+        private GameObject initialChunk;
         private List<GameObject> _chunks;
         private int _previousChunk;
         private PlayerView playerGo;
@@ -37,6 +38,7 @@ namespace Code.Views
 
         public void Initialize(GameConfiguration configuration)
         {
+            displayableData.Content = 0;
             _configuration = configuration;
             Actionables = new List<Actionable>();
             SetUp();
@@ -55,14 +57,13 @@ namespace Code.Views
         private void ClearChunks()
         {
             _chunks.ForEach(Destroy);
+            Destroy(initialChunk);
         }
 
         private void Update()
         {
             float playerSpeed = _configuration.PlayerSpeed;
-            float cameraSpeed = _configuration.CameraSpeed + _configuration.IncrementalRatio * _increments;
-            if (displayableData.Content > _configuration.DistanceCap * (_increments + 1))
-                _increments++;
+           
             MovePlayer(playerSpeed * Time.deltaTime);
             if (HasPlayerCollidedHorizontally(playerGo.transform.position.x)) 
                 Finish();
@@ -83,7 +84,7 @@ namespace Code.Views
 
         public void CreateChunks()
         {
-            var initialChunk =  CreateFirstChunk();
+            initialChunk =  CreateFirstChunk();
 
             _chunks = Enumerable.Range(0, levelGenerator.AmountOfChunks)
                 .Select(_ => InitializeChunkContainersWithFirstChunks()).ToList();

@@ -1,3 +1,4 @@
+using Code.ScriptableObjects;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ namespace Code.Views
     public class TicketView : MonoBehaviour
     {
         [SerializeField] private BoxCollider2D _trigger;
-
+        [SerializeField] DisplayableData tickets;
         private void Start()
         {
             _trigger = GetComponent<BoxCollider2D>();
@@ -22,6 +23,7 @@ namespace Code.Views
             {
                 gameObject.SetActive(false);
                 Destroy(gameObject);
+                tickets.Content++;
             }
         }
     }
