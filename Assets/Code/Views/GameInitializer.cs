@@ -13,9 +13,14 @@ namespace Code.Views
         [SerializeField] private GameConfiguration gameConfiguration;
         private void Start()
         {
+            Initialize();
+        }
+
+        public void Initialize()
+        {
             var gameStarted = new Subject<Unit>();
             var gameFinished = new Subject<Unit>();
-            var startGameHudPresenter = new StartGameHubPresenter(startGameHudView, gameStarted,gameFinished);
+            var startGameHudPresenter = new StartGameHubPresenter(startGameHudView, gameStarted, gameFinished);
             startGameHudPresenter.Initialize();
             var gamePlay = new GamePlay(gamePlayView, gameStarted, gameFinished, gameConfiguration);
         }

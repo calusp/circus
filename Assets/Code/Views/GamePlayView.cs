@@ -22,17 +22,16 @@ namespace Code.Views
         [SerializeField] private PlayerInput playerInput;
         [SerializeField] private PlayerView playerView;
         [SerializeField] private LevelGenerator levelGenerator;
-        [SerializeField] private float chunkStartPositionHorizontal = -6.5f;
-        [SerializeField] private float chunkStartPositionVertical = 0f;
-        [SerializeField] private GameObject chunkContainer;
         [SerializeField] private CameraView cameraView;
         [SerializeField] private DisplayableData displayableData;
+        [SerializeField] private SharedGameState sharedGameState;
+        [SerializeField] private GameObject endGameCanvas;
+        [SerializeField] private GameObject hudCanvas;
+
         private GameObject initialChunk;
-        private List<GameObject> _chunks;
-        private int _previousChunk;
+        private List<ChunkView> _chunks;
         private PlayerView playerGo;
         private GameConfiguration _configuration;
-        private float _increments = 0;
 
         public List<Actionable> Actionables { get; private set; }
 
@@ -48,10 +47,12 @@ namespace Code.Views
 
         public void Finish()
         {
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
             ClearChunks();
-            Destroy(playerGo.gameObject);
+            //Destroy(playerGo.gameObject);
             GamePlayFinish();
+            endGameCanvas.SetActive(true);
+            hudCanvas.SetActive(false);
         }
 
         private void ClearChunks()
@@ -63,8 +64,9 @@ namespace Code.Views
         private void Update()
         {
             float playerSpeed = _configuration.PlayerSpeed;
-           
             MovePlayer(playerSpeed * Time.deltaTime);
+            
+                
             if (HasPlayerCollidedHorizontally(playerGo.transform.position.x)) 
                 Finish();
         } 
@@ -79,61 +81,29 @@ namespace Code.Views
         private void SetUp()
         {
             gameObject.SetActive(true);
-            _previousChunk = 0;
+            sharedGameState.ChunkDestroyed.Subscribe(_ => CreateChunkAt(_chunks.Count-1));
         }
 
-        public void CreateChunks()
-        {
-            initialChunk =  CreateFirstChunk();
 
-            _chunks = Enumerable.Range(0, levelGenerator.AmountOfChunks)
-                .Select(_ => InitializeChunkContainersWithFirstChunks()).ToList();
-            for (var i = 0; i < _chunks.Count; i++)
+        public void StartGamePlay()
+        {
+            var initialChunk = Instantiate(levelGenerator.StartChunk, new Vector2(-levelGenerator.StartChunk.Witdh/2, levelGenerator.StartChunk.transform.position.y), Quaternion.identity, transform);
+            _chunks = new List<ChunkView> { initialChunk};
+            for (int i = 0; i < levelGenerator.AmountOfChunks; i++)
             {
-                var chunk = _chunks[i];
-                var offset = (levelGenerator.Width * 0.5f - levelGenerator.StartChunkWidth);
-                var initialposition = offset + initialChunk.transform.position.x + levelGenerator.StartChunkWidth*2;
-                chunk.transform.position =
-                    new Vector3(initialposition + (i * levelGenerator.Width) , chunkStartPositionVertical);
-                chunk.GetComponent<ChunkContainerView>().Id = i;
+                CreateChunkAt(i);
             }
         }
 
-        private GameObject CreateFirstChunk()
+        private void CreateChunkAt(int index)
         {
-            var container = Instantiate(chunkContainer, transform);
-            var initialChunk = Instantiate(levelGenerator.StartChunk, container.transform);
-            container.GetComponent<ChunkContainerView>().Chunk = initialChunk.GetComponent<ChunkView>();
-            container.transform.position =
-                    new Vector3(chunkStartPositionHorizontal, chunkStartPositionVertical);
-            return container;
-        }
-
-        private GameObject InitializeChunkContainersWithFirstChunks()
-        {
-            var go = Instantiate(chunkContainer, transform);
-            AddChunkToContainer(go);
-            return go;
-        }
-
-        private void AddChunkToContainer(GameObject container)
-        {
-            var go = Instantiate(levelGenerator.GetChunk(), container.transform);
-            container.GetComponent<ChunkContainerView>().Chunk = go.GetComponent<ChunkView>();
-            if (container.GetComponent<ChunkContainerView>().Chunk.HasActionable)
-                AttachToActionable(container.GetComponent<ChunkContainerView>().Chunk.Actionable);
-            if (container.GetComponent<ChunkContainerView>().Chunk.HasHazard)
-                AttachToHazard(container.GetComponent<ChunkContainerView>().Chunk.Hazard);
-        }
-
-        private void UpdateGameplayForChunk(GameObject chunk)
-        {
-            chunk.transform.position =
-                new Vector3(chunk.transform.position.x + levelGenerator.TotalWidth,
-                    chunkStartPositionVertical);
-        
-            Destroy(chunk.transform.GetChild(0).gameObject);
-            AddChunkToContainer(chunk);
+            var chunk = Instantiate(levelGenerator.GetChunk(), transform);
+            chunk.transform.position = new Vector3(_chunks[index].GetRightBound(), transform.position.y, transform.position.z);
+            if (chunk.HasActionable)
+                AttachToActionable(chunk.Actionable);
+            if (chunk.HasHazard)
+                AttachToHazard(chunk.Hazard);
+            _chunks.Add(chunk);
         }
     }
 }

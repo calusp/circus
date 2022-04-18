@@ -17,6 +17,4 @@ public static class RaysHelper
             verticalHits.First(hit => hit.collider && hit.distance < collider.bounds.size.x * 0.5f).collider.GetComponent<PlayerView>().DieFromSmash();
         }
     }
-
- 
 }

@@ -177,9 +177,25 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -4373551076322862761, guid: ed81f5c1e7d36944c853aa37a565b321,
         type: 3}
+      propertyPath: width
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -4373551076322862761, guid: ed81f5c1e7d36944c853aa37a565b321,
+        type: 3}
+      propertyPath: _isInitial
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4373551076322862761, guid: ed81f5c1e7d36944c853aa37a565b321,
+        type: 3}
       propertyPath: distanceData
       value: 
       objectReference: {fileID: 11400000, guid: b81ead8f0e9c1f54dbd52b182cc64f4e,
+        type: 2}
+    - target: {fileID: -4373551076322862761, guid: ed81f5c1e7d36944c853aa37a565b321,
+        type: 3}
+      propertyPath: sharedGameState
+      value: 
+      objectReference: {fileID: 11400000, guid: 0d26a4181eba90544928fcecacf35c1d,
         type: 2}
     - target: {fileID: -4373551076322862761, guid: ed81f5c1e7d36944c853aa37a565b321,
         type: 3}

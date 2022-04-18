@@ -28,11 +28,10 @@ public class SandBagView : BaseHazardView
     // Update is called once per frame
     void Update()
     {
-       
-        var speed = gameConfiguration.CameraSpeed + gameConfiguration.IncrementalRatio * _increments;
-        if (distanceData.Content > gameConfiguration.DistanceCap * (_increments + 1))
-            _increments++;
-        if (player.transform.position.x >= transform.position.x - (_collider.bounds.size.x + gameConfiguration.BagDropDistance + gameConfiguration.IncrementalRatio * _increments)  &&
+
+        var speed = gameConfiguration.CameraSpeed + gameConfiguration.CalculateIncrement(distanceData.Content);
+  
+        if (player.transform.position.x >= transform.position.x - (_collider.bounds.size.x + gameConfiguration.BagDropDistance + gameConfiguration.CalculateIncrement(distanceData.Content))  &&
                     player.transform.position.x <= transform.position.x + _collider.bounds.size.x / 2)
             _rigidBody.simulated = true;
         CheckHits(transform.position);
@@ -41,7 +40,6 @@ public class SandBagView : BaseHazardView
     private void CheckHits(Vector3 position)
     {
         HitSomethingVertically(position);
-
     }
 
     private void HitSomethingVertically(Vector3 position)

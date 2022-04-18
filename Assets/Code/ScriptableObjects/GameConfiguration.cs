@@ -20,11 +20,10 @@ namespace Code.ScriptableObjects
         [SerializeField] SeesawBallConfiguration seesawBallConfiguration;
         [SerializeField] private Vector2 trapeceForce;
         [SerializeField] private float _bagDropDistance;
+        [SerializeField] private AnimationCurve incrementCurve;
 
         public float PlayerSpeed => playerSpeed;
         public float CameraSpeed => cameraSpeed;
-        public float IncrementalRatio => incrementalRatio;
-        public float DistanceCap => distanceCap;
         public Vector2 JumpForce => jumpForce;
         public Vector2 TrampolineForce => trampoolineForce;
 
@@ -36,5 +35,8 @@ namespace Code.ScriptableObjects
         public SeesawBallConfiguration SeesawBallConfiguration => seesawBallConfiguration;
 
         public float BagDropDistance => _bagDropDistance;
+
+        public float CalculateIncrement(float distanceTravelled) =>
+            incrementCurve.Evaluate(incrementalRatio * distanceTravelled / distanceCap);
     }
 }
