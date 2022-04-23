@@ -212,9 +212,10 @@ MonoBehaviour:
   animator: {fileID: 1755568262044993164}
   jumpForce: {x: 2.5, y: 4}
   startPosition: {x: -2.38, y: -3, z: 0}
-  displyableData: {fileID: 11400000, guid: 3df898ce065bbde4aaeaf21c021dc897, type: 2}
   burnt: {fileID: 7400000, guid: dfca25635d38850449ffb31e1f846016, type: 2}
   smashed: {fileID: 7400000, guid: 6be7e1d134f3d7848979cc7e5e5eee7d, type: 2}
+  gameConfiguration: {fileID: 11400000, guid: e42de6adcfbdb2740a7e8a5d44b47e94, type: 2}
+  distance: {fileID: 11400000, guid: b81ead8f0e9c1f54dbd52b182cc64f4e, type: 2}
   offset: {x: 0, y: 0}
 --- !u!95 &1755568262044993164
 Animator:

@@ -15,6 +15,7 @@ namespace Code.Presenters
 
         private readonly GamePlayView _gamePlayView;
         private readonly GameConfiguration gameConfiguration;
+        private readonly ISubject<Unit> stopped;
         private bool _isGrounded;
         private bool _isOnTrampoline;
         private bool _jumpedFromTrampoline;
@@ -26,23 +27,25 @@ namespace Code.Presenters
         private bool _isInTrapece;
         private bool _launchedFromTrapece;
 
-        public PlayerPresenter(PlayerView view, ISubject<float> actionActivated, GamePlayView gamePlayView, GameConfiguration gameConfiguration)
+        public PlayerPresenter(PlayerView view, ISubject<float> actionActivated, GamePlayView gamePlayView, GameConfiguration gameConfiguration, ISubject<Unit> stopped)
         {
             _view = view;
             _view.IsGrounded = SetGrounded;
             _actionActivated = actionActivated;
             _gamePlayView = gamePlayView;
             this.gameConfiguration = gameConfiguration;
-            _gamePlayView.MovePlayer = Move;
+            this.stopped = stopped;
             _actionActivated.Subscribe(ActivateAction);
+            this.stopped.Subscribe(_=> Stop());
             _view.DieFromSmash = DieSmashed;
         }
 
-        private void Move(float amount)
+        private void Stop()
         {
-            if (!_isOnTrampoline && !_isInCannon)
-                _view.Move(amount);
+            if(!_isOnTrampoline && !_isInCannon && !_isInTrapece && _isGrounded)
+                _view.Stop();
         }
+
 
         private void ActivateAction(float power)
         {

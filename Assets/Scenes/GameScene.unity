@@ -1722,6 +1722,61 @@ PrefabInstance:
       propertyPath: changeTime
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 7380024615942834137, guid: 5b300161c27021248b5b0e120ee00e17,
+        type: 3}
+      propertyPath: threshold
+      value: 0.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380024615942834137, guid: 5b300161c27021248b5b0e120ee00e17,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[0].time
+      value: 0.00007309031
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380024615942834137, guid: 5b300161c27021248b5b0e120ee00e17,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[0].value
+      value: 0.20957027
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380024615942834137, guid: 5b300161c27021248b5b0e120ee00e17,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[0].inSlope
+      value: 0.79048747
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380024615942834137, guid: 5b300161c27021248b5b0e120ee00e17,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[1].inSlope
+      value: 0.79048747
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380024615942834137, guid: 5b300161c27021248b5b0e120ee00e17,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[0].outSlope
+      value: 0.79048747
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380024615942834137, guid: 5b300161c27021248b5b0e120ee00e17,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380024615942834137, guid: 5b300161c27021248b5b0e120ee00e17,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[1].outSlope
+      value: 0.79048747
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380024615942834137, guid: 5b300161c27021248b5b0e120ee00e17,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[0].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380024615942834137, guid: 5b300161c27021248b5b0e120ee00e17,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380024615942834137, guid: 5b300161c27021248b5b0e120ee00e17,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     - target: {fileID: 7380024617113190540, guid: 5b300161c27021248b5b0e120ee00e17,
         type: 3}
       propertyPath: tickets

@@ -14,7 +14,6 @@ namespace Code.Views
     {
         public Action<PlayerInput, PlayerView, CameraView> GamePlayStart { get; set; }
         public Action GamePlayFinish { get; set; }
-        public Action<float> MovePlayer { get; set; }
         public Action<float> MoveCamera { get; set; }
         public Action<Actionable>AttachToActionable { get; set; }
         public Action<Hazard>AttachToHazard { get; set; }

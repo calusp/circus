@@ -21,20 +21,26 @@ namespace Code.Views
         [SerializeField] private Vector3 startPosition;
         [SerializeField] AnimationClip burnt;
         [SerializeField] AnimationClip smashed;
+        [SerializeField] GameConfiguration gameConfiguration;
+        [SerializeField] DisplayableData distance;
         private float _newPlayerPositionXAxis;
         private readonly LayerMask layerMask = 1 << 9;
         public Vector2 offset;
         private bool _jumped;
         private float _previousVelocityOnY;
+        [SerializeField]  private float _moveSpeed;
 
         public Action<bool> IsGrounded { get; set; }
         public Action DieFromSmash { get; set; }
-        public float DistanceTravelled { get; private set; }
-        public bool IsInsideCannon { get; set; }
 
         public void Awake()
         {
             Init();
+        }
+
+        public void Stop()
+        {
+            _moveSpeed = _moveSpeed == 0 ? (gameConfiguration.CalculateIncrement(distance.Content) + gameConfiguration.CameraSpeed )* -1 : 0;
         }
 
         public void GetPlayerInCannon(Vector2 cannon, Quaternion rotation)
@@ -53,6 +59,7 @@ namespace Code.Views
 
         public void Jump(float powerX, float powerY)
         {
+            _moveSpeed = 0;
             body.simulated = true;
             body.velocity = Vector2.zero;
             body.AddForce(new Vector2(jumpForce.x * powerX, jumpForce.y * (1 + powerY)),
@@ -73,11 +80,6 @@ namespace Code.Views
         {
             _newPlayerPositionXAxis = startPosition.x;
             transform.position = startPosition;
-        }
-
-        public void Move(float amount)
-        {
-            _newPlayerPositionXAxis = transform.position.x + amount;
         }
 
         public void GetInTrapece(Vector3 trapeceSpot)
@@ -145,7 +147,7 @@ namespace Code.Views
         private void Update()
         {
             List<RaycastHit2D> hits = CreateRays(transform.position);
-
+            transform.position = new Vector3(transform.position.x + _moveSpeed * Time.deltaTime, transform.position.y, transform.position.z);
             bool isGrounded = CheckGrounded(hits);
             IsGrounded(isGrounded);
             if (isGrounded && !StopMovement)
