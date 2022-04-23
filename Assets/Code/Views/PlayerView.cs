@@ -19,7 +19,6 @@ namespace Code.Views
         [SerializeField] private Animator animator;
         [SerializeField] private Vector2 jumpForce;
         [SerializeField] private Vector3 startPosition;
-        [SerializeField] private DisplayableData displyableData;
         [SerializeField] AnimationClip burnt;
         [SerializeField] AnimationClip smashed;
         private float _newPlayerPositionXAxis;
@@ -72,7 +71,6 @@ namespace Code.Views
 
         public void Init()
         {
-            displyableData.Content = 0;
             _newPlayerPositionXAxis = startPosition.x;
             transform.position = startPosition;
         }

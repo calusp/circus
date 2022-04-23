@@ -7,20 +7,20 @@ namespace Code.Presenters
     {
         private readonly StartGameHudView _view;
         private readonly ISubject<Unit> _gameStarted;
-        private readonly Subject<Unit> _gameFinished;
+        private readonly Subject<Unit> _backToMainMenu;
 
-        public StartGameHubPresenter(StartGameHudView view, ISubject<Unit> gameStarted, Subject<Unit> gameFinished)
+        public StartGameHubPresenter(StartGameHudView view, ISubject<Unit> gameStarted, Subject<Unit> backToMainMenu)
         {
             _view = view;
             _view.StartGame = StartGame;
             _gameStarted = gameStarted;
-            _gameFinished = gameFinished;
+            _backToMainMenu = backToMainMenu;
         }
 
         public void Initialize()
         {
             _view.Initialize();
-            _gameFinished.Do(_ => _view.Show()).Subscribe();
+            _backToMainMenu.Do(_ => _view.Show()).Subscribe();
         }
 
         private void StartGame()

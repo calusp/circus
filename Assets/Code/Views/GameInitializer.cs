@@ -11,6 +11,7 @@ namespace Code.Views
         [SerializeField] private StartGameHudView startGameHudView;
         [SerializeField] private GamePlayView gamePlayView;
         [SerializeField] private GameConfiguration gameConfiguration;
+        [SerializeField] private EndGameHudView endGameHudView;
         private void Start()
         {
             Initialize();
@@ -20,8 +21,11 @@ namespace Code.Views
         {
             var gameStarted = new Subject<Unit>();
             var gameFinished = new Subject<Unit>();
-            var startGameHudPresenter = new StartGameHubPresenter(startGameHudView, gameStarted, gameFinished);
+            var backToMainMenu = new Subject<Unit>();
+            var startGameHudPresenter = new StartGameHubPresenter(startGameHudView, gameStarted, backToMainMenu);
+            var endGameHudPresenter = new EndGameHubPresenter(endGameHudView, gameStarted, gameFinished, backToMainMenu);
             startGameHudPresenter.Initialize();
+            endGameHudPresenter.Setup();
             var gamePlay = new GamePlay(gamePlayView, gameStarted, gameFinished, gameConfiguration);
         }
     }

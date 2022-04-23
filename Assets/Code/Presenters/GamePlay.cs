@@ -20,7 +20,7 @@ namespace Code.Presenters
         {
             _gamePlayView = view;
             _gameStarted = gameStarted;
-            InitializeView(gameCofiguration);
+            InitializeView();
             _gameFinished = gameFinished;
             this.gameCofiguration = gameCofiguration;
             _gamePlayView.GamePlayStart = GamePlayStart;
@@ -29,9 +29,9 @@ namespace Code.Presenters
             _gamePlayView.AttachToHazard = AttachTo;
         }
 
-        private void InitializeView(GameConfiguration gameCofiguration)
+        private void InitializeView()
         {
-            _gameStarted.Subscribe(_ => _gamePlayView.Initialize(gameCofiguration));
+            _gameStarted.Subscribe(_ => _gamePlayView.Initialize());
         }
 
         private void AttachTo(Actionable actionable)
@@ -48,7 +48,7 @@ namespace Code.Presenters
         {
             _playerPresenter.Dismiss();
             _playerInputPresenter.Dismiss();
-            //_gameFinished.OnNext(Unit.Default);
+            _gameFinished.OnNext(Unit.Default);
         }
 
         private void GamePlayStart(PlayerInput playerInput, PlayerView playerView, CameraView cameraView)

@@ -23,22 +23,19 @@ namespace Code.Views
         [SerializeField] private PlayerView playerView;
         [SerializeField] private LevelGenerator levelGenerator;
         [SerializeField] private CameraView cameraView;
-        [SerializeField] private DisplayableData displayableData;
+        [SerializeField] private DisplayableData distance;
+        [SerializeField] private DisplayableData tickets;
         [SerializeField] private SharedGameState sharedGameState;
-        [SerializeField] private GameObject endGameCanvas;
         [SerializeField] private GameObject hudCanvas;
-
-        private GameObject initialChunk;
         private List<ChunkView> _chunks;
         private PlayerView playerGo;
-        private GameConfiguration _configuration;
 
         public List<Actionable> Actionables { get; private set; }
 
-        public void Initialize(GameConfiguration configuration)
+        public void Initialize()
         {
-            displayableData.Content = 0;
-            _configuration = configuration;
+            distance.Content = 0;
+            tickets.Content = 0;
             Actionables = new List<Actionable>();
             SetUp();
             playerGo = Instantiate(playerView, transform);
@@ -47,26 +44,25 @@ namespace Code.Views
 
         public void Finish()
         {
-            //gameObject.SetActive(false);
             ClearChunks();
-            //Destroy(playerGo.gameObject);
+            Destroy(playerGo.gameObject);
             GamePlayFinish();
-            endGameCanvas.SetActive(true);
             hudCanvas.SetActive(false);
+            gameObject.SetActive(false);
         }
 
         private void ClearChunks()
         {
-            _chunks.ForEach(Destroy);
-            Destroy(initialChunk);
+            foreach (var chunk in _chunks)
+            {
+                if (chunk != null)
+                    Destroy(chunk.gameObject);
+            }
+            _chunks = new List<ChunkView>();
         }
 
         private void Update()
-        {
-            float playerSpeed = _configuration.PlayerSpeed;
-            MovePlayer(playerSpeed * Time.deltaTime);
-            
-                
+        {               
             if (HasPlayerCollidedHorizontally(playerGo.transform.position.x)) 
                 Finish();
         } 
@@ -80,6 +76,7 @@ namespace Code.Views
 
         private void SetUp()
         {
+            hudCanvas.SetActive(true);
             gameObject.SetActive(true);
             sharedGameState.ChunkDestroyed.Subscribe(_ => CreateChunkAt(_chunks.Count-1));
         }
