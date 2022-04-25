@@ -1,4 +1,5 @@
-﻿using Code.ScriptableObjects;
+﻿using Assets.Code.Views.TargetSystem;
+using Code.ScriptableObjects;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,6 +16,9 @@ namespace Code.Views
         private readonly int EnterTrapeceTrigger = Animator.StringToHash("enteringTrapece");
         private readonly int DyingSmashed = Animator.StringToHash("dyingSmashed");
         private readonly int DyingBurnt = Animator.StringToHash("dyingBurned");
+        private readonly int DyingKnifed = Animator.StringToHash("dyingKnifed");
+        private readonly int Stopped = Animator.StringToHash("stopped");
+
         [SerializeField] private Rigidbody2D body;
         [SerializeField] private Animator animator;
         [SerializeField] private Vector2 jumpForce;
@@ -22,25 +26,51 @@ namespace Code.Views
         [SerializeField] AnimationClip burnt;
         [SerializeField] AnimationClip smashed;
         [SerializeField] GameConfiguration gameConfiguration;
+        [SerializeField] SharedGameState sharedGameState;
         [SerializeField] DisplayableData distance;
-        private float _newPlayerPositionXAxis;
+        [SerializeField] private float _moveSpeed;
+
         private readonly LayerMask layerMask = 1 << 9;
-        public Vector2 offset;
-        private bool _jumped;
         private float _previousVelocityOnY;
-        [SerializeField]  private float _moveSpeed;
+       
 
         public Action<bool> IsGrounded { get; set; }
         public Action DieFromSmash { get; set; }
+        public bool StopMovement { get; set; }
+        public Action<KnifeView> DieFromKnife { get; set; }
 
         public void Awake()
         {
             Init();
         }
 
+        public IObservable<Unit> DieKnifed(KnifeView knifeView)
+        {
+            StopMovement = true;
+            knifeView.gameObject.SetActive(false);
+            sharedGameState.JustDied = true;
+            animator.ResetTrigger(WalkTrigger);
+            animator.SetTrigger(DyingKnifed);
+            return MoveWithKnife(knifeView).ToObservable();
+        }
+
+        private IEnumerator MoveWithKnife(KnifeView knifeView)
+        {
+            yield return new WaitForSeconds(2);
+        }
+
         public void Stop()
         {
-            _moveSpeed = _moveSpeed == 0 ? (gameConfiguration.CalculateIncrement(distance.Content) + gameConfiguration.CameraSpeed )* -1 : 0;
+            _moveSpeed = _moveSpeed  == 0 && !sharedGameState.JustDied ? (gameConfiguration.CalculateIncrement(distance.Content) + gameConfiguration.CameraSpeed )* -1 : 0;
+            if(_moveSpeed == 0)
+            {
+                animator.ResetTrigger(WalkTrigger);
+                animator.SetTrigger(DyingKnifed);
+            }
+            else
+            {
+                animator.SetTrigger(WalkTrigger);
+            }
         }
 
         public void GetPlayerInCannon(Vector2 cannon, Quaternion rotation)
@@ -64,7 +94,6 @@ namespace Code.Views
             body.velocity = Vector2.zero;
             body.AddForce(new Vector2(jumpForce.x * powerX, jumpForce.y * (1 + powerY)),
                 ForceMode2D.Impulse);
-            _jumped = true;
 
         }
 
@@ -78,7 +107,6 @@ namespace Code.Views
 
         public void Init()
         {
-            _newPlayerPositionXAxis = startPosition.x;
             transform.position = startPosition;
         }
 
@@ -95,12 +123,8 @@ namespace Code.Views
             animator.SetTrigger(EnterTrapeceTrigger);
         }
 
-        public bool StopMovement { get; set; }
-        
-
         public void RestartMovement()
         {
-            _newPlayerPositionXAxis = transform.position.x;
             StopMovement = false;
         }
 
@@ -136,10 +160,6 @@ namespace Code.Views
             Physics2D.Raycast(new Vector2(position.x + 0.5f, position.y), Vector2.down,  0.51f, layerMask)
         };
 
-        internal void Jump(object p1, object p2)
-        {
-            throw new NotImplementedException();
-        }
 
         private bool ColliderHasActionable(IEnumerable<RaycastHit2D> hits) =>
             hits.Any(hit => hit.collider && hit.collider.GetComponent<Actionable>() != null);

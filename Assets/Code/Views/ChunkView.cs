@@ -34,12 +34,13 @@ namespace Code.Views
             target = new Vector3(position.x - width, position.y, position.z);
             playerTransform = GameObject.Find("Player(Clone)").transform;
             MoveChunk();
-            prevDistance = position.x - width / 2 + (playerTransform.position.x + 5) +36.5f;
+            prevDistance = position.x - width / 2 + (playerTransform.position.x + 5) + 36.5f;
         }
 
         // Update is called once per frame
         void Update()
         {
+            if (sharedGameState.JustDied) return;
             MoveChunk();
             SaveDistanceMoved();
         }
@@ -48,7 +49,7 @@ namespace Code.Views
         {
             var distance = (transform.position.x - width / 2) + (playerTransform.position.x + 5);
             if (distance > 0)
-                distanceData.Content +=Mathf.Clamp(Mathf.Abs(prevDistance) - Mathf.Abs(distance),0,1);
+                distanceData.Content += Mathf.Clamp(Mathf.Abs(prevDistance) - Mathf.Abs(distance), 0, 1);
             prevDistance = distance;
         }
 
@@ -56,17 +57,17 @@ namespace Code.Views
         {
             var speed = gameConfiguration.CameraSpeed + gameConfiguration.CalculateIncrement(distanceData.Content);
             var position = transform.position;
-           
+
             transform.position = Vector3.MoveTowards(
                 position,
                 target,
                 speed * Time.deltaTime
                 );
 
-            if(transform.position.x <= target.x)
+            if (transform.position.x <= target.x)
             {
                 Destroy(gameObject);
-                if(!_isInitial)
+                if (!_isInitial)
                 {
                     sharedGameState.ChunkDestroyed.OnNext(Unit.Default);
                 }
@@ -75,7 +76,7 @@ namespace Code.Views
 
         public float GetRightBound()
         {
-           return transform.position.x + width;
+            return transform.position.x + width;
         }
     }
 }

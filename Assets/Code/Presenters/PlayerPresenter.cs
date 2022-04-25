@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Assets.Code.Views.TargetSystem;
 using Code.ScriptableObjects;
 using Code.Views;
 using UniRx;
@@ -22,7 +23,7 @@ namespace Code.Presenters
         private bool _isInCannon;
         private bool _launchedFromCannon;
 
-    
+
 
         private bool _isInTrapece;
         private bool _launchedFromTrapece;
@@ -36,13 +37,21 @@ namespace Code.Presenters
             this.gameConfiguration = gameConfiguration;
             this.stopped = stopped;
             _actionActivated.Subscribe(ActivateAction);
-            this.stopped.Subscribe(_=> Stop());
+            this.stopped.Subscribe(_ => Stop());
             _view.DieFromSmash = DieSmashed;
+            _view.DieFromKnife = DieFromKnife;
+        }
+
+        private void DieFromKnife(KnifeView knife)
+        {
+            _view.DieKnifed(knife)
+                .DoOnCompleted(_gamePlayView.Finish)
+                .Subscribe();
         }
 
         private void Stop()
         {
-            if(!_isOnTrampoline && !_isInCannon && !_isInTrapece && _isGrounded)
+            if (!_isOnTrampoline && !_isInCannon && !_isInTrapece && _isGrounded)
                 _view.Stop();
         }
 
@@ -77,7 +86,7 @@ namespace Code.Presenters
                 _view.UpdatePlayerInCannon(position, rotation);
         }
 
-   
+
         private void SetGrounded(bool isGrounded)
         {
             _isGrounded = isGrounded;
@@ -136,7 +145,7 @@ namespace Code.Presenters
 
         public void EnterTrapece(Vector3 trapeceSpot)
         {
-            if(_launchedFromTrapece)
+            if (_launchedFromTrapece)
             {
                 _isInTrapece = false;
                 return;

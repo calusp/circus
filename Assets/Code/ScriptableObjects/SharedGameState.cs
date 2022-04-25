@@ -11,5 +11,6 @@ namespace Code.ScriptableObjects
 
         public ISubject<Unit> ChunkDestroyed => _chunkDestroyed;
 
+        public bool JustDied { get; set; }
     }
 }

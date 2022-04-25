@@ -17,11 +17,16 @@ namespace Code.Views
 
         private void Update()
         {
+            ClickHandling();
+        }
+
+        private void ClickHandling()
+        {
             if (startAccumulateEnery)
             {
                 _acc += Time.deltaTime * 2;
             }
-            if( isAccDoubleClick)
+            if (isAccDoubleClick)
                 _doubleClickAcc += Time.deltaTime * 2;
 
             if (_doubleClickAcc > threshold)
@@ -43,14 +48,12 @@ namespace Code.Views
                     isAccDoubleClick = false;
                 }
             }
-            if (Input.GetButtonUp("Action") || _acc >= 1+ threshold)
-            { 
+            if (Input.GetButtonUp("Action") || _acc >= 1 + threshold)
+            {
                 startAccumulateEnery = false;
-                if (_acc > threshold) Action(curve.Evaluate(_acc - threshold)) ;
+                if (_acc > threshold) Action(curve.Evaluate(_acc - threshold));
                 _acc = 0;
             }
-
-          
         }
     }
 }

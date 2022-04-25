@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2871384439655947384}
   - component: {fileID: 4971171056680275010}
+  - component: {fileID: 4754092200038982796}
   m_Layer: 0
   m_Name: KnifeTop
   m_TagString: Untagged
@@ -44,7 +45,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.13114274, y: 0}
+  m_Offset: {x: 1.0482823, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -55,8 +56,66 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.262285, y: 0.2}
+  m_Size: {x: 4.9034357, y: 0.2}
   m_EdgeRadius: 0
+--- !u!114 &4754092200038982796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056475572594617247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b064d8cd5553a415998d67acd28c0b39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activable: {fileID: 5965547521699505862}
+--- !u!1 &1595431431016041203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2453910255071254971}
+  - component: {fileID: 3649585787373133892}
+  m_Layer: 0
+  m_Name: Waypoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2453910255071254971
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595431431016041203}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.97, y: -0.26, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8618567917367980637}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3649585787373133892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595431431016041203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fee622d33920524381b350c4306e366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 0.1
+  color: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &1749655466941117403
 GameObject:
   m_ObjectHideFlags: 0
@@ -69,7 +128,7 @@ GameObject:
   - component: {fileID: 6281320487450481420}
   - component: {fileID: 8161011841917343940}
   m_Layer: 9
-  m_Name: ReveilleFrontal
+  m_Name: TargetFrontal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,7 +142,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1749655466941117403}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4, y: 0, z: 0}
+  m_LocalPosition: {x: 4, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8618567917367980637}
@@ -126,8 +185,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1076367783
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -3850418565458448719, guid: af4d91b757f5485429cd9bd482904aab,
     type: 3}
@@ -176,6 +235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8618567917367980637}
+  - component: {fileID: 1625998136807372206}
   m_Layer: 0
   m_Name: KnifeWithReveille
   m_TagString: Untagged
@@ -190,7 +250,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1856865902312178437}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -198,9 +258,25 @@ Transform:
   - {fileID: 5688345889664362661}
   - {fileID: 2871384439655947384}
   - {fileID: 5028855525346984058}
+  - {fileID: 2453910255071254971}
+  - {fileID: 6774594495881259090}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1625998136807372206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856865902312178437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02fcd12ea49711c4093b9d5c62ca7112, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFrontal: {fileID: 1749655466941117403}
+  targetSideways: {fileID: 3772719884728077495}
 --- !u!1 &3654416143057857288
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,6 +287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5688345889664362661}
   - component: {fileID: 8849264103080907684}
+  - component: {fileID: 4419381885459115686}
   m_Layer: 0
   m_Name: KnifeFrontal
   m_TagString: Untagged
@@ -226,7 +303,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3654416143057857288}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4, y: 0, z: 0}
+  m_LocalPosition: {x: -1.46, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8618567917367980637}
@@ -258,6 +335,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &4419381885459115686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3654416143057857288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b064d8cd5553a415998d67acd28c0b39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activable: {fileID: 5965547521699505862}
 --- !u!1 &3772719884728077495
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,12 +360,12 @@ GameObject:
   - component: {fileID: 7134008411722989972}
   - component: {fileID: 256901545985933101}
   m_Layer: 9
-  m_Name: ReveillSideway
+  m_Name: TargetSideway
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5028855525346984058
 Transform:
   m_ObjectHideFlags: 0
@@ -284,7 +374,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3772719884728077495}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4, y: 0, z: 0}
+  m_LocalPosition: {x: 4, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8618567917367980637}
@@ -327,8 +417,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1076367783
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 783736749810108257, guid: af4d91b757f5485429cd9bd482904aab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -367,3 +457,51 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.46394312, y: 1.56}
   m_EdgeRadius: 0
+--- !u!1 &5965547521699505862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6774594495881259090}
+  - component: {fileID: 6826890080738016711}
+  m_Layer: 0
+  m_Name: KnifeGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &6774594495881259090
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5965547521699505862}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8618567917367980637}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6826890080738016711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5965547521699505862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30b3fca8dd20d2941b5408d5eaa7054f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knifePrefab: {fileID: -4597695046474323020, guid: e7bed9bec6ce25d4a9683c5cee944669,
+    type: 3}
+  targetView: {fileID: 1625998136807372206}
+  startPosition: {fileID: 2453910255071254971}
+  endPosition: {fileID: 5028855525346984058}

@@ -33,6 +33,7 @@ namespace Code.Views
 
         public void Initialize()
         {
+            sharedGameState.JustDied = false;
             distance.Content = 0;
             tickets.Content = 0;
             Actionables = new List<Actionable>();
