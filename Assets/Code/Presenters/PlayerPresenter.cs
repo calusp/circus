@@ -89,6 +89,7 @@ namespace Code.Presenters
 
         private void SetGrounded(bool isGrounded)
         {
+            if (isGrounded && !_isGrounded) _view.SetWalking();
             _isGrounded = isGrounded;
         }
 

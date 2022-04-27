@@ -170,8 +170,6 @@ namespace Code.Views
             transform.position = new Vector3(transform.position.x + _moveSpeed * Time.deltaTime, transform.position.y, transform.position.z);
             bool isGrounded = CheckGrounded(hits);
             IsGrounded(isGrounded);
-            if (isGrounded && !StopMovement)
-                SetWalking();
 
             CheckCollisionWithActivable(hits);
         }
