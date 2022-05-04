@@ -69,18 +69,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 053d93e16ec18c24aad18c62069e1406, type: 3}
---- !u!114 &8447024768211838768 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5998925492908488897, guid: 053d93e16ec18c24aad18c62069e1406,
-    type: 3}
-  m_PrefabInstance: {fileID: 2772434744299298801}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf925e7199060e349abf575f1a89942a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &4684040161086873759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -155,6 +143,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1261777983287136824, guid: a1e062cb74c9da0479014cf3a784c4ef,
         type: 3}
+      propertyPath: playerBounds
+      value: 
+      objectReference: {fileID: 33878907185439883, guid: f09b96e0b0f2236478d4cc6f6c3d13a1,
+        type: 3}
+    - target: {fileID: 1261777983287136824, guid: a1e062cb74c9da0479014cf3a784c4ef,
+        type: 3}
       propertyPath: _hasActionable
       value: 1
       objectReference: {fileID: 0}
@@ -167,7 +161,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _hazardViewView
       value: 
-      objectReference: {fileID: 8447024768211838768}
+      objectReference: {fileID: 0}
     - target: {fileID: 7033847040367032309, guid: a1e062cb74c9da0479014cf3a784c4ef,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -341,7 +335,7 @@ PrefabInstance:
     - target: {fileID: 8520538647168096677, guid: 0f91a8cd4c2e2394d985a2239a386157,
         type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f91a8cd4c2e2394d985a2239a386157, type: 3}
@@ -367,7 +361,7 @@ PrefabInstance:
     - target: {fileID: 8093838180790258708, guid: 62f446e010a87e144b019e7e529f9100,
         type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8093838180790258708, guid: 62f446e010a87e144b019e7e529f9100,
         type: 3}
@@ -446,7 +440,7 @@ PrefabInstance:
     - target: {fileID: 8093838180790258708, guid: 62f446e010a87e144b019e7e529f9100,
         type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8093838180790258708, guid: 62f446e010a87e144b019e7e529f9100,
         type: 3}
@@ -525,7 +519,7 @@ PrefabInstance:
     - target: {fileID: 8093838180790258708, guid: 62f446e010a87e144b019e7e529f9100,
         type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8093838180790258708, guid: 62f446e010a87e144b019e7e529f9100,
         type: 3}

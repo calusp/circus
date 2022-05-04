@@ -26,7 +26,7 @@ namespace Code.Presenters
 
         private void Move(float moveAmount)
         {
-            _cameraView.Move(moveAmount);
+          
         }
 
         public void KeepPlayerIntoBounds(float maxPosX)

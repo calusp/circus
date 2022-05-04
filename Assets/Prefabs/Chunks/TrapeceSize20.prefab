@@ -714,6 +714,12 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 1261777983287136824, guid: a1e062cb74c9da0479014cf3a784c4ef,
         type: 3}
+      propertyPath: playerBounds
+      value: 
+      objectReference: {fileID: 33878907185439883, guid: f09b96e0b0f2236478d4cc6f6c3d13a1,
+        type: 3}
+    - target: {fileID: 1261777983287136824, guid: a1e062cb74c9da0479014cf3a784c4ef,
+        type: 3}
       propertyPath: _hasActionable
       value: 1
       objectReference: {fileID: 0}

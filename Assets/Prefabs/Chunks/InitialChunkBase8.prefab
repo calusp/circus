@@ -15,12 +15,12 @@ PrefabInstance:
     - target: {fileID: 236439651877530092, guid: aa7c8e0c6a1ba1444a58eabfb270b57c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 1.55
       objectReference: {fileID: 0}
     - target: {fileID: 236439651877530092, guid: aa7c8e0c6a1ba1444a58eabfb270b57c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8990593
+      value: -3.7609408
       objectReference: {fileID: 0}
     - target: {fileID: 236439651877530092, guid: aa7c8e0c6a1ba1444a58eabfb270b57c,
         type: 3}
@@ -84,7 +84,7 @@ PrefabInstance:
     - target: {fileID: 2483676009271180429, guid: 46fe049c366be4941bafdb612d894671,
         type: 3}
       propertyPath: m_Size.x
-      value: 4.018173
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2483676009271180429, guid: 46fe049c366be4941bafdb612d894671,
         type: 3}
@@ -104,12 +104,12 @@ PrefabInstance:
     - target: {fileID: 2483676009271180429, guid: 46fe049c366be4941bafdb612d894671,
         type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2483676009271180430, guid: 46fe049c366be4941bafdb612d894671,
         type: 3}
       propertyPath: m_Size.x
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2483676009271180431, guid: 46fe049c366be4941bafdb612d894671,
         type: 3}
@@ -124,7 +124,7 @@ PrefabInstance:
     - target: {fileID: 2483676009271180431, guid: 46fe049c366be4941bafdb612d894671,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -4.66
       objectReference: {fileID: 0}
     - target: {fileID: 2483676009271180431, guid: 46fe049c366be4941bafdb612d894671,
         type: 3}
@@ -193,6 +193,12 @@ PrefabInstance:
         type: 2}
     - target: {fileID: -4373551076322862761, guid: ed81f5c1e7d36944c853aa37a565b321,
         type: 3}
+      propertyPath: playerBounds
+      value: 
+      objectReference: {fileID: 33878907185439883, guid: f09b96e0b0f2236478d4cc6f6c3d13a1,
+        type: 3}
+    - target: {fileID: -4373551076322862761, guid: ed81f5c1e7d36944c853aa37a565b321,
+        type: 3}
       propertyPath: sharedGameState
       value: 
       objectReference: {fileID: 11400000, guid: 0d26a4181eba90544928fcecacf35c1d,
@@ -216,12 +222,12 @@ PrefabInstance:
     - target: {fileID: 399836477408652766, guid: ed81f5c1e7d36944c853aa37a565b321,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 399836477408652766, guid: ed81f5c1e7d36944c853aa37a565b321,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.66
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 399836477408652766, guid: ed81f5c1e7d36944c853aa37a565b321,
         type: 3}

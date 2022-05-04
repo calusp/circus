@@ -1712,6 +1712,21 @@ PrefabInstance:
       propertyPath: changeTime
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 6222451581592487730, guid: 5b300161c27021248b5b0e120ee00e17,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222451581592487730, guid: 5b300161c27021248b5b0e120ee00e17,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222451581592487730, guid: 5b300161c27021248b5b0e120ee00e17,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6482013118344943489, guid: 5b300161c27021248b5b0e120ee00e17,
         type: 3}
       propertyPath: changeTime

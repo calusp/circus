@@ -23,6 +23,8 @@ namespace Code.Views
         public Actionable Actionable => _actionableView;
         public Hazard Hazard => _hazardViewView;
 
+        public bool IsInitial => _isInitial;
+
         private Transform playerTransform;
         private float prevDistance;
         private float _increments;
@@ -33,7 +35,6 @@ namespace Code.Views
             Vector3 position = transform.position;
             target = new Vector3(position.x - width, position.y, position.z);
             playerTransform = GameObject.Find("Player(Clone)").transform;
-            MoveChunk();
             prevDistance = position.x - width / 2 + (playerTransform.position.x + 5) + 36.5f;
         }
 
@@ -41,7 +42,6 @@ namespace Code.Views
         void Update()
         {
             if (sharedGameState.JustDied) return;
-            MoveChunk();
             SaveDistanceMoved();
         }
 
@@ -53,30 +53,11 @@ namespace Code.Views
             prevDistance = distance;
         }
 
-        private void MoveChunk()
-        {
-            var speed = gameConfiguration.CameraSpeed + gameConfiguration.CalculateIncrement(distanceData.Content);
-            var position = transform.position;
-
-            transform.position = Vector3.MoveTowards(
-                position,
-                target,
-                speed * Time.deltaTime
-                );
-
-            if (transform.position.x <= target.x)
-            {
-                Destroy(gameObject);
-                if (!_isInitial)
-                {
-                    sharedGameState.ChunkDestroyed.OnNext(Unit.Default);
-                }
-            }
-        }
+    
 
         public float GetRightBound()
         {
-            return transform.position.x + width;
+            return transform.position.x + width/2;
         }
     }
 }
