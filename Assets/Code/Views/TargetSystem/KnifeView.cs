@@ -35,10 +35,10 @@ namespace Assets.Code.Views.TargetSystem
             
         }
 
-        public void SetDestination(Transform endPosition)
+        public void SetDestination(Transform target)
         {
-            this.endPosition = endPosition;
-            this.endPosition.position = new Vector3(endPosition.position.x, transform.position.y, transform.position.z);
+            this.endPosition = target;
+            this.endPosition.position = new Vector3(target.position.x, transform.position.y, transform.position.z);
         }
     }
 }

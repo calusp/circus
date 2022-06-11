@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 658395a18f46441f8a2b4b4ae93a9168, type: 3}
+  m_Name: LevelGeneratorSize10 1
+  m_EditorClassIdentifier: 
+  chunks:
+  - {fileID: 5073678768547175256, guid: f625bde7f0b4fef41951bd190c9234b4, type: 3}
+  - {fileID: 5073678768547175256, guid: c23511c15ba2bc445b1c44461872f30e, type: 3}
+  - {fileID: 5073678768547175256, guid: 6dd98938033fa424e9aa50f610c2c800, type: 3}
+  - {fileID: 5073678768547175256, guid: d612ea00a30e1d04f8507b883d592305, type: 3}
+  - {fileID: 5073678768547175256, guid: 7a7f421407b538348b9d7df17d0f7663, type: 3}
+  - {fileID: 5073678768547175256, guid: 21e4f405fe39af34c96a9bce008f8963, type: 3}
+  - {fileID: 5073678768547175256, guid: 7b17754e137e3b345af1907d1fb25135, type: 3}
+  - {fileID: 5073678768547175256, guid: 8535565e2ab12034ea752444927dc082, type: 3}
+  startChunk: {fileID: 2164564544986798677, guid: 8d3eba9d68e6da8488fd8758bdaa5c8a,
+    type: 3}
+  startChunkWith: 4
+  chunkWidth: 10
+  amountOfChunks: 6

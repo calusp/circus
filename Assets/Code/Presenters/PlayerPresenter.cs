@@ -16,30 +16,34 @@ namespace Code.Presenters
 
         private readonly GamePlayView _gamePlayView;
         private readonly GameConfiguration gameConfiguration;
-        private readonly ISubject<Unit> stopped;
+        private readonly ISubject<float> moved;
         private bool _isGrounded;
         private bool _isOnTrampoline;
         private bool _jumpedFromTrampoline;
         private bool _isInCannon;
         private bool _launchedFromCannon;
-
-
-
         private bool _isInTrapece;
         private bool _launchedFromTrapece;
 
-        public PlayerPresenter(PlayerView view, ISubject<float> actionActivated, GamePlayView gamePlayView, GameConfiguration gameConfiguration, ISubject<Unit> stopped)
+        public PlayerPresenter(PlayerView view, ISubject<float> actionActivated, GamePlayView gamePlayView, GameConfiguration gameConfiguration, ISubject<float> moved)
         {
             _view = view;
             _view.IsGrounded = SetGrounded;
             _actionActivated = actionActivated;
             _gamePlayView = gamePlayView;
             this.gameConfiguration = gameConfiguration;
-            this.stopped = stopped;
+            this.moved = moved;
             _actionActivated.Subscribe(ActivateAction);
-            this.stopped.Subscribe(_ => Stop());
+            this.moved.Subscribe(Move);
             _view.DieFromSmash = DieSmashed;
             _view.DieFromKnife = DieFromKnife;
+        }
+
+        private void Move(float speed)
+        {
+            if (speed != 0) _view.SetWalking();
+            else _view.SetStopping();
+           _view.Move(speed);
         }
 
         private void DieFromKnife(KnifeView knife)
@@ -48,13 +52,6 @@ namespace Code.Presenters
                 .DoOnCompleted(_gamePlayView.Finish)
                 .Subscribe();
         }
-
-        private void Stop()
-        {
-            if (!_isOnTrampoline && !_isInCannon && !_isInTrapece && _isGrounded)
-                _view.Stop();
-        }
-
 
         private void ActivateAction(float power)
         {
@@ -89,7 +86,6 @@ namespace Code.Presenters
 
         private void SetGrounded(bool isGrounded)
         {
-            if (isGrounded && !_isGrounded) _view.SetWalking();
             _isGrounded = isGrounded;
         }
 

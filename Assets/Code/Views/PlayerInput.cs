@@ -6,52 +6,35 @@ namespace Code.Views
 {
     public class PlayerInput : MonoBehaviour
     {
-        [SerializeField] private float threshold = 0.5f;
         [SerializeField] private AnimationCurve curve;
         private float _acc;
-        private float _doubleClickAcc;
         private bool startAccumulateEnery;
-        private bool isAccDoubleClick;
         public Action<float> Action { get; set; }
-        public Action Stop { get; set; }
+        public Action<float> Move { get; set; }
 
         private void Update()
         {
             ClickHandling();
+            Move(Input.GetAxis("Horizontal"));
         }
 
         private void ClickHandling()
         {
             if (startAccumulateEnery)
             {
-                _acc += Time.deltaTime * 2;
+                _acc += Time.deltaTime * 4;
             }
-            if (isAccDoubleClick)
-                _doubleClickAcc += Time.deltaTime * 2;
 
-            if (_doubleClickAcc > threshold)
-            {
-                _doubleClickAcc = 0;
-                isAccDoubleClick = false;
-            }
 
             if (Input.GetButtonDown("Action"))
             {
                 startAccumulateEnery = true;
-                isAccDoubleClick = true;
-                if (_doubleClickAcc > 0 && _doubleClickAcc <= threshold)
-                {
-                    Stop();
-                    _doubleClickAcc = 0;
-                    _acc = 0;
-                    startAccumulateEnery = false;
-                    isAccDoubleClick = false;
-                }
+              
             }
-            if (Input.GetButtonUp("Action") || _acc >= 1 + threshold)
+            if (Input.GetButtonUp("Action") || _acc >= 1 )
             {
                 startAccumulateEnery = false;
-                if (_acc > threshold) Action(curve.Evaluate(_acc - threshold));
+                Action(curve.Evaluate(_acc));
                 _acc = 0;
             }
         }

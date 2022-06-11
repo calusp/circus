@@ -35,14 +35,14 @@ namespace Assets.Code.Views
         {
             if (sharedGameState.JustDied) return;
             
-            float distance = playerTransform.position.x - playerBounds.RightBound;
-            if (distance > 0)
-            {
-                foreach (var container in containers)
-                    container.position = new Vector3(container.position.x - distance, container.position.y, container.position.z);
-                playerTransform.position = new Vector3(playerTransform.position.x - distance, playerTransform.position.y, playerTransform.position.z);
-                return;
-            }
+            //float distance = playerTransform.position.x - playerBounds.RightBound;
+            //if (distance > 0)
+            //{
+            //    foreach (var container in containers)
+            //        container.position = new Vector3(container.position.x - distance, container.position.y, container.position.z);
+            //    playerTransform.position = new Vector3(playerTransform.position.x - distance, playerTransform.position.y, playerTransform.position.z);
+            //    return;
+            //}
             foreach (var container in containers)
             {
                 MoveContainer(container);

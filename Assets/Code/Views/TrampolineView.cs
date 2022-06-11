@@ -4,19 +4,14 @@ using UnityEngine;
 
 namespace Code.Views
 {
-    public class TrampolineView : BaseActionableView
+    public class TrampolineView : MonoBehaviour
     {
         private PlayerPresenter _playerPresenter;
 
-        public override void Execute()
+        public  void Execute()
         {
             _playerPresenter.TrampolineJump();
-        }
-
-        public override void Attach(PlayerPresenter playerPresenter)
-        {
-            _playerPresenter = playerPresenter;
-        }   
+        } 
     }
     
 }

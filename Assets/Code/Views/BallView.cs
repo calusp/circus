@@ -16,6 +16,7 @@ namespace Code.Views
         private SeesawBallConfiguration seesawBallConfiguratoin;
         private float timeToDieAcc;
         [SerializeField] GameConfiguration gameConfiguration;
+        [SerializeField] bool canDestroy =true;
 
         // Use this for initialization
         void Start()
@@ -30,6 +31,7 @@ namespace Code.Views
         // Update is called once per frame
         void Update()
         {
+            if (!canDestroy) return;
             CheckHits(transform.position);
             timeToDieAcc += Time.deltaTime;
             if (timeToDieAcc >= seesawBallConfiguratoin.ballTimeToLive)
@@ -40,6 +42,7 @@ namespace Code.Views
         {
             HitSomethingVertically(position);
             HitSomethingRight(position);
+            HitSomethingLeft(position);
         }
 
         private void HitSomethingVertically(Vector3 position)
@@ -68,6 +71,20 @@ namespace Code.Views
             }
         }
 
+        private void HitSomethingLeft(Vector3 position)
+        {
+            List<RaycastHit2D> hits = CreateLeftHorizontalRays(position);
+            hits.ForEach(hit => Debug.DrawLine(hit.centroid, hit.centroid + Vector2.left, Color.red, 0.5f));
+            var hitSomething = hits.Any(hit => hit.collider && hit.distance < _collider.bounds.size.x * 0.5f);
+            if (hitSomething && _rigidBody.velocity.x < 0)
+            {
+                Debug.Log("Player Hit from the front.");
+                enabled = false;
+                hits.First(hit => hit.collider && hit.distance < _collider.bounds.size.x * 0.5f).collider.GetComponent<PlayerView>().DieFromSmash();
+                //_playerPresenter.DieSmashed();
+            }
+        }
+
         private List<RaycastHit2D> CreateVerticalRays(Vector3 position) => new List<RaycastHit2D>()
         {
             Physics2D.Raycast(new Vector2(position.x - _collider.bounds.size.x*0.33f, position.y), Vector2.down, 1, 1 << 8),
@@ -80,6 +97,13 @@ namespace Code.Views
             Physics2D.Raycast(new Vector2(position.x , position.y- _collider.bounds.size.y*0.33f), Vector2.right, 1, 1 << 8),
             Physics2D.Raycast(new Vector2(position.x, position.y), Vector2.right, 1, 1 << 8),
             Physics2D.Raycast(new Vector2(position.x , position.y+ _collider.bounds.size.y*0.33f), Vector2.right, 1, 1 << 8)
+        };
+
+        private List<RaycastHit2D> CreateLeftHorizontalRays(Vector3 position) => new List<RaycastHit2D>()
+        {
+            Physics2D.Raycast(new Vector2(position.x , position.y- _collider.bounds.size.y*0.33f), Vector2.left, 1, 1 << 8),
+            Physics2D.Raycast(new Vector2(position.x, position.y), Vector2.left, 1, 1 << 8),
+            Physics2D.Raycast(new Vector2(position.x , position.y+ _collider.bounds.size.y*0.33f), Vector2.left, 1, 1 << 8)
         };
 
         public override void Attach(PlayerPresenter playerPresenter)

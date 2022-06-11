@@ -17,7 +17,7 @@ namespace Code.Views
         private readonly int DyingSmashed = Animator.StringToHash("dyingSmashed");
         private readonly int DyingBurnt = Animator.StringToHash("dyingBurned");
         private readonly int DyingKnifed = Animator.StringToHash("dyingKnifed");
-        private readonly int Stopped = Animator.StringToHash("stopped");
+        private readonly int StopTrigger = Animator.StringToHash("stopped");
 
         [SerializeField] private Rigidbody2D body;
         [SerializeField] private Animator animator;
@@ -28,11 +28,27 @@ namespace Code.Views
         [SerializeField] GameConfiguration gameConfiguration;
         [SerializeField] SharedGameState sharedGameState;
         [SerializeField] DisplayableData distance;
+
+        public void Move(float speed)
+        {
+            updatedPositionOnX = transform.position.x + speed * Time.deltaTime * gameConfiguration.PlayerSpeed;
+        }
+
+        public void SetWalking()
+        {
+            animator.SetTrigger(WalkTrigger);
+        }
+
+        public void SetStopping()
+        {
+            animator.SetTrigger(StopTrigger);
+        }
+
         [SerializeField] private float _moveSpeed;
 
         private readonly LayerMask layerMask = 1 << 9;
         private float _previousVelocityOnY;
-       
+        private float updatedPositionOnX;
 
         public Action<bool> IsGrounded { get; set; }
         public Action DieFromSmash { get; set; }
@@ -49,7 +65,6 @@ namespace Code.Views
             StopMovement = true;
             knifeView.gameObject.SetActive(false);
             sharedGameState.JustDied = true;
-            animator.ResetTrigger(WalkTrigger);
             animator.SetTrigger(DyingKnifed);
             return MoveWithKnife(knifeView).ToObservable();
         }
@@ -57,20 +72,6 @@ namespace Code.Views
         private IEnumerator MoveWithKnife(KnifeView knifeView)
         {
             yield return new WaitForSeconds(2);
-        }
-
-        public void Stop()
-        {
-            _moveSpeed = _moveSpeed  == 0 && !sharedGameState.JustDied ? (gameConfiguration.CalculateIncrement(distance.Content) + gameConfiguration.CameraSpeed )* -1 : 0;
-            if(_moveSpeed == 0)
-            {
-                animator.ResetTrigger(WalkTrigger);
-                animator.SetTrigger(DyingKnifed);
-            }
-            else
-            {
-                animator.SetTrigger(WalkTrigger);
-            }
         }
 
         public void GetPlayerInCannon(Vector2 cannon, Quaternion rotation)
@@ -83,7 +84,6 @@ namespace Code.Views
 
         public void SetEnteringCannon()
         {
-            animator.ResetTrigger(WalkTrigger);
             animator.SetTrigger(EnterCannonTrigger);
         }
 
@@ -100,7 +100,6 @@ namespace Code.Views
         public IObservable<Unit> DieBurnt()
         {
             animator.ResetTrigger(EnterTrapeceTrigger);
-            animator.ResetTrigger(WalkTrigger);
             animator.SetTrigger(DyingBurnt);
             return Die(burnt.length).ToObservable();
         }
@@ -119,7 +118,6 @@ namespace Code.Views
 
         private void SetEnteringTrapece()
         {
-            animator.ResetTrigger(WalkTrigger);
             animator.SetTrigger(EnterTrapeceTrigger);
         }
 
@@ -132,11 +130,6 @@ namespace Code.Views
         {
             transform.rotation = rotation;
             transform.position = position;
-        }
-
-        public void SetWalking()
-        {
-            animator.SetTrigger(WalkTrigger);
         }
 
         public IObservable<Unit> DieSmashed()
@@ -182,6 +175,9 @@ namespace Code.Views
                 transform.rotation = Quaternion.identity;
 
             _previousVelocityOnY = transform.position.y;
+
+            transform.position = new Vector2(updatedPositionOnX, transform.position.y);
+            updatedPositionOnX = 0;
         }
 
         private bool CheckGrounded(List<RaycastHit2D> hits)

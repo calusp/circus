@@ -49,7 +49,7 @@ namespace Code.Views
                 0,
                 innerCannon.rotation.eulerAngles.z + moveAmount * direction
                 );
-            _playerPresenter.UpdatePlayerRotation(playerSpot.position, playerSpot.rotation);
+            _playerPresenter?.UpdatePlayerRotation(playerSpot.position, playerSpot.rotation);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

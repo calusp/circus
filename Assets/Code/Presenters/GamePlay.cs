@@ -54,9 +54,9 @@ namespace Code.Presenters
         private void GamePlayStart(PlayerInput playerInput, PlayerView playerView, CameraView cameraView)
         {
             var actionActivated = new Subject<float>();
-            var stopped = new Subject<Unit>();
-            _playerInputPresenter = new PlayerInputPresenter(playerInput, actionActivated, stopped);
-            _playerPresenter = new PlayerPresenter(playerView, actionActivated, _gamePlayView, gameCofiguration, stopped);
+            var moved = new Subject<float>();
+            _playerInputPresenter = new PlayerInputPresenter(playerInput, actionActivated, moved);
+            _playerPresenter = new PlayerPresenter(playerView, actionActivated, _gamePlayView, gameCofiguration, moved);
             _cameraPresenter = new CameraPresenter(playerView, cameraView, _gamePlayView);
             _playerPresenter.Initialize();
             _cameraPresenter.Initialize();

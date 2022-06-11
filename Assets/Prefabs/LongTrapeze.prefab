@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526741633310608917}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.073, y: 0, z: -0.71}
+  m_LocalPosition: {x: -0.075, y: 0.056, z: -0.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7208073263046021287}
@@ -68,8 +68,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 657443229
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -5907698099074878965, guid: af4d91b757f5485429cd9bd482904aab,
     type: 3}
@@ -344,8 +344,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1076367783
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -5907698099074878965, guid: af4d91b757f5485429cd9bd482904aab,
     type: 3}
@@ -460,8 +460,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1076367783
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -5907698099074878965, guid: af4d91b757f5485429cd9bd482904aab,
     type: 3}
@@ -500,7 +500,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3236033209816700214}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.073, y: 0, z: -0.71}
+  m_LocalPosition: {x: -0.075, y: 0.06599999, z: -0.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5287774024935925662}
@@ -583,7 +583,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3969584717569187064}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.073, y: 0, z: -0.71}
+  m_LocalPosition: {x: -0.075, y: 0.055999994, z: -0.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3238068190755356982}
@@ -626,8 +626,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 657443229
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -5907698099074878965, guid: af4d91b757f5485429cd9bd482904aab,
     type: 3}
@@ -666,7 +666,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4207150225879496182}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.073, y: 0, z: -0.71}
+  m_LocalPosition: {x: -0.075, y: 0.067999996, z: -0.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 490426282719583196}
@@ -709,8 +709,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 657443229
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -5907698099074878965, guid: af4d91b757f5485429cd9bd482904aab,
     type: 3}
@@ -876,8 +876,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -161289803
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -2546747604224292835, guid: af4d91b757f5485429cd9bd482904aab,
     type: 3}
@@ -960,8 +960,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1076367783
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -5907698099074878965, guid: af4d91b757f5485429cd9bd482904aab,
     type: 3}
@@ -1044,8 +1044,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1076367783
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -5907698099074878965, guid: af4d91b757f5485429cd9bd482904aab,
     type: 3}
