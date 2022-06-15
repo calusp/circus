@@ -12,6 +12,7 @@ namespace Code.Views
         [SerializeField] private GamePlayView gamePlayView;
         [SerializeField] private GameConfiguration gameConfiguration;
         [SerializeField] private EndGameHudView endGameHudView;
+        [SerializeField] private SharedGameState sharedGameState;
         private void Start()
         {
             Initialize();
@@ -26,7 +27,7 @@ namespace Code.Views
             var endGameHudPresenter = new EndGameHubPresenter(endGameHudView, gameStarted, gameFinished, backToMainMenu);
             startGameHudPresenter.Initialize();
             endGameHudPresenter.Setup();
-            var gamePlay = new GamePlay(gamePlayView, gameStarted, gameFinished, gameConfiguration);
+            var gamePlay = new GamePlay(gamePlayView, gameStarted, gameFinished, gameConfiguration, sharedGameState);
         }
     }
 }

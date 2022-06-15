@@ -1,6 +1,5 @@
 ﻿using Code.ScriptableObjects;
 using Code.Views;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UniRx;
@@ -13,7 +12,6 @@ namespace Assets.Code.Views
         [SerializeField] private GameConfiguration gameConfiguration;
         [SerializeField] private DisplayableData distanceData;
         [SerializeField] private SharedGameState sharedGameState;
-        [SerializeField] private PlayerBounds playerBounds;
         [SerializeField] private Waypoint target;
         [SerializeField] private LevelGenerator levelGenerator;
         [SerializeField] private GamePlayView gamePlayView;
@@ -21,9 +19,11 @@ namespace Assets.Code.Views
         private List<Transform> containers = new List<Transform>();
         private Transform playerTransform;
         private List<ChunkView> _chunks;
+        private float currentSpeed;
 
         private void OnEnable()
         {
+            sharedGameState.PlayerDistanceFromBox.Subscribe(FixChunks);
             containers = Enumerable
                .Range(0, levelGenerator.AmountOfChunks + 1)
                .Select(index => new GameObject($"Container {index}").transform)
@@ -34,27 +34,29 @@ namespace Assets.Code.Views
         void Update()
         {
             if (sharedGameState.JustDied) return;
-            
-            //float distance = playerTransform.position.x - playerBounds.RightBound;
-            //if (distance > 0)
-            //{
-            //    foreach (var container in containers)
-            //        container.position = new Vector3(container.position.x - distance, container.position.y, container.position.z);
-            //    playerTransform.position = new Vector3(playerTransform.position.x - distance, playerTransform.position.y, playerTransform.position.z);
-            //    return;
-            //}
+
+            currentSpeed = (gameConfiguration.CameraSpeed + gameConfiguration.CalculateIncrement(distanceData.Content)) * Time.deltaTime;
+          
+        }
+
+        private void FixedUpdate()
+        {
             foreach (var container in containers)
             {
                 MoveContainer(container);
             }
         }
 
+        private void FixChunks(float distance)
+        {
+            foreach (var container in containers)
+                container.position = new Vector3(container.position.x - distance, container.position.y, container.position.z);
+        }
+
         private void MoveContainer(Transform container)
         {
-            var speed = gameConfiguration.CameraSpeed + gameConfiguration.CalculateIncrement(distanceData.Content);
-            var position = transform.position;
-
-            container.position = new Vector3(container.position.x - speed * Time.deltaTime, container.position.y, container.position.z);
+            
+            container.position = new Vector3(container.position.x - currentSpeed, container.position.y, container.position.z);
 
           
             var child = container.GetChild(0);
@@ -66,34 +68,6 @@ namespace Assets.Code.Views
                 int indexOfCurrent = containers.IndexOf(container);
                 var indexOfPrev = indexOfCurrent == 1 ? containers.Count - 1 : indexOfCurrent -1;
                 CreateChunkAtContainer(container, containers[indexOfPrev].GetComponentInChildren<ChunkView>());
-            }
-        }
-
-        public void SetPlayer(Transform transform)
-        {
-            playerTransform = transform;
-        }
-
-        private void MoveChunk(ChunkView chunkView)
-        {
-            var speed = gameConfiguration.CameraSpeed + gameConfiguration.CalculateIncrement(distanceData.Content);
-            var position = transform.position;
-
-            chunkView.transform.position = new Vector3(chunkView.transform.position.x - speed * Time.deltaTime, chunkView.transform.position.y, chunkView.transform.position.z);
-
-            //float distance = playerTransform.position.x - playerBounds.RightBound;
-            //if (distance > 0)
-            //{
-            //    chunkView.transform.position = new Vector3(chunkView.transform.position.x - distance, chunkView.transform.position.y, chunkView.transform.position.z);
-            //}
-
-            if (chunkView.transform.position.x <= target.transform.position.x)
-            {
-                Destroy(chunkView.gameObject);
-                if (!chunkView.IsInitial)
-                {
-                    sharedGameState.ChunkDestroyed.OnNext(Unit.Default);
-                }
             }
         }
 

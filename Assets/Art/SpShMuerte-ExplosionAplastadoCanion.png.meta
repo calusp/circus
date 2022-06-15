@@ -1,7 +1,55 @@
 fileFormatVersion: 2
 guid: aee878c1638d05b4282172c8ce77767c
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 4617318248459343361
+    second: SpShMuerte-ExplosionAplastadoCanion_0
+  - first:
+      213: -4573733065014047165
+    second: SpShMuerte-ExplosionAplastadoCanion_1
+  - first:
+      213: -183778525006191423
+    second: SpShMuerte-ExplosionAplastadoCanion_2
+  - first:
+      213: -5705565645712244517
+    second: SpShMuerte-ExplosionAplastadoCanion_3
+  - first:
+      213: -4159252677086775412
+    second: SpShMuerte-ExplosionAplastadoCanion_4
+  - first:
+      213: -7679784050390246970
+    second: SpShMuerte-ExplosionAplastadoCanion_5
+  - first:
+      213: 5526822084265921604
+    second: SpShMuerte-ExplosionAplastadoCanion_6
+  - first:
+      213: 5491088137539925708
+    second: SpShMuerte-ExplosionAplastadoCanion_7
+  - first:
+      213: 3020150861091148020
+    second: SpShMuerte-ExplosionAplastadoCanion_8
+  - first:
+      213: -671731485728363457
+    second: SpShMuerte-ExplosionAplastadoCanion_9
+  - first:
+      213: -2765327977178792483
+    second: SpShMuerte-ExplosionAplastadoCanion_10
+  - first:
+      213: 9054699896407441237
+    second: SpShMuerte-ExplosionAplastadoCanion_11
+  - first:
+      213: -5832652593844811549
+    second: SpShMuerte-ExplosionAplastadoCanion_12
+  - first:
+      213: 7710288274296594214
+    second: SpShMuerte-ExplosionAplastadoCanion_13
+  - first:
+      213: -4850367029283616812
+    second: SpShMuerte-ExplosionAplastadoCanion_14
+  - first:
+      213: -6465753731041016436
+    second: SpShMuerte-ExplosionAplastadoCanion_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -101,7 +149,343 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: SpShMuerte-ExplosionAplastadoCanion_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 106195ebb72041040800000000000000
+      internalID: 4617318248459343361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpShMuerte-ExplosionAplastadoCanion_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34e01629206d680c0800000000000000
+      internalID: -4573733065014047165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpShMuerte-ExplosionAplastadoCanion_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c429abb766137df0800000000000000
+      internalID: -183778525006191423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpShMuerte-ExplosionAplastadoCanion_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd046ac4642c1d0b0800000000000000
+      internalID: -5705565645712244517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpShMuerte-ExplosionAplastadoCanion_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8776231abd5746c0800000000000000
+      internalID: -4159252677086775412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpShMuerte-ExplosionAplastadoCanion_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c957cc681deb6590800000000000000
+      internalID: -7679784050390246970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpShMuerte-ExplosionAplastadoCanion_6
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44c447d376733bc40800000000000000
+      internalID: 5526822084265921604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpShMuerte-ExplosionAplastadoCanion_7
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc6bd6c6193443c40800000000000000
+      internalID: 5491088137539925708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpShMuerte-ExplosionAplastadoCanion_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f09d6be43bb9e920800000000000000
+      internalID: 3020150861091148020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpShMuerte-ExplosionAplastadoCanion_9
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3c27b0d5c78da6f0800000000000000
+      internalID: -671731485728363457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpShMuerte-ExplosionAplastadoCanion_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dddfec82bd49f99d0800000000000000
+      internalID: -2765327977178792483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpShMuerte-ExplosionAplastadoCanion_11
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55fb129f491c8ad70800000000000000
+      internalID: 9054699896407441237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpShMuerte-ExplosionAplastadoCanion_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e88e9d5e514e0fa0800000000000000
+      internalID: -5832652593844811549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpShMuerte-ExplosionAplastadoCanion_13
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62fde49a552700b60800000000000000
+      internalID: 7710288274296594214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpShMuerte-ExplosionAplastadoCanion_14
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d7884d92e800bcb0800000000000000
+      internalID: -4850367029283616812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpShMuerte-ExplosionAplastadoCanion_15
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c85c4281d370546a0800000000000000
+      internalID: -6465753731041016436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

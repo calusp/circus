@@ -44,6 +44,7 @@ namespace Code.Views
 
         public void Finish()
         {
+            sharedGameState.PlayerDied.OnNext(Unit.Default);
             chunkGenerator.ClearChunks();
             Destroy(playerGo.gameObject);
             GamePlayFinish();
@@ -54,7 +55,7 @@ namespace Code.Views
       
 
         private void Update()
-        {               
+        {
             if (HasPlayerCollidedHorizontally(playerGo.transform.position.x)) 
                 Finish();
         } 
@@ -77,7 +78,6 @@ namespace Code.Views
         public void StartGamePlay()
         {
             chunkGenerator.CreateChunksOnContainers();
-            chunkGenerator.SetPlayer(playerGo.transform);
         }
     }
 }

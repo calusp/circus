@@ -213,9 +213,11 @@ MonoBehaviour:
   startPosition: {x: -2.38, y: -3, z: 0}
   burnt: {fileID: 7400000, guid: dfca25635d38850449ffb31e1f846016, type: 2}
   smashed: {fileID: 7400000, guid: 6be7e1d134f3d7848979cc7e5e5eee7d, type: 2}
-  gameConfiguration: {fileID: 11400000, guid: e42de6adcfbdb2740a7e8a5d44b47e94, type: 2}
+  fallBanana: {fileID: 7400000, guid: 108bc9f3a9f11904483352eaa2c5e857, type: 2}
+  bottlePinched: {fileID: 7400000, guid: 653ce4642bf8e7046bcf14cf7c51c23b, type: 2}
   sharedGameState: {fileID: 11400000, guid: 0d26a4181eba90544928fcecacf35c1d, type: 2}
-  distance: {fileID: 11400000, guid: b81ead8f0e9c1f54dbd52b182cc64f4e, type: 2}
+  playerBounds: {fileID: 33878907185439883, guid: f09b96e0b0f2236478d4cc6f6c3d13a1,
+    type: 3}
   _moveSpeed: 0
 --- !u!95 &1755568262044993164
 Animator:

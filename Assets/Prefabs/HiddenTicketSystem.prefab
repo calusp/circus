@@ -269,6 +269,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7313859360097738136}
     m_Modifications:
+    - target: {fileID: 41633375021009869, guid: 67d32ddcae4bd414392cf82f4162b04e,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.2721585
+      objectReference: {fileID: 0}
+    - target: {fileID: 41633375021009869, guid: 67d32ddcae4bd414392cf82f4162b04e,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.18492801
+      objectReference: {fileID: 0}
+    - target: {fileID: 338420949111986537, guid: 67d32ddcae4bd414392cf82f4162b04e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 338420949111986537, guid: 67d32ddcae4bd414392cf82f4162b04e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 2199570068825105141, guid: 67d32ddcae4bd414392cf82f4162b04e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2199570068825105141, guid: 67d32ddcae4bd414392cf82f4162b04e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.255
+      objectReference: {fileID: 0}
     - target: {fileID: 2407765783990993038, guid: 67d32ddcae4bd414392cf82f4162b04e,
         type: 3}
       propertyPath: m_Name
@@ -329,7 +359,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.02
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8960550783595020316, guid: 67d32ddcae4bd414392cf82f4162b04e,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.29
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 624047470408815806, guid: 67d32ddcae4bd414392cf82f4162b04e, type: 3}
+    - {fileID: 3434229158980165774, guid: 67d32ddcae4bd414392cf82f4162b04e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 67d32ddcae4bd414392cf82f4162b04e, type: 3}
 --- !u!4 &5836817180696460324 stripped
 Transform:

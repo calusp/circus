@@ -1,4 +1,5 @@
-﻿using Assets.Code.Views.TargetSystem;
+﻿using Assets.Code.Views;
+using Assets.Code.Views.TargetSystem;
 using Code.ScriptableObjects;
 using System;
 using System.Collections;
@@ -15,6 +16,8 @@ namespace Code.Views
         private readonly int WalkTrigger = Animator.StringToHash("walking");
         private readonly int EnterTrapeceTrigger = Animator.StringToHash("enteringTrapece");
         private readonly int DyingSmashed = Animator.StringToHash("dyingSmashed");
+        private readonly int DyingBottle = Animator.StringToHash("dyingBottle");
+        private readonly int DyingBanana = Animator.StringToHash("dyingBanana");
         private readonly int DyingBurnt = Animator.StringToHash("dyingBurned");
         private readonly int DyingKnifed = Animator.StringToHash("dyingKnifed");
         private readonly int StopTrigger = Animator.StringToHash("stopped");
@@ -25,13 +28,63 @@ namespace Code.Views
         [SerializeField] private Vector3 startPosition;
         [SerializeField] AnimationClip burnt;
         [SerializeField] AnimationClip smashed;
-        [SerializeField] GameConfiguration gameConfiguration;
+        [SerializeField] AnimationClip fallBanana;
+        [SerializeField] private AnimationClip bottlePinched;
         [SerializeField] SharedGameState sharedGameState;
-        [SerializeField] DisplayableData distance;
+        [SerializeField] private PlayerBounds playerBounds;
+    
+
+        private readonly LayerMask layerMask = 1 << 9;
+        private float _previousVelocityOnY;
+        private float updatedPositionOnX;
+     
+
+        public Action<bool> IsGrounded { get; set; }
+        public Action DieFromSmash { get; set; }
+        public bool StopMovement { get; set; }
+        public Action<KnifeView> DieFromKnife { get; set; }
+        public Action DieFromBanana { get;  set; }
+        public Action DieFromBottle { get; set; }
+        public float PositionX => transform.position.x;
+
+       
+
+        public void Awake()
+        {
+            Init();
+        }
+
+        private void Update()
+        {
+            List<RaycastHit2D> hits = CreateRays(transform.position);
+            bool isGrounded = CheckGrounded(hits);
+            IsGrounded(isGrounded);
+
+            CheckCollisionWithActivable(hits);
+        }
+
+        private void FixedUpdate()
+        {
+            if (StopMovement) return;
+
+            if (transform.position.y < _previousVelocityOnY)
+                transform.rotation = Quaternion.identity;
+
+            _previousVelocityOnY = transform.position.y;
+            var distanceOffset = (transform.position.x + updatedPositionOnX) - playerBounds.RightBound;
+
+            if (distanceOffset > 0)
+            {
+                transform.position = new Vector2(transform.position.x - distanceOffset, transform.position.y);
+                sharedGameState.PlayerDistanceFromBox.OnNext(distanceOffset);
+            }
+            else
+                transform.position = new Vector2(transform.position.x + updatedPositionOnX, transform.position.y);
+        }
 
         public void Move(float speed)
         {
-            updatedPositionOnX = transform.position.x + speed * Time.deltaTime * gameConfiguration.PlayerSpeed;
+            updatedPositionOnX = speed * Time.deltaTime;
         }
 
         public void SetWalking()
@@ -42,22 +95,6 @@ namespace Code.Views
         public void SetStopping()
         {
             animator.SetTrigger(StopTrigger);
-        }
-
-        [SerializeField] private float _moveSpeed;
-
-        private readonly LayerMask layerMask = 1 << 9;
-        private float _previousVelocityOnY;
-        private float updatedPositionOnX;
-
-        public Action<bool> IsGrounded { get; set; }
-        public Action DieFromSmash { get; set; }
-        public bool StopMovement { get; set; }
-        public Action<KnifeView> DieFromKnife { get; set; }
-
-        public void Awake()
-        {
-            Init();
         }
 
         public IObservable<Unit> DieKnifed(KnifeView knifeView)
@@ -89,7 +126,6 @@ namespace Code.Views
 
         public void Jump(float powerX, float powerY)
         {
-            _moveSpeed = 0;
             body.simulated = true;
             body.velocity = Vector2.zero;
             body.AddForce(new Vector2(jumpForce.x * powerX, jumpForce.y * (1 + powerY)),
@@ -103,7 +139,17 @@ namespace Code.Views
             animator.SetTrigger(DyingBurnt);
             return Die(burnt.length).ToObservable();
         }
+        public IObservable<Unit> DieFallBanana()
+        {
+            animator.SetTrigger(DyingBanana);
+            return Die(fallBanana.length).ToObservable();
+        }
 
+        public IObservable<Unit> DieBottle()
+        {
+            animator.SetTrigger(DyingBottle);
+            return Die(bottlePinched.length).ToObservable();
+        }
         public void Init()
         {
             transform.position = startPosition;
@@ -157,28 +203,6 @@ namespace Code.Views
         private bool ColliderHasActionable(IEnumerable<RaycastHit2D> hits) =>
             hits.Any(hit => hit.collider && hit.collider.GetComponent<Actionable>() != null);
 
-        private void Update()
-        {
-            List<RaycastHit2D> hits = CreateRays(transform.position);
-            transform.position = new Vector3(transform.position.x + _moveSpeed * Time.deltaTime, transform.position.y, transform.position.z);
-            bool isGrounded = CheckGrounded(hits);
-            IsGrounded(isGrounded);
-
-            CheckCollisionWithActivable(hits);
-        }
-
-        private void FixedUpdate()
-        {
-            if (StopMovement) return;
-
-            if (transform.position.y < _previousVelocityOnY)
-                transform.rotation = Quaternion.identity;
-
-            _previousVelocityOnY = transform.position.y;
-
-            transform.position = new Vector2(updatedPositionOnX, transform.position.y);
-            updatedPositionOnX = 0;
-        }
 
         private bool CheckGrounded(List<RaycastHit2D> hits)
         {

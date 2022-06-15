@@ -12,17 +12,19 @@ namespace Code.Presenters
         private readonly ISubject<Unit> _gameStarted;
         private readonly ISubject<Unit> _gameFinished;
         private readonly GameConfiguration gameCofiguration;
+        private readonly SharedGameState sharedGameState;
         private PlayerPresenter _playerPresenter;
         private CameraPresenter _cameraPresenter;
         private PlayerInputPresenter _playerInputPresenter;
 
-        public GamePlay(GamePlayView view, ISubject<Unit> gameStarted, ISubject<Unit> gameFinished, GameConfiguration gameCofiguration)
+        public GamePlay(GamePlayView view, ISubject<Unit> gameStarted, ISubject<Unit> gameFinished, GameConfiguration gameCofiguration, SharedGameState sharedGameState)
         {
             _gamePlayView = view;
             _gameStarted = gameStarted;
             InitializeView();
             _gameFinished = gameFinished;
             this.gameCofiguration = gameCofiguration;
+            this.sharedGameState = sharedGameState;
             _gamePlayView.GamePlayStart = GamePlayStart;
             _gamePlayView.GamePlayFinish = GamePlayFinish;
             _gamePlayView.AttachToActionable = AttachTo;
@@ -56,7 +58,7 @@ namespace Code.Presenters
             var actionActivated = new Subject<float>();
             var moved = new Subject<float>();
             _playerInputPresenter = new PlayerInputPresenter(playerInput, actionActivated, moved);
-            _playerPresenter = new PlayerPresenter(playerView, actionActivated, _gamePlayView, gameCofiguration, moved);
+            _playerPresenter = new PlayerPresenter(playerView, actionActivated, _gamePlayView, gameCofiguration, moved, sharedGameState);
             _cameraPresenter = new CameraPresenter(playerView, cameraView, _gamePlayView);
             _playerPresenter.Initialize();
             _cameraPresenter.Initialize();

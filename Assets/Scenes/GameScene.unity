@@ -123,6 +123,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &314625554 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2082986442703807937, guid: 5b300161c27021248b5b0e120ee00e17,
+    type: 3}
+  m_PrefabInstance: {fileID: 7380024616558411426}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ec966dbb6d2d140aa602d4b62598b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &355636570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -225,6 +237,7 @@ MonoBehaviour:
   gamePlayView: {fileID: 1865530926}
   gameConfiguration: {fileID: 11400000, guid: e42de6adcfbdb2740a7e8a5d44b47e94, type: 2}
   endGameHudView: {fileID: 804507647}
+  sharedGameState: {fileID: 11400000, guid: 0d26a4181eba90544928fcecacf35c1d, type: 2}
 --- !u!4 &360080554
 Transform:
   m_ObjectHideFlags: 0
@@ -772,6 +785,11 @@ PrefabInstance:
       propertyPath: changeTime
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 4059148871470264168, guid: 5b300161c27021248b5b0e120ee00e17,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.51
+      objectReference: {fileID: 0}
     - target: {fileID: 4436428622112256654, guid: 5b300161c27021248b5b0e120ee00e17,
         type: 3}
       propertyPath: changeTime
@@ -869,6 +887,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: b81ead8f0e9c1f54dbd52b182cc64f4e,
         type: 2}
+    - target: {fileID: 7380024617113190540, guid: 5b300161c27021248b5b0e120ee00e17,
+        type: 3}
+      propertyPath: playerBounds
+      value: 
+      objectReference: {fileID: 314625554}
     - target: {fileID: 7380024617113190540, guid: 5b300161c27021248b5b0e120ee00e17,
         type: 3}
       propertyPath: endGameCanvas

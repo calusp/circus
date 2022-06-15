@@ -37,6 +37,7 @@ namespace Code.ScriptableObjects
         public float BagDropDistance => _bagDropDistance;
 
         public float CalculateIncrement(float distanceTravelled) =>
-            incrementCurve.Evaluate(incrementalRatio * distanceTravelled / distanceCap);
+            //incrementCurve.Evaluate(incrementalRatio * distanceTravelled / distanceCap);
+            0;
     }
 }

@@ -51,6 +51,7 @@ MonoBehaviour:
   minRotationZ: 0
   gameConfiguration: {fileID: 11400000, guid: e42de6adcfbdb2740a7e8a5d44b47e94, type: 2}
   playerSpot: {fileID: 3572744511141446483}
+  sharedGameState: {fileID: 11400000, guid: 0d26a4181eba90544928fcecacf35c1d, type: 2}
 --- !u!61 &8457231412937472236
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -147,7 +148,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1076367783
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -8276256847195095063, guid: af4d91b757f5485429cd9bd482904aab,
     type: 3}
@@ -230,7 +231,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1076367783
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -3246017269580235378, guid: af4d91b757f5485429cd9bd482904aab,
     type: 3}

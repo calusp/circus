@@ -25,9 +25,6 @@ public class FireRingView : BaseHazardView
             _playerPresenter.DieBurnt();
             enabled = false;
         }
-           
-
-
     }
 
     public override void Attach(PlayerPresenter playerPresenter)

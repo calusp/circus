@@ -17,6 +17,7 @@ namespace Code.Presenters
         private readonly GamePlayView _gamePlayView;
         private readonly GameConfiguration gameConfiguration;
         private readonly ISubject<float> moved;
+        private readonly SharedGameState sharedGameState;
         private bool _isGrounded;
         private bool _isOnTrampoline;
         private bool _jumpedFromTrampoline;
@@ -24,8 +25,9 @@ namespace Code.Presenters
         private bool _launchedFromCannon;
         private bool _isInTrapece;
         private bool _launchedFromTrapece;
+        private bool playerDied;
 
-        public PlayerPresenter(PlayerView view, ISubject<float> actionActivated, GamePlayView gamePlayView, GameConfiguration gameConfiguration, ISubject<float> moved)
+        public PlayerPresenter(PlayerView view, ISubject<float> actionActivated, GamePlayView gamePlayView, GameConfiguration gameConfiguration, ISubject<float> moved, SharedGameState sharedGameState)
         {
             _view = view;
             _view.IsGrounded = SetGrounded;
@@ -33,21 +35,46 @@ namespace Code.Presenters
             _gamePlayView = gamePlayView;
             this.gameConfiguration = gameConfiguration;
             this.moved = moved;
+            this.sharedGameState = sharedGameState;
+            this.sharedGameState.PlayerDied.Subscribe(_ => playerDied = true);
             _actionActivated.Subscribe(ActivateAction);
             this.moved.Subscribe(Move);
             _view.DieFromSmash = DieSmashed;
             _view.DieFromKnife = DieFromKnife;
+            _view.DieFromBanana = DieFromBanana;
+            _view.DieFromBottle = DieFromBottle;
+            playerDied = false;
+        }
+
+        private void DieFromBottle()
+        {
+            sharedGameState.PlayerDied.OnNext(Unit.Default);
+            _view.DieBottle()
+                 .Subscribe(_ => _gamePlayView.Finish());
+        }
+
+        private void DieFromBanana()
+        {
+            sharedGameState.PlayerDied.OnNext(Unit.Default);
+            _view.DieFallBanana()
+                 .Subscribe(_ => _gamePlayView.Finish());
         }
 
         private void Move(float speed)
         {
+            if (playerDied)
+            {
+                _view.Move( - gameConfiguration.CameraSpeed);
+                return;
+            }
             if (speed != 0) _view.SetWalking();
             else _view.SetStopping();
-           _view.Move(speed);
+           _view.Move(speed * gameConfiguration.PlayerSpeed - gameConfiguration.CameraSpeed);
         }
 
         private void DieFromKnife(KnifeView knife)
         {
+            sharedGameState.PlayerDied.OnNext(Unit.Default);
             _view.DieKnifed(knife)
                 .DoOnCompleted(_gamePlayView.Finish)
                 .Subscribe();
@@ -55,25 +82,24 @@ namespace Code.Presenters
 
         private void ActivateAction(float power)
         {
-            if (_isOnTrampoline) _jumpedFromTrampoline = true;
-            else if (_isInCannon) LaunchFromCannon();
-            else if (_isInTrapece) LaunchFromTrapece();
-            else if (_isGrounded)
+            if (playerDied) return;
+            if (_isGrounded)
             {
                 _view
                     .Jump(power * gameConfiguration.JumpForce.x, power * gameConfiguration.JumpForce.y);
-                _jumpedFromTrampoline = false;
             }
         }
 
 
         public void DieSmashed()
         {
+            sharedGameState.PlayerDied.OnNext(Unit.Default);
             _view.DieSmashed().Subscribe(_ => _gamePlayView.Finish());
         }
 
         public void DieBurnt()
         {
+            sharedGameState.PlayerDied.OnNext(Unit.Default);
             _view.DieBurnt().Subscribe(_ => _gamePlayView.Finish());
         }
 

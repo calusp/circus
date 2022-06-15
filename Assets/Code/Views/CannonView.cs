@@ -2,6 +2,7 @@
 using Code.ScriptableObjects;
 using System;
 using System.Collections;
+using UniRx;
 using UnityEngine;
 
 namespace Code.Views
@@ -16,7 +17,7 @@ namespace Code.Views
         [SerializeField] private float minRotationZ;
         [SerializeField] private GameConfiguration gameConfiguration;
         [SerializeField] private Transform playerSpot;
-
+        [SerializeField] private SharedGameState sharedGameState;
         private int direction;
         private PlayerPresenter _playerPresenter;
         private BoxCollider2D _trigger;
@@ -56,7 +57,7 @@ namespace Code.Views
         {
             if (collision.gameObject.name.Contains("Player"))
             {
-                _playerPresenter.EnterCannon(playerSpot.position,playerSpot.rotation);
+                sharedGameState.EnteredCannon.OnNext(Unit.Default);
             }
         }
 
