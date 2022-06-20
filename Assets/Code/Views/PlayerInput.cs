@@ -26,12 +26,12 @@ namespace Code.Views
             }
 
 
-            if (Input.GetButtonDown("Action"))
+            if (Input.GetButtonDown("Jump"))
             {
                 startAccumulateEnery = true;
               
             }
-            if (Input.GetButtonUp("Action") || _acc >= 1 )
+            if (Input.GetButtonUp("Jump") || _acc >= 1 )
             {
                 startAccumulateEnery = false;
                 Action(curve.Evaluate(_acc));

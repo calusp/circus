@@ -37,6 +37,7 @@ namespace Code.Presenters
             this.moved = moved;
             this.sharedGameState = sharedGameState;
             this.sharedGameState.PlayerDied.Subscribe(_ => playerDied = true);
+            this.sharedGameState.OnTrampolineHit.Subscribe(_ => TrampolineJump());
             _actionActivated.Subscribe(ActivateAction);
             this.moved.Subscribe(Move);
             _view.DieFromSmash = DieSmashed;
@@ -127,16 +128,7 @@ namespace Code.Presenters
 
         public void TrampolineJump()
         {
-            if (!_jumpedFromTrampoline)
-            {
-                SetOnTrampoline(true);
-                _view.Jump(0, 0);
-            }
-            else
-            {
-                SetOnTrampoline(false);
-                _view.Jump(gameConfiguration.TrampolineForce.x, gameConfiguration.TrampolineForce.y);
-            }
+            _view.Jump(gameConfiguration.TrampolineForce.x, gameConfiguration.TrampolineForce.y);
         }
 
         public void Initialize()

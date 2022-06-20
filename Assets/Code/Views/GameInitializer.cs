@@ -20,6 +20,7 @@ namespace Code.Views
 
         public void Initialize()
         {
+            sharedGameState.Initialize();
             var gameStarted = new Subject<Unit>();
             var gameFinished = new Subject<Unit>();
             var backToMainMenu = new Subject<Unit>();

@@ -51,6 +51,7 @@ namespace Code.Presenters
             _playerPresenter.Dismiss();
             _playerInputPresenter.Dismiss();
             _gameFinished.OnNext(Unit.Default);
+            sharedGameState.Initialize();
         }
 
         private void GamePlayStart(PlayerInput playerInput, PlayerView playerView, CameraView cameraView)
