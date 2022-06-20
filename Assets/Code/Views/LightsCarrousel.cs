@@ -9,7 +9,8 @@ namespace Assets.Code.Views
         enum LightSwitchStyle
         {
             Parity,
-            Snake
+            Snake,
+            SnakePositive
         }
         [SerializeField] private List<GameObject> lights = new List<GameObject>();
         [SerializeField] private float changeTime = 0.5f;
@@ -43,16 +44,18 @@ namespace Assets.Code.Views
                     case LightSwitchStyle.Snake:
                         if (snakeCounter == lights.Count)
                         {
-                            if (timeAccumulatorForStatic <= timeToStopAfterSwitch)
-                                lights.ForEach(light => light.SetActive(true));
-                            else
-                            {
-                                timeAccumulatorForStatic = 0;
-                                snakeCounter = 0;
-                            }    
+                            RestartWith(true,true);
                             break;
                         }
-                        SnakeSwitch();
+                        SnakeSwitch(true);
+                        break;
+                    case LightSwitchStyle.SnakePositive:
+                        if (snakeCounter == lights.Count)
+                        {
+                            RestartWith(false,false);
+                            break;
+                        }
+                        SnakeSwitch(false);
                         break;
                     default:
                         break;
@@ -60,11 +63,29 @@ namespace Assets.Code.Views
             }
         }
 
-        private void SnakeSwitch()
+        private void RestartWith(bool lightState, bool restartCounter)
         {
-            lights.ForEach(light => light.SetActive(false));
+            if (timeAccumulatorForStatic <= timeToStopAfterSwitch)
+                lights.ForEach(light => light.SetActive(lightState));
+            else
+            {
+                timeAccumulatorForStatic = 0;
+                if(restartCounter)
+                    snakeCounter = 0;
+            }
+        }
+
+        private void SnakeSwitch(bool turnOff)
+        {
+            if (turnOff)
+                TurnLightsOff();
             lights[snakeCounter].SetActive(true);
             snakeCounter++;
+        }
+
+        private void TurnLightsOff()
+        {
+            lights.ForEach(light => light.SetActive(false));
         }
 
         private void SwitchByParity()
