@@ -23,7 +23,7 @@ namespace Assets.Code.Views
 
         private void OnEnable()
         {
-            sharedGameState.PlayerDistanceFromBox.Subscribe(FixChunks);
+            //sharedGameState.PlayerDistanceFromBox.Subscribe(FixChunks);
             containers = Enumerable
                .Range(0, levelGenerator.AmountOfChunks + 1)
                .Select(index => new GameObject($"Container {index}").transform)
@@ -35,7 +35,7 @@ namespace Assets.Code.Views
         {
             if (sharedGameState.JustDied) return;
 
-            currentSpeed = (gameConfiguration.CameraSpeed + gameConfiguration.CalculateIncrement(distanceData.Content)) * Time.deltaTime;
+            currentSpeed = gameConfiguration.ChunkSpeed * Time.deltaTime;
           
         }
 
@@ -51,14 +51,15 @@ namespace Assets.Code.Views
         {
             foreach (var container in containers)
                 container.position = new Vector3(container.position.x - distance, container.position.y, container.position.z);
+            distanceData.Content += currentSpeed;
         }
 
         private void MoveContainer(Transform container)
         {
             
             container.position = new Vector3(container.position.x - currentSpeed, container.position.y, container.position.z);
+            
 
-          
             var child = container.GetChild(0);
             var chunkView = child.GetComponent<ChunkView>();
             if (container.position.x <= target.transform.position.x)

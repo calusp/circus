@@ -6,7 +6,7 @@ namespace Code.ScriptableObjects
     [CreateAssetMenu(fileName = "Game Configuration")]
     public class GameConfiguration : ScriptableObject
     {
-        [SerializeField, Range(0,50)] float playerSpeed = 3;
+        [SerializeField, Range(0, 50)] float playerSpeed = 3;
         [SerializeField, Range(0, 50)] float cameraSpeed = 3;
         [SerializeField, Range(0, 50)] float incrementalRatio = 3;
         [SerializeField, Range(0, 50)] float distanceCap = 3;
@@ -21,9 +21,9 @@ namespace Code.ScriptableObjects
         [SerializeField] private Vector2 trapeceForce;
         [SerializeField] private float _bagDropDistance;
         [SerializeField] private AnimationCurve incrementCurve;
-
+        [SerializeField] private DisplayableData distanceData;
         public float PlayerSpeed => playerSpeed;
-        public float CameraSpeed => cameraSpeed;
+
         public Vector2 JumpForce => jumpForce;
         public Vector2 TrampolineForce => trampoolineForce;
 
@@ -37,7 +37,11 @@ namespace Code.ScriptableObjects
         public float BagDropDistance => _bagDropDistance;
 
         public float CalculateIncrement(float distanceTravelled) =>
-            //incrementCurve.Evaluate(incrementalRatio * distanceTravelled / distanceCap);
-            0;
+            incrementCurve.Evaluate(incrementalRatio * distanceTravelled / distanceCap);
+        public float Increment => CalculateIncrement(distanceData.Content);
+        public float ChunkSpeed => CameraSpeed + Increment;
+        private float CameraSpeed => cameraSpeed;
+
+
     }
 }

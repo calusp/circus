@@ -14,6 +14,7 @@ namespace Code.Views
     {
         private readonly int EnterCannonTrigger = Animator.StringToHash("enteringCannon");
         private readonly int WalkTrigger = Animator.StringToHash("walking");
+        private readonly int JumpTrigger = Animator.StringToHash("jumping");
         private readonly int EnterTrapeceTrigger = Animator.StringToHash("enteringTrapece");
         private readonly int DyingSmashed = Animator.StringToHash("dyingSmashed");
         private readonly int DyingBottle = Animator.StringToHash("dyingBottle");
@@ -75,7 +76,8 @@ namespace Code.Views
 
             if (distanceOffset > 0)
             {
-                transform.position = new Vector2(transform.position.x - distanceOffset, transform.position.y);
+                //transform.position = new Vector2(transform.position.x - distanceOffset, transform.position.y);
+                transform.position = new Vector2(transform.position.x, transform.position.y);
                 sharedGameState.PlayerDistanceFromBox.OnNext(distanceOffset);
             }
             else
@@ -126,6 +128,7 @@ namespace Code.Views
 
         public void Jump(float powerX, float powerY)
         {
+            animator.SetTrigger(JumpTrigger);
             body.simulated = true;
             body.velocity = Vector2.zero;
             body.AddForce(new Vector2(jumpForce.x * powerX, jumpForce.y * (1 + powerY)),

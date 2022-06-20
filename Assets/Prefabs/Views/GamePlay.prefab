@@ -47,7 +47,6 @@ MonoBehaviour:
   gameConfiguration: {fileID: 11400000, guid: e42de6adcfbdb2740a7e8a5d44b47e94, type: 2}
   distanceData: {fileID: 11400000, guid: b81ead8f0e9c1f54dbd52b182cc64f4e, type: 2}
   sharedGameState: {fileID: 11400000, guid: 0d26a4181eba90544928fcecacf35c1d, type: 2}
-  playerBounds: {fileID: 2082986442703807937}
   target: {fileID: 6324615646397361803}
   levelGenerator: {fileID: 11400000, guid: 840e69ef26aef8943a94b476bd783c93, type: 2}
   gamePlayView: {fileID: 7380024617113190540}
@@ -413,7 +412,7 @@ PrefabInstance:
     - target: {fileID: 2649493072933793314, guid: f09b96e0b0f2236478d4cc6f6c3d13a1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.67
+      value: 4.16
       objectReference: {fileID: 0}
     - target: {fileID: 2649493072933793314, guid: f09b96e0b0f2236478d4cc6f6c3d13a1,
         type: 3}
@@ -473,18 +472,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2058177525052997962}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2082986442703807937 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 33878907185439883, guid: f09b96e0b0f2236478d4cc6f6c3d13a1,
-    type: 3}
-  m_PrefabInstance: {fileID: 2058177525052997962}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65ec966dbb6d2d140aa602d4b62598b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2125227873564166925
 PrefabInstance:
   m_ObjectHideFlags: 0

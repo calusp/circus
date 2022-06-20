@@ -63,14 +63,15 @@ namespace Code.Presenters
 
         private void Move(float speed)
         {
+            float chunkSpeed = gameConfiguration.ChunkSpeed;
             if (playerDied)
             {
-                _view.Move( - gameConfiguration.CameraSpeed);
+                _view.Move(- chunkSpeed);
                 return;
             }
             if (speed != 0) _view.SetWalking();
             else _view.SetStopping();
-           _view.Move(speed * gameConfiguration.PlayerSpeed - gameConfiguration.CameraSpeed);
+           _view.Move(speed * gameConfiguration.PlayerSpeed + gameConfiguration.Increment - chunkSpeed);
         }
 
         private void DieFromKnife(KnifeView knife)

@@ -13,16 +13,13 @@ MonoBehaviour:
   m_Name: LevelGeneratorSize10 1
   m_EditorClassIdentifier: 
   chunks:
-  - {fileID: 5073678768547175256, guid: f625bde7f0b4fef41951bd190c9234b4, type: 3}
-  - {fileID: 5073678768547175256, guid: c23511c15ba2bc445b1c44461872f30e, type: 3}
-  - {fileID: 5073678768547175256, guid: 6dd98938033fa424e9aa50f610c2c800, type: 3}
-  - {fileID: 5073678768547175256, guid: d612ea00a30e1d04f8507b883d592305, type: 3}
-  - {fileID: 5073678768547175256, guid: 7a7f421407b538348b9d7df17d0f7663, type: 3}
-  - {fileID: 5073678768547175256, guid: 21e4f405fe39af34c96a9bce008f8963, type: 3}
-  - {fileID: 5073678768547175256, guid: 7b17754e137e3b345af1907d1fb25135, type: 3}
-  - {fileID: 5073678768547175256, guid: 8535565e2ab12034ea752444927dc082, type: 3}
+  - {fileID: 399032840373576241, guid: 6dd98938033fa424e9aa50f610c2c800, type: 3}
+  - {fileID: -7316905478185820011, guid: 7a7f421407b538348b9d7df17d0f7663, type: 3}
+  - {fileID: -7858439635578144948, guid: 21e4f405fe39af34c96a9bce008f8963, type: 3}
+  - {fileID: 1181953987356912446, guid: 7b17754e137e3b345af1907d1fb25135, type: 3}
+  - {fileID: 9150281782228752021, guid: 8535565e2ab12034ea752444927dc082, type: 3}
   startChunk: {fileID: 2164564544986798677, guid: 8d3eba9d68e6da8488fd8758bdaa5c8a,
     type: 3}
   startChunkWith: 4
   chunkWidth: 10
-  amountOfChunks: 6
+  amountOfChunks: 3

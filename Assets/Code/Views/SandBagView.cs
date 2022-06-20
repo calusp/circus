@@ -29,7 +29,7 @@ public class SandBagView : BaseHazardView
     void Update()
     {
 
-        var speed = gameConfiguration.CameraSpeed + gameConfiguration.CalculateIncrement(distanceData.Content);
+        var speed = gameConfiguration.ChunkSpeed;
   
         if (player.transform.position.x >= transform.position.x - (_collider.bounds.size.x + gameConfiguration.BagDropDistance + gameConfiguration.CalculateIncrement(distanceData.Content))  &&
                     player.transform.position.x <= transform.position.x + _collider.bounds.size.x / 2)
