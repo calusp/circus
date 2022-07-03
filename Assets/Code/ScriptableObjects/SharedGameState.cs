@@ -12,6 +12,7 @@ namespace Code.ScriptableObjects
         private ISubject<Unit> _enteredCannon;
         private ISubject<float> _playerDistanceFromBox;
         private ISubject<Unit> _onTrampolineHit;
+        private ISubject<Unit> _initializeGamePlay;
 
         public void Initialize()
         {
@@ -20,6 +21,7 @@ namespace Code.ScriptableObjects
             _enteredCannon = new Subject<Unit>();
             _playerDistanceFromBox = new Subject<float>();
             _onTrampolineHit = new Subject<Unit>();
+            _initializeGamePlay = new Subject<Unit>();
 
         }
         public ISubject<Unit> ChunkDestroyed => _chunkDestroyed;
@@ -30,5 +32,7 @@ namespace Code.ScriptableObjects
         public ISubject<Unit> EnteredCannon => _enteredCannon;
 
         public ISubject<Unit> OnTrampolineHit => _onTrampolineHit;
+
+        public ISubject<Unit> InitializeGameplay => _initializeGamePlay;
     }
 }

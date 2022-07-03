@@ -1,4 +1,5 @@
-﻿using Assets.Code.Views;
+﻿using Assets.Code.ScriptableObjects;
+using Assets.Code.Views;
 using Assets.Code.Views.TargetSystem;
 using Code.ScriptableObjects;
 using System;
@@ -33,6 +34,8 @@ namespace Code.Views
         [SerializeField] private AnimationClip bottlePinched;
         [SerializeField] SharedGameState sharedGameState;
         [SerializeField] private PlayerBounds playerBounds;
+        [SerializeField] PlayerSounds playerSounds;
+        AudioCenter audioCenter;
     
 
         private readonly LayerMask layerMask = 1 << 9;
@@ -48,7 +51,10 @@ namespace Code.Views
         public Action DieFromBottle { get; set; }
         public float PositionX => transform.position.x;
 
-       
+       public void Setup(AudioCenter audioCenter)
+        {
+            this.audioCenter = audioCenter;
+        }
 
         public void Awake()
         {
@@ -105,6 +111,7 @@ namespace Code.Views
             knifeView.gameObject.SetActive(false);
             sharedGameState.JustDied = true;
             animator.SetTrigger(DyingKnifed);
+            audioCenter.PlaySoundFx(playerSounds.DieStabbed);
             return MoveWithKnife(knifeView).ToObservable();
         }
 
@@ -128,6 +135,7 @@ namespace Code.Views
 
         public void Jump(float powerX, float powerY)
         {
+            audioCenter.PlaySoundFx(playerSounds.Jump);
             animator.SetTrigger(JumpTrigger);
             body.simulated = true;
             body.velocity = Vector2.zero;
@@ -138,18 +146,21 @@ namespace Code.Views
 
         public IObservable<Unit> DieBurnt()
         {
+            audioCenter.PlaySoundFx(playerSounds.DieBurnt);
             animator.ResetTrigger(EnterTrapeceTrigger);
             animator.SetTrigger(DyingBurnt);
             return Die(burnt.length).ToObservable();
         }
         public IObservable<Unit> DieFallBanana()
         {
+            audioCenter.PlaySoundFx(playerSounds.DieFellDown);
             animator.SetTrigger(DyingBanana);
             return Die(fallBanana.length).ToObservable();
         }
 
         public IObservable<Unit> DieBottle()
         {
+            audioCenter.PlaySoundFx(playerSounds.DieStabbed);
             animator.SetTrigger(DyingBottle);
             return Die(bottlePinched.length).ToObservable();
         }
@@ -183,6 +194,7 @@ namespace Code.Views
 
         public IObservable<Unit> DieSmashed()
         {
+            audioCenter.PlaySoundFx(playerSounds.DieSmashed);
             animator.ResetTrigger(WalkTrigger);
             animator.SetTrigger(DyingSmashed);
             body.simulated = false;

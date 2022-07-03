@@ -13,7 +13,7 @@ namespace Code.Views
 {
     public class GamePlayView : MonoBehaviour
     {
-        public Action<PlayerInput, PlayerView, CameraView> GamePlayStart { get; set; }
+        public Action<PlayerInput, PlayerView, CameraView, AudioCenter> GamePlayStart { get; set; }
         public Action GamePlayFinish { get; set; }
         public Action<float> MoveCamera { get; set; }
         public Action<Actionable>AttachToActionable { get; set; }
@@ -27,9 +27,15 @@ namespace Code.Views
         [SerializeField] private SharedGameState sharedGameState;
         [SerializeField] private GameObject hudCanvas;
         [SerializeField] private ChunkGenerator chunkGenerator;
+        [SerializeField] private AudioClip mainClip;
+        [SerializeField] private AudioCenter audioCenter;
         private PlayerView playerGo;
 
         public List<Actionable> Actionables { get; private set; }
+        public void OnEnable()
+        {
+            audioCenter.ChangeBackgroundMusic(mainClip);
+        }
 
         public void Initialize()
         {
@@ -39,7 +45,8 @@ namespace Code.Views
             Actionables = new List<Actionable>();
             SetUp();
             playerGo = Instantiate(playerView, transform);
-            GamePlayStart(playerInput, playerGo, cameraView);
+            GamePlayStart(playerInput, playerGo, cameraView, audioCenter);
+           
         }
 
         public void Finish()

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a0b1bd5fa5c1e44c8eb24ae5766176a, type: 3}
+  m_Name: PlayerSounds
+  m_EditorClassIdentifier: 
+  jump: {fileID: 8300000, guid: 8928ff569e8283e44b31fb7f94bd13ef, type: 3}
+  dieStabbed: {fileID: 8300000, guid: aa8e351f6dc0ee047a7016d0864bd9d0, type: 3}
+  dieBurnt: {fileID: 8300000, guid: c071fb0b7c099fd49805b8271a9f184c, type: 3}
+  dieFellDown: {fileID: 8300000, guid: 687d59ea61da4284ca6e0ce630203ded, type: 3}
+  dieSmashed: {fileID: 8300000, guid: 0260006e09adeee41b189134a1673138, type: 3}
+  dieExploded: {fileID: 8300000, guid: ef5ff571a5ca2134a96079b18d44d31c, type: 3}

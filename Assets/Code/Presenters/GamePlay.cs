@@ -54,12 +54,12 @@ namespace Code.Presenters
             sharedGameState.Initialize();
         }
 
-        private void GamePlayStart(PlayerInput playerInput, PlayerView playerView, CameraView cameraView)
+        private void GamePlayStart(PlayerInput playerInput, PlayerView playerView, CameraView cameraView, AudioCenter audioCenter)
         {
             var actionActivated = new Subject<float>();
             var moved = new Subject<float>();
             _playerInputPresenter = new PlayerInputPresenter(playerInput, actionActivated, moved);
-            _playerPresenter = new PlayerPresenter(playerView, actionActivated, _gamePlayView, gameCofiguration, moved, sharedGameState);
+            _playerPresenter = new PlayerPresenter(playerView, actionActivated, _gamePlayView, gameCofiguration, moved, sharedGameState, audioCenter);
             _cameraPresenter = new CameraPresenter(playerView, cameraView, _gamePlayView);
             _playerPresenter.Initialize();
             _cameraPresenter.Initialize();

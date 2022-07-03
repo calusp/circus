@@ -218,7 +218,7 @@ MonoBehaviour:
   sharedGameState: {fileID: 11400000, guid: 0d26a4181eba90544928fcecacf35c1d, type: 2}
   playerBounds: {fileID: 33878907185439883, guid: f09b96e0b0f2236478d4cc6f6c3d13a1,
     type: 3}
-  _moveSpeed: 0
+  playerSounds: {fileID: 11400000, guid: a19bf68874d8f23419458bcd9a413e59, type: 2}
 --- !u!95 &1755568262044993164
 Animator:
   serializedVersion: 3

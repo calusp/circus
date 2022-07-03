@@ -25,6 +25,7 @@ namespace Code.Presenters
 
         private void StartGame()
         {
+            _view.PlayStartButtonSound();
             _gameStarted.OnNext(Unit.Default);
             _view.Hide();
         }

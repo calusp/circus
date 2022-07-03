@@ -10,6 +10,10 @@ namespace Code.Views
         [SerializeField] private Button startButton;
         [SerializeField] private GameObject startGameHud;
         [SerializeField] private Camera camera;
+        [SerializeField] private AudioClip menuAudioClip;
+        [SerializeField] private AudioCenter audioCenter;
+        [SerializeField] private AudioClip _startSound;
+        [SerializeField] private AudioClip _commonButtonSound;
         public Action StartGame { get; set; }
 
         public void Initialize()
@@ -29,5 +33,21 @@ namespace Code.Views
             startGameHud.SetActive(true);
             camera.enabled = true;
         }
+
+        private void OnEnable()
+        {
+            audioCenter.ChangeBackgroundMusic(menuAudioClip);
+        }
+
+        public void PlayStartButtonSound()
+        {
+            audioCenter.PlaySoundFx(_startSound);
+        }
+
+        public void PlayCommonButtonSound()
+        {
+            audioCenter.PlaySoundFx(_commonButtonSound);
+        }
+
     }
 }

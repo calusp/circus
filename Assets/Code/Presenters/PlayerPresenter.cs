@@ -27,7 +27,7 @@ namespace Code.Presenters
         private bool _launchedFromTrapece;
         private bool playerDied;
 
-        public PlayerPresenter(PlayerView view, ISubject<float> actionActivated, GamePlayView gamePlayView, GameConfiguration gameConfiguration, ISubject<float> moved, SharedGameState sharedGameState)
+        public PlayerPresenter(PlayerView view, ISubject<float> actionActivated, GamePlayView gamePlayView, GameConfiguration gameConfiguration, ISubject<float> moved, SharedGameState sharedGameState, AudioCenter audioCenter)
         {
             _view = view;
             _view.IsGrounded = SetGrounded;
@@ -45,6 +45,7 @@ namespace Code.Presenters
             _view.DieFromBanana = DieFromBanana;
             _view.DieFromBottle = DieFromBottle;
             playerDied = false;
+            _view.Setup(audioCenter);
         }
 
         private void DieFromBottle()
@@ -95,6 +96,7 @@ namespace Code.Presenters
 
         public void DieSmashed()
         {
+            if (!_isGrounded) return;
             sharedGameState.PlayerDied.OnNext(Unit.Default);
             _view.DieSmashed().Subscribe(_ => _gamePlayView.Finish());
         }

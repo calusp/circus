@@ -125,3 +125,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _trigger: {fileID: 8093838180790258715}
   tickets: {fileID: 11400000, guid: c0a0a96953046044da081fd40dfd4edd, type: 2}
+  audioCenter: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: e6b1a6d2111a88b4aa4e12b001a565bf, type: 3}
