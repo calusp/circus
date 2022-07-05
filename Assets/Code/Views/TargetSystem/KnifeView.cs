@@ -25,7 +25,8 @@ namespace Assets.Code.Views.TargetSystem
         // Update is called once per frame
         void Update()
         {
-          transform.position = Vector2.MoveTowards(transform.position, endPosition.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, endPosition.position, speed * Time.deltaTime);
+            if (Mathf.Abs(transform.position.x - endPosition.position.x) <= 0.1f) gameObject.SetActive(false);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -38,7 +39,7 @@ namespace Assets.Code.Views.TargetSystem
         public void SetDestination(Transform target)
         {
             this.endPosition = target;
-            this.endPosition.position = new Vector3(target.position.x, transform.position.y, transform.position.z);
+            this.endPosition.position = new Vector3(target.position.x, target.position.y, target.position.y);
         }
     }
 }

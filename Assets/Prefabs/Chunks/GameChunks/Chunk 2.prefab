@@ -499,6 +499,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: KnifeWithReveille
       objectReference: {fileID: 0}
+    - target: {fileID: 3772719884728077495, guid: cc36426d99eac8c4d80b314869c5d2dc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8618567917367980637, guid: cc36426d99eac8c4d80b314869c5d2dc,
         type: 3}
       propertyPath: m_RootOrder
