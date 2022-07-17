@@ -85,7 +85,7 @@ MonoBehaviour:
   gameConfiguration: {fileID: 11400000, guid: e42de6adcfbdb2740a7e8a5d44b47e94, type: 2}
   _hasActionable: 0
   _hasHazzard: 0
-  width: 10
+  width: 9.8
   distanceData: {fileID: 11400000, guid: b81ead8f0e9c1f54dbd52b182cc64f4e, type: 2}
   sharedGameState: {fileID: 11400000, guid: 0d26a4181eba90544928fcecacf35c1d, type: 2}
   _isInitial: 0

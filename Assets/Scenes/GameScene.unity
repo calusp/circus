@@ -699,6 +699,7 @@ MonoBehaviour:
   gameConfiguration: {fileID: 11400000, guid: e42de6adcfbdb2740a7e8a5d44b47e94, type: 2}
   endGameHudView: {fileID: 804507647}
   sharedGameState: {fileID: 11400000, guid: 0d26a4181eba90544928fcecacf35c1d, type: 2}
+  bestGamePoints: {fileID: 11400000, guid: 45ae08b0668b65844926419c085c9e0b, type: 2}
 --- !u!4 &360080554
 Transform:
   m_ObjectHideFlags: 0

@@ -24,7 +24,8 @@ namespace Assets.Code.Views
         private void OnEnable()
         {
             //sharedGameState.PlayerDistanceFromBox.Subscribe(FixChunks);
-            containers = Enumerable
+            distanceData.Content = 0;
+           containers = Enumerable
                .Range(0, levelGenerator.AmountOfChunks + 1)
                .Select(index => new GameObject($"Container {index}").transform)
                .ToList();
@@ -36,7 +37,7 @@ namespace Assets.Code.Views
             if (sharedGameState.JustDied) return;
 
             currentSpeed = gameConfiguration.ChunkSpeed * Time.deltaTime;
-          
+            distanceData.Content += currentSpeed;
         }
 
         private void FixedUpdate()
@@ -45,13 +46,6 @@ namespace Assets.Code.Views
             {
                 MoveContainer(container);
             }
-        }
-
-        private void FixChunks(float distance)
-        {
-            foreach (var container in containers)
-                container.position = new Vector3(container.position.x - distance, container.position.y, container.position.z);
-            distanceData.Content += currentSpeed;
         }
 
         private void MoveContainer(Transform container)

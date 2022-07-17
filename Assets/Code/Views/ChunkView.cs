@@ -26,34 +26,18 @@ namespace Code.Views
         public bool IsInitial => _isInitial;
 
         private Transform playerTransform;
-        private float prevDistance;
-        private float _increments;
-        private Vector3 target;
         // Start is called before the first frame update
         void Awake()
         {
             Vector3 position = transform.position;
-            target = new Vector3(position.x - width, position.y, position.z);
             playerTransform = GameObject.Find("Player(Clone)").transform;
-            prevDistance = position.x - width / 2 + (playerTransform.position.x + 5) + 36.5f;
         }
 
         // Update is called once per frame
         void Update()
         {
             if (sharedGameState.JustDied) return;
-            SaveDistanceMoved();
         }
-
-        private void SaveDistanceMoved()
-        {
-            var distance = (transform.position.x - width / 2) + (playerTransform.position.x + 5);
-            if (distance > 0)
-                distanceData.Content += Mathf.Clamp(Mathf.Abs(prevDistance) - Mathf.Abs(distance), 0, 1);
-            prevDistance = distance;
-        }
-
-    
 
         public float GetRightBound()
         {

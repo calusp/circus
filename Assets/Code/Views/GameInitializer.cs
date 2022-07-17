@@ -13,6 +13,7 @@ namespace Code.Views
         [SerializeField] private GameConfiguration gameConfiguration;
         [SerializeField] private EndGameHudView endGameHudView;
         [SerializeField] private SharedGameState sharedGameState;
+        [SerializeField] private BestGamePoints bestGamePoints;
         private void Start()
         {
             Initialize();
@@ -25,7 +26,7 @@ namespace Code.Views
             var gameFinished = new Subject<Unit>();
             var backToMainMenu = new Subject<Unit>();
             var startGameHudPresenter = new StartGameHubPresenter(startGameHudView, gameStarted, backToMainMenu);
-            var endGameHudPresenter = new EndGameHubPresenter(endGameHudView, gameStarted, gameFinished, backToMainMenu);
+            var endGameHudPresenter = new EndGameHubPresenter(endGameHudView, gameStarted, gameFinished, backToMainMenu, bestGamePoints);
             startGameHudPresenter.Initialize();
             endGameHudPresenter.Setup();
             var gamePlay = new GamePlay(gamePlayView, gameStarted, gameFinished, gameConfiguration, sharedGameState);
