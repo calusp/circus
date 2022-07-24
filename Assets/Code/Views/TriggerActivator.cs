@@ -25,6 +25,7 @@ public class TriggerActivator : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        activable.SetActive(true);
+        if(other.name.Contains("Player"))
+            activable.SetActive(true);
     }
 }

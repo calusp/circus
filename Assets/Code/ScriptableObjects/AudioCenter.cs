@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AudioCenter : MonoBehaviour
 {
@@ -18,5 +20,11 @@ public class AudioCenter : MonoBehaviour
     public void PlaySoundFx(AudioClip audioClip)
     {
         soundFx.PlayOneShot(audioClip);
+    }
+
+    public void SwithSoundOnOff()
+    {
+        backGround.mute = !backGround.mute;
+        soundFx.mute = !soundFx.mute;
     }
 }

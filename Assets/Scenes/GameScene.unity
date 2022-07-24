@@ -1499,6 +1499,11 @@ PrefabInstance:
       propertyPath: changeTime
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 2725778770078192955, guid: 5b300161c27021248b5b0e120ee00e17,
+        type: 3}
+      propertyPath: audioCenter
+      value: 
+      objectReference: {fileID: 1961183805}
     - target: {fileID: 3590938321771570263, guid: 5b300161c27021248b5b0e120ee00e17,
         type: 3}
       propertyPath: changeTime
