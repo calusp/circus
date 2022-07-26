@@ -13478,6 +13478,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Courtine (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7559274853807961440, guid: b1604a673ed536747be14468a9135118,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1374263860298851990, guid: 968d2239e3f15264dada6ec0b6dcb7df,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1604a673ed536747be14468a9135118, type: 3}
 --- !u!224 &904221661303730047 stripped
@@ -13603,6 +13609,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackGround
       objectReference: {fileID: 0}
+    - target: {fileID: 8064628515442102232, guid: a4089b43d187c124eb55e5085196afcb,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -108550841656530407, guid: 968d2239e3f15264dada6ec0b6dcb7df,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4089b43d187c124eb55e5085196afcb, type: 3}
 --- !u!224 &6722739915347333351 stripped
@@ -13853,6 +13865,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Courtine
       objectReference: {fileID: 0}
+    - target: {fileID: 7125797878077904502, guid: 0915547b0faba50468c633820b65ae56,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3190216927762606617, guid: 968d2239e3f15264dada6ec0b6dcb7df,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0915547b0faba50468c633820b65ae56, type: 3}
 --- !u!224 &6729714375831361377 stripped

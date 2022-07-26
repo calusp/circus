@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Assets.Code.Presenters;
 using Code.ScriptableObjects;
 using Code.Views;
 using UniRx;
@@ -13,8 +14,10 @@ namespace Code.Presenters
         private readonly ISubject<Unit> _gameFinished;
         private readonly GameConfiguration gameCofiguration;
         private readonly SharedGameState sharedGameState;
+        private readonly InGameMenuView gameMenuView;
         private PlayerPresenter _playerPresenter;
         private CameraPresenter _cameraPresenter;
+        private InGameMenuPresenter _inGameMenuPresenter;
         private PlayerInputPresenter _playerInputPresenter;
 
         public GamePlay(GamePlayView view, ISubject<Unit> gameStarted, ISubject<Unit> gameFinished, GameConfiguration gameCofiguration, SharedGameState sharedGameState)
@@ -54,13 +57,20 @@ namespace Code.Presenters
             sharedGameState.Initialize();
         }
 
-        private void GamePlayStart(PlayerInput playerInput, PlayerView playerView, CameraView cameraView, AudioCenter audioCenter)
+        private void GamePlayStart(
+            PlayerInput playerInput,
+            PlayerView playerView,
+            CameraView cameraView,
+            AudioCenter audioCenter,
+            InGameMenuView gameMenuView
+            )
         {
             var actionActivated = new Subject<float>();
             var moved = new Subject<float>();
             _playerInputPresenter = new PlayerInputPresenter(playerInput, actionActivated, moved);
             _playerPresenter = new PlayerPresenter(playerView, actionActivated, _gamePlayView, gameCofiguration, moved, sharedGameState, audioCenter);
             _cameraPresenter = new CameraPresenter(playerView, cameraView, _gamePlayView);
+            _inGameMenuPresenter = new InGameMenuPresenter(gameMenuView, audioCenter);
             _playerPresenter.Initialize();
             _cameraPresenter.Initialize();
             _gamePlayView.StartGamePlay();

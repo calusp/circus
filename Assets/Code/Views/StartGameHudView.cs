@@ -7,25 +7,41 @@ namespace Code.Views
 {
     public class StartGameHudView : MonoBehaviour
     {
+        public Action StartGame { get; set; }
+        public Action SwithSoundOnOff { get; set; }
+        public Action<AudioClip> PlayClip { get; set; }
+        public AudioClip MenuMusic => menuAudioClip;
+
         [SerializeField] private Button startButton;
         [SerializeField] private GameObject startGameHud;
         [SerializeField] private Camera camera;
         [SerializeField] private AudioClip menuAudioClip;
-        [SerializeField] private AudioCenter audioCenter;
         [SerializeField] private AudioClip _startSound;
         [SerializeField] private AudioClip _commonButtonSound;
-        public Action StartGame { get; set; }
-
+        [SerializeField] private Sprite volumeOnSprite;
+        [SerializeField] private Sprite volumeOffSprite;
+        [SerializeField] private Button volumeButton;
+      
         public void Initialize()
         {
             startButton.onClick.RemoveAllListeners();
             startButton.onClick.AddListener(StartGame.Invoke);
+            volumeButton.onClick.RemoveAllListeners();
+            volumeButton.onClick.AddListener(SwithSoundOnOff.Invoke);
         }
 
         public void Hide()
         {
             startGameHud.SetActive(false);
             camera.enabled = false;
+        }
+
+        public void SwithSoundButton(bool isMuted)
+        {
+            if (isMuted)
+                volumeButton.image.sprite = volumeOffSprite;
+            else
+                volumeButton.image.sprite = volumeOnSprite;
         }
 
         public void Show()
@@ -36,18 +52,19 @@ namespace Code.Views
 
         private void OnEnable()
         {
-            audioCenter.ChangeBackgroundMusic(menuAudioClip);
+           
         }
 
         public void PlayStartButtonSound()
         {
-            audioCenter.PlaySoundFx(_startSound);
+            PlayClip(_startSound);
         }
 
         public void PlayCommonButtonSound()
         {
-            audioCenter.PlaySoundFx(_commonButtonSound);
+            PlayClip(_commonButtonSound);
         }
+
 
     }
 }

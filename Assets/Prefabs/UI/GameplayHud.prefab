@@ -905,7 +905,10 @@ MonoBehaviour:
   returnToMenuButton: {fileID: 4246571935588690769}
   continueButton: {fileID: 7783855973625660803}
   animator: {fileID: 5541931433770211012}
-  audioCenter: {fileID: 0}
+  volumeOnSprite: {fileID: 4896831605158423156, guid: bf20a97668301714bb9b5796a720d8a8,
+    type: 3}
+  volumeOffSprite: {fileID: -8609103675281645948, guid: bf20a97668301714bb9b5796a720d8a8,
+    type: 3}
 --- !u!95 &5541931433770211012
 Animator:
   serializedVersion: 3

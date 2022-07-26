@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class InGameMenuView : MonoBehaviour
 {
+    public Action SwithSoundOnOff { get; set; }
+    public Action ReturnToMenu { get; set; }
 
     [SerializeField] private GameObject menuBackground;
     [SerializeField] private Button button;
@@ -14,20 +16,26 @@ public class InGameMenuView : MonoBehaviour
     [SerializeField] private Button returnToMenuButton;
     [SerializeField] private Button continueButton;
     [SerializeField] private Animator animator;
-    [SerializeField] private AudioCenter audioCenter;
+    [SerializeField] private Sprite volumeOnSprite;
+    [SerializeField] private Sprite volumeOffSprite;
     private bool isClosed;
-
+   
     // Start is called before the first frame update
     void Start()
     {
         isClosed = true;
         button.onClick.AddListener(SwitchOpenClose);
-        volumeButton.onClick.AddListener(SwithSoundOnOff);
+        volumeButton.onClick.AddListener(() => SwithSoundOnOff());
+        continueButton.onClick.AddListener(() => SwitchOpenClose());
+        returnToMenuButton.onClick.AddListener(() => ReturnToMenu());
     }
 
-    private void SwithSoundOnOff()
+    public void SwithSoundButton(bool isMuted)
     {
-        audioCenter.SwithSoundOnOff();
+        if (isMuted)
+            volumeButton.image.sprite = volumeOffSprite;
+        else
+            volumeButton.image.sprite = volumeOnSprite;
     }
 
     private void SwitchOpenClose()

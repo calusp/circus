@@ -27,4 +27,11 @@ public class AudioCenter : MonoBehaviour
         backGround.mute = !backGround.mute;
         soundFx.mute = !soundFx.mute;
     }
+
+    public bool ReturnSoundFXState() =>
+        soundFx.mute;
+
+    public bool IsBackgroundMuted() =>
+        backGround.mute;
+
 }

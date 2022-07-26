@@ -13,7 +13,7 @@ namespace Code.Views
 {
     public class GamePlayView : MonoBehaviour
     {
-        public Action<PlayerInput, PlayerView, CameraView, AudioCenter> GamePlayStart { get; set; }
+        public Action<PlayerInput, PlayerView, CameraView, AudioCenter, InGameMenuView> GamePlayStart { get; set; }
         public Action GamePlayFinish { get; set; }
         public Action<float> MoveCamera { get; set; }
         public Action<Actionable>AttachToActionable { get; set; }
@@ -29,6 +29,7 @@ namespace Code.Views
         [SerializeField] private ChunkGenerator chunkGenerator;
         [SerializeField] private AudioClip mainClip;
         [SerializeField] private AudioCenter audioCenter;
+        [SerializeField] private InGameMenuView inGameMenuView;
         private PlayerView playerGo;
 
         public List<Actionable> Actionables { get; private set; }
@@ -45,7 +46,7 @@ namespace Code.Views
             Actionables = new List<Actionable>();
             SetUp();
             playerGo = Instantiate(playerView, transform);
-            GamePlayStart(playerInput, playerGo, cameraView, audioCenter);
+            GamePlayStart(playerInput, playerGo, cameraView, audioCenter, inGameMenuView);
            
         }
 
