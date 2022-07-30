@@ -14,13 +14,14 @@ namespace Code.Presenters
         private readonly ISubject<Unit> _gameFinished;
         private readonly GameConfiguration gameCofiguration;
         private readonly SharedGameState sharedGameState;
+        private readonly ISubject<Unit> backToMenu;
         private readonly InGameMenuView gameMenuView;
         private PlayerPresenter _playerPresenter;
         private CameraPresenter _cameraPresenter;
         private InGameMenuPresenter _inGameMenuPresenter;
         private PlayerInputPresenter _playerInputPresenter;
 
-        public GamePlay(GamePlayView view, ISubject<Unit> gameStarted, ISubject<Unit> gameFinished, GameConfiguration gameCofiguration, SharedGameState sharedGameState)
+        public GamePlay(GamePlayView view, ISubject<Unit> gameStarted, ISubject<Unit> gameFinished, GameConfiguration gameCofiguration, SharedGameState sharedGameState, ISubject<Unit> backToMenu)
         {
             _gamePlayView = view;
             _gameStarted = gameStarted;
@@ -28,6 +29,7 @@ namespace Code.Presenters
             _gameFinished = gameFinished;
             this.gameCofiguration = gameCofiguration;
             this.sharedGameState = sharedGameState;
+            this.backToMenu = backToMenu;
             _gamePlayView.GamePlayStart = GamePlayStart;
             _gamePlayView.GamePlayFinish = GamePlayFinish;
             _gamePlayView.AttachToActionable = AttachTo;
@@ -70,7 +72,12 @@ namespace Code.Presenters
             _playerInputPresenter = new PlayerInputPresenter(playerInput, actionActivated, moved);
             _playerPresenter = new PlayerPresenter(playerView, actionActivated, _gamePlayView, gameCofiguration, moved, sharedGameState, audioCenter);
             _cameraPresenter = new CameraPresenter(playerView, cameraView, _gamePlayView);
-            _inGameMenuPresenter = new InGameMenuPresenter(gameMenuView, audioCenter);
+            _inGameMenuPresenter = new InGameMenuPresenter(gameMenuView, audioCenter, backToMenu);
+            backToMenu.Subscribe(_ => {
+                _gamePlayView.ClearState();
+                _playerPresenter.Dismiss();
+                sharedGameState.Initialize();
+            } );
             _playerPresenter.Initialize();
             _cameraPresenter.Initialize();
             _gamePlayView.StartGamePlay();

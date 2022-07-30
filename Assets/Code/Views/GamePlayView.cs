@@ -52,15 +52,20 @@ namespace Code.Views
 
         public void Finish()
         {
+            ClearState();
+            GamePlayFinish();
+        }
+
+        public void ClearState()
+        {
             sharedGameState.PlayerDied.OnNext(Unit.Default);
             chunkGenerator.ClearChunks();
             Destroy(playerGo.gameObject);
-            GamePlayFinish();
+
             hudCanvas.SetActive(false);
             gameObject.SetActive(false);
         }
 
-      
 
         private void Update()
         {

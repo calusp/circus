@@ -30,7 +30,7 @@ namespace Code.Views
             var endGameHudPresenter = new EndGameHubPresenter(endGameHudView, gameStarted, gameFinished, backToMainMenu, bestGamePoints);
             startGameHudPresenter.Initialize();
             endGameHudPresenter.Setup();
-            var gamePlay = new GamePlay(gamePlayView, gameStarted, gameFinished, gameConfiguration, sharedGameState);
+            var gamePlay = new GamePlay(gamePlayView, gameStarted, gameFinished, gameConfiguration, sharedGameState, backToMainMenu);
         }
     }
 }
