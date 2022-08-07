@@ -22,8 +22,11 @@ namespace Code.Views
         [SerializeField] private PlayerInput playerInput;
         [SerializeField] private PlayerView playerView;
         [SerializeField] private CameraView cameraView;
+        [SerializeField] private Transform loseBound;
         [SerializeField] private DisplayableData distance;
         [SerializeField] private DisplayableData tickets;
+        [SerializeField] private DisplayableData points;
+        [SerializeField] private BestGamePoints bestGamePoints;
         [SerializeField] private SharedGameState sharedGameState;
         [SerializeField] private GameObject hudCanvas;
         [SerializeField] private ChunkGenerator chunkGenerator;
@@ -69,12 +72,14 @@ namespace Code.Views
 
         private void Update()
         {
+            points.Content = bestGamePoints.GetPoints();
             if (HasPlayerCollidedHorizontally(playerGo.transform.position.x)) 
                 Finish();
+
         } 
 
         private bool HasPlayerCollidedHorizontally(float position) => 
-            HasCollidedWithEndOfCamera(position, position+0.5f, cameraView.NextPositionOnAxisX - 17.5f * 0.5f);
+            HasCollidedWithEndOfCamera(position, position+0.5f,loseBound.position.x);
 
         private bool HasCollidedWithEndOfCamera(float colliderMinX, float colliderMaxX, float cameraMinX) =>
             colliderMinX < cameraMinX &&

@@ -13,8 +13,11 @@ public class BestGamePoints : ScriptableObject
     public void SaveBestGame()
     {
         var bestPoints = DataRepository.ReturnPoints();
-        var currentPoints = CurrentTicketData.Content * PointsPerTicket + CurrentDistance.Content;
+        float currentPoints = GetPoints();
         if (currentPoints > bestPoints)
             DataRepository.SaveBestPoints((int)currentPoints);
     }
+
+    public float GetPoints() =>
+        CurrentTicketData.Content * PointsPerTicket + CurrentDistance.Content;
 }

@@ -1,0 +1,1296 @@
+fileFormatVersion: 2
+guid: 2aff3985591403248ada7538d940f943
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3387658945553167095
+    second: SpSh-UI-Carteles_0
+  - first:
+      213: -1892555445630212980
+    second: SpSh-UI-Carteles_1
+  - first:
+      213: -4331053207988658985
+    second: SpSh-UI-Carteles_2
+  - first:
+      213: -2222850022359473993
+    second: SpSh-UI-Carteles_3
+  - first:
+      213: 62151176193364609
+    second: SpSh-UI-Carteles_4
+  - first:
+      213: -2443160894269089147
+    second: SpSh-UI-Carteles_5
+  - first:
+      213: 7034280970223536920
+    second: SpSh-UI-Carteles_6
+  - first:
+      213: 6528590548844977919
+    second: SpSh-UI-Carteles_7
+  - first:
+      213: 5569000905347336346
+    second: SpSh-UI-Carteles_8
+  - first:
+      213: 3494285518245630262
+    second: SpSh-UI-Carteles_9
+  - first:
+      213: 4768366823341500439
+    second: SpSh-UI-Carteles_10
+  - first:
+      213: 1197571996236977514
+    second: SpSh-UI-Carteles_11
+  - first:
+      213: -5388264665699273822
+    second: SpSh-UI-Carteles_12
+  - first:
+      213: -517106553225281840
+    second: SpSh-UI-Carteles_13
+  - first:
+      213: -2351230656113898142
+    second: SpSh-UI-Carteles_14
+  - first:
+      213: -1865633395553473038
+    second: SpSh-UI-Carteles_15
+  - first:
+      213: -849967781684173865
+    second: SpSh-UI-Carteles_16
+  - first:
+      213: 782036949830691049
+    second: SpSh-UI-Carteles_17
+  - first:
+      213: 6065504268984774068
+    second: SpSh-UI-Carteles_18
+  - first:
+      213: 3725019145113080031
+    second: SpSh-UI-Carteles_19
+  - first:
+      213: -5259343542850577591
+    second: SpSh-UI-Carteles_20
+  - first:
+      213: 3977961831956394382
+    second: SpSh-UI-Carteles_21
+  - first:
+      213: -7497030788753489781
+    second: SpSh-UI-Carteles_22
+  - first:
+      213: -3778774653656940572
+    second: SpSh-UI-Carteles_23
+  - first:
+      213: -7190713433468138155
+    second: SpSh-UI-Carteles_24
+  - first:
+      213: -5756127859376008288
+    second: SpSh-UI-Carteles_25
+  - first:
+      213: -8349087748122912706
+    second: SpSh-UI-Carteles_26
+  - first:
+      213: 4806300166552910113
+    second: SpSh-UI-Carteles_27
+  - first:
+      213: -1620450490473018236
+    second: SpSh-UI-Carteles_28
+  - first:
+      213: 2973036768671591953
+    second: SpSh-UI-Carteles_29
+  - first:
+      213: 3712572088037857110
+    second: SpSh-UI-Carteles_30
+  - first:
+      213: 4810647324323240564
+    second: SpSh-UI-Carteles_31
+  - first:
+      213: -8961214931914962671
+    second: SpSh-UI-Carteles_32
+  - first:
+      213: 5918914366908170908
+    second: SpSh-UI-Carteles_33
+  - first:
+      213: -7849914115352627577
+    second: SpSh-UI-Carteles_34
+  - first:
+      213: 3504007473514188836
+    second: SpSh-UI-Carteles_35
+  - first:
+      213: -7932057929327506003
+    second: SpSh-UI-Carteles_36
+  - first:
+      213: 8414810714041074841
+    second: SpSh-UI-Carteles_37
+  - first:
+      213: -3662318892697279773
+    second: SpSh-UI-Carteles_38
+  - first:
+      213: 6833365984354500135
+    second: SpSh-UI-Carteles_39
+  - first:
+      213: -290889422728138870
+    second: SpSh-UI-Carteles_40
+  - first:
+      213: 1902020777093265340
+    second: SpSh-UI-Carteles_41
+  - first:
+      213: 6051262087638185679
+    second: SpSh-UI-Carteles_42
+  - first:
+      213: 6871845924558985651
+    second: SpSh-UI-Carteles_43
+  - first:
+      213: 4693068831588398267
+    second: SpSh-UI-Carteles_44
+  - first:
+      213: -6242595311179597676
+    second: SpSh-UI-Carteles_45
+  - first:
+      213: -7633657626845331104
+    second: SpSh-UI-Carteles_46
+  - first:
+      213: -6181282767327351855
+    second: SpSh-UI-Carteles_47
+  - first:
+      213: -4947574269035620548
+    second: SpSh-UI-Carteles_48
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_0
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 788
+        width: 120
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f2fed5ccd1630f20800000000000000
+      internalID: 3387658945553167095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_1
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 790
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c84ea7179da4cb5e0800000000000000
+      internalID: -1892555445630212980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_2
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 790
+        width: 104
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dc1582ed0205e3c0800000000000000
+      internalID: -4331053207988658985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_3
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 790
+        width: 104
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b06b4c8ea9d621e0800000000000000
+      internalID: -2222850022359473993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_4
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 797
+        width: 256
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 182d06b5a2eccd000800000000000000
+      internalID: 62151176193364609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_5
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 913
+        width: 123
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58a17ff6c16281ed0800000000000000
+      internalID: -2443160894269089147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_6
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 632
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81bc670f549ce9160800000000000000
+      internalID: 7034280970223536920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_7
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 633
+        width: 120
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffe90e3a3863a9a50800000000000000
+      internalID: 6528590548844977919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_8
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 634
+        width: 104
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a988e0d41d0194d40800000000000000
+      internalID: 5569000905347336346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_9
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 634
+        width: 104
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63192d25a223e7030800000000000000
+      internalID: 3494285518245630262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_10
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 515
+        width: 121
+        height: 255
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7182708ac54ac2240800000000000000
+      internalID: 4768366823341500439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_11
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 724
+        width: 81
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6519a4b261ae9010800000000000000
+      internalID: 1197571996236977514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_12
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 723
+        width: 81
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a3b435b5d90935b0800000000000000
+      internalID: -5388264665699273822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_13
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 692
+        width: 97
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0defaff545ed2d8f0800000000000000
+      internalID: -517106553225281840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_14
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 635
+        width: 80
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26d8255fc20ce5fd0800000000000000
+      internalID: -2351230656113898142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_15
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 635
+        width: 80
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fdede0bf40fb16e0800000000000000
+      internalID: -1865633395553473038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_16
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 538
+        width: 131
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d3203e4ece4434f0800000000000000
+      internalID: -849967781684173865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_17
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 569
+        width: 43
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e863e3667a5ada00800000000000000
+      internalID: 782036949830691049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_18
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 542
+        width: 156
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bde3780ffffc2450800000000000000
+      internalID: 6065504268984774068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_19
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 587
+        width: 80
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd09efd2d2de1b330800000000000000
+      internalID: 3725019145113080031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_20
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 539
+        width: 42
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94b95a8b9ee0307b0800000000000000
+      internalID: -5259343542850577591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_21
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 546
+        width: 80
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e81b2d3c53f843730800000000000000
+      internalID: 3977961831956394382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_22
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 481
+        width: 115
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b808e26f73235f790800000000000000
+      internalID: -7497030788753489781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_23
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 508
+        width: 97
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ef378a29781f8bc0800000000000000
+      internalID: -3778774653656940572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_24
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 460
+        width: 4
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55d8084fa34753c90800000000000000
+      internalID: -7190713433468138155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_25
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 460
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a3d92c85302e10b0800000000000000
+      internalID: -5756127859376008288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_26
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 460
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e38519eade4122c80800000000000000
+      internalID: -8349087748122912706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_27
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 460
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 129794f598863b240800000000000000
+      internalID: 4806300166552910113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_28
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 460
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48c8f3b4dd00389e0800000000000000
+      internalID: -1620450490473018236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_29
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 460
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11e68d47039524920800000000000000
+      internalID: 2973036768671591953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_30
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 460
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 657d68ed4a4b58330800000000000000
+      internalID: 3712572088037857110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_31
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 460
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47a58f9e04ad2c240800000000000000
+      internalID: 4810647324323240564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_32
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 460
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 119484b7f7e53a380800000000000000
+      internalID: -8961214931914962671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_33
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 437
+        width: 81
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c928487c145342250800000000000000
+      internalID: 5918914366908170908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_34
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 450
+        width: 120
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 786f415e3b08f0390800000000000000
+      internalID: -7849914115352627577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_35
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 447
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 420902d6b3cb0a030800000000000000
+      internalID: 3504007473514188836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_36
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 447
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dad0d90d65babe190800000000000000
+      internalID: -7932057929327506003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_37
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 398
+        width: 80
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 994c196c2c967c470800000000000000
+      internalID: 8414810714041074841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_38
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 305
+        width: 101
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e2a392fe54dc2dc0800000000000000
+      internalID: -3662318892697279773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_39
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 398
+        width: 80
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72effa5782ef4de50800000000000000
+      internalID: 6833365984354500135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_40
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 371
+        width: 80
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8fee597c9d86fbf0800000000000000
+      internalID: -290889422728138870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_41
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 278
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb77e06c1d5556a10800000000000000
+      internalID: 1902020777093265340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_42
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 344
+        width: 80
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc67678cec66af350800000000000000
+      internalID: 6051262087638185679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_43
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 261
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b9dd84b573bd5f50800000000000000
+      internalID: 6871845924558985651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_44
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 195
+        width: 72
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb4b845cc31212140800000000000000
+      internalID: 4693068831588398267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_45
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 199
+        width: 66
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 498fe90a3a8dd59a0800000000000000
+      internalID: -6242595311179597676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_46
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 55
+        width: 66
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 061ceee45dccf0690800000000000000
+      internalID: -7633657626845331104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_47
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 23
+        width: 72
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dba53da21ca73aa0800000000000000
+      internalID: -6181282767327351855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpSh-UI-Carteles_48
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 460
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c37d44a6a6fa65bb0800000000000000
+      internalID: -4947574269035620548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

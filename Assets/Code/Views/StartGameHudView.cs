@@ -21,13 +21,15 @@ namespace Code.Views
         [SerializeField] private Sprite volumeOnSprite;
         [SerializeField] private Sprite volumeOffSprite;
         [SerializeField] private Button volumeButton;
-      
+        [SerializeField] private Button exitGameButton;
         public void Initialize()
         {
             startButton.onClick.RemoveAllListeners();
             startButton.onClick.AddListener(StartGame.Invoke);
             volumeButton.onClick.RemoveAllListeners();
             volumeButton.onClick.AddListener(SwithSoundOnOff.Invoke);
+            exitGameButton.onClick.RemoveAllListeners();
+            exitGameButton.onClick.AddListener(Application.Quit);
         }
 
         public void Hide()
