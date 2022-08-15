@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Assets.Code.Presenters;
+﻿using Assets.Code.Presenters;
 using Code.ScriptableObjects;
 using Code.Views;
 using UniRx;
@@ -32,23 +30,11 @@ namespace Code.Presenters
             this.backToMenu = backToMenu;
             _gamePlayView.GamePlayStart = GamePlayStart;
             _gamePlayView.GamePlayFinish = GamePlayFinish;
-            _gamePlayView.AttachToActionable = AttachTo;
-            _gamePlayView.AttachToHazard = AttachTo;
         }
 
         private void InitializeView()
         {
             _gameStarted.Subscribe(_ => _gamePlayView.Initialize());
-        }
-
-        private void AttachTo(Actionable actionable)
-        {
-            actionable.Attach(_playerPresenter);
-        }
-        
-        private void AttachTo(Hazard hazard)
-        {
-            hazard.Attach(_playerPresenter);
         }
 
         private void GamePlayFinish()
@@ -82,11 +68,5 @@ namespace Code.Presenters
             _cameraPresenter.Initialize();
             _gamePlayView.StartGamePlay();
         }
-    }
-
-    public interface Hazard
-    {
-        void Execute();
-        void Attach(PlayerPresenter playerPresenter);
     }
 }

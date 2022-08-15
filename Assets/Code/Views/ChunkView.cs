@@ -1,5 +1,7 @@
 using Code.Presenters;
 using Code.ScriptableObjects;
+using System;
+using System.Collections.Generic;
 using UniRx;
 using UnityEngine;
 
@@ -16,20 +18,21 @@ namespace Code.Views
         [SerializeField] private DisplayableData distanceData;
         [SerializeField] private SharedGameState sharedGameState;
         [SerializeField] private bool _isInitial;
+        [SerializeField] private List<GameObject> structures = new List<GameObject>();
         public int Id { get; set; }
         public bool HasActionable => _hasActionable;
         public bool HasHazard => _hasHazzard;
         public float Witdh => width;
         public Actionable Actionable => _actionableView;
-        public Hazard Hazard => _hazardViewView;
 
         public bool IsInitial => _isInitial;
 
         private Transform playerTransform;
+
+        private List<GameObject> instancedStructures = new List<GameObject>();
         // Start is called before the first frame update
         void Awake()
         {
-            Vector3 position = transform.position;
             playerTransform = GameObject.Find("Player(Clone)").transform;
         }
 
@@ -42,6 +45,38 @@ namespace Code.Views
         public float GetRightBound()
         {
             return transform.position.x + width/2;
+        }
+
+        public void Activate()
+        {
+            gameObject.SetActive(true);
+        }
+
+        public void Deactivate()
+        {
+            gameObject.SetActive(false);
+        }
+
+        public void SetPosition(float positionX)
+        {
+            transform.position = new Vector3(positionX, transform.position.y, transform.position.z);
+        }
+
+        private void OnEnable()
+        {
+            instancedStructures = new List<GameObject>();
+            foreach (var structure in structures)
+            {
+                instancedStructures.Add(Instantiate(structure, transform)) ;
+            }
+        }
+
+        private void OnDisable()
+        {
+            foreach (var structure in instancedStructures)
+            {
+                Destroy(structure);
+            }
         }
     }
 }

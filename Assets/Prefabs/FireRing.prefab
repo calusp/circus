@@ -113,6 +113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2577819219437569389}
   - component: {fileID: 9099092989093544011}
+  - component: {fileID: 5218623418796776717}
   m_Layer: 0
   m_Name: TopCollider
   m_TagString: Untagged
@@ -144,7 +145,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0027698278, y: -0.26062217}
@@ -160,6 +161,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.047124505, y: 0.13923341}
   m_EdgeRadius: 0
+--- !u!114 &5218623418796776717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693215311264579067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90383ee5785ee6642942d21a75a9e2a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collider2D: {fileID: 9099092989093544011}
 --- !u!1 &3411956944988832551
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,6 +287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7908112018696480005}
   - component: {fileID: 2181674585802156762}
+  - component: {fileID: 4252878199883362730}
   m_Layer: 0
   m_Name: BottomCollider
   m_TagString: Untagged
@@ -304,7 +319,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0076202154, y: -0.35454923}
@@ -320,6 +335,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.036044955, y: 0.055208445}
   m_EdgeRadius: 0
+--- !u!114 &4252878199883362730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3520678963057009158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90383ee5785ee6642942d21a75a9e2a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collider2D: {fileID: 2181674585802156762}
 --- !u!1 &4914012305406281399
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,5 +563,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fbd7781f631b794c94cc5404240077e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  topCollider: {fileID: 9099092989093544011}
-  bottomColliders: {fileID: 2181674585802156762}

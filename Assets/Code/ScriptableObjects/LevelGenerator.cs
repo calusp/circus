@@ -22,5 +22,7 @@ namespace Code.ScriptableObjects
         public ChunkView StartChunk => startChunk;
         public ChunkView GetChunk() => 
             chunks[Random.Range(0, chunks.Count)];
+
+        public List<ChunkView> Chunks => chunks;
     }
 }

@@ -14,17 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpeed: 2
   cameraSpeed: 1
-  incrementalRatio: 0.1
-  distanceCap: 10
+  incrementalRatio: 0.0127689205
+  distanceCap: 5
   cannonSpeed: 2
   trapeceSpeed: 0.061
   jumpForce: {x: 0, y: 1}
   trampoolineForce: {x: 0, y: 2}
   cannonForce: {x: 2, y: 4}
   seesawBallConfiguration:
-    maxCooldown: 3
-    throwForce: {x: -10.59, y: -10}
-    ballTimeToLive: 3
+    maxCooldown: 2
+    throwForce: {x: -10.59, y: -20}
+    ballTimeToLive: 2
   trapeceForce: {x: -3, y: -1}
   _bagDropDistance: 1
   incrementCurve:

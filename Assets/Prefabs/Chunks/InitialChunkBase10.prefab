@@ -79,7 +79,7 @@ PrefabInstance:
     - target: {fileID: -4373551076322862761, guid: ed81f5c1e7d36944c853aa37a565b321,
         type: 3}
       propertyPath: width
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -4373551076322862761, guid: ed81f5c1e7d36944c853aa37a565b321,
         type: 3}
@@ -113,7 +113,7 @@ PrefabInstance:
     - target: {fileID: 262850490566902269, guid: ed81f5c1e7d36944c853aa37a565b321,
         type: 3}
       propertyPath: m_Name
-      value: InitialChunkBase8
+      value: InitialChunkBase10
       objectReference: {fileID: 0}
     - target: {fileID: 399836477408652766, guid: ed81f5c1e7d36944c853aa37a565b321,
         type: 3}
@@ -173,7 +173,7 @@ PrefabInstance:
     - target: {fileID: 7033847040367032309, guid: ed81f5c1e7d36944c853aa37a565b321,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7033847040367032310, guid: ed81f5c1e7d36944c853aa37a565b321,
         type: 3}

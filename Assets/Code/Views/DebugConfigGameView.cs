@@ -89,11 +89,13 @@ public class DebugConfigGameView : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+#if DEVELOPMENT_BUILD || UNITY_EDITOR
         if (Input.GetKeyUp(KeyCode.Q))
         {
             container.SetActive(!container.activeSelf);
             Time.timeScale = container.activeSelf ? 0 : 1;
         }
+#endif
 
     }
 

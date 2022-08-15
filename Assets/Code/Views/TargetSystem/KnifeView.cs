@@ -26,7 +26,7 @@ namespace Assets.Code.Views.TargetSystem
         void Update()
         {
             transform.position = Vector2.MoveTowards(transform.position, endPosition.position, speed * Time.deltaTime);
-            if (Mathf.Abs(transform.position.x - endPosition.position.x) <= 0.1f) gameObject.SetActive(false);
+            if (Mathf.Abs(transform.position.x - endPosition.position.x) <= 0.1f) trigger.isTrigger = false ;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

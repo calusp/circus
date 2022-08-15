@@ -17,7 +17,6 @@ namespace Code.Views
         public Action GamePlayFinish { get; set; }
         public Action<float> MoveCamera { get; set; }
         public Action<Actionable>AttachToActionable { get; set; }
-        public Action<Hazard>AttachToHazard { get; set; }
         
         [SerializeField] private PlayerInput playerInput;
         [SerializeField] private PlayerView playerView;
