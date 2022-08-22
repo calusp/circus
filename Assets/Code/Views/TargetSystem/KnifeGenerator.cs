@@ -1,11 +1,12 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 namespace Assets.Code.Views.TargetSystem
 {
     public class KnifeGenerator : MonoBehaviour
     {
-        [SerializeField] KnifeView knifePrefab;
+        [SerializeField] List<KnifeView> knifePrefab = new List<KnifeView>();
         [SerializeField] TargetView targetView;
         [SerializeField] Transform startPosition;
         [SerializeField] Transform endPosition;
@@ -24,7 +25,7 @@ namespace Assets.Code.Views.TargetSystem
         private void OnEnable()
         {
             targetView.Swap();
-            var knife = Instantiate<KnifeView>(knifePrefab, startPosition);
+            var knife = Instantiate(knifePrefab[Random.Range(0,knifePrefab.Count)], startPosition) ;
             knife.SetDestination(endPosition);
         }
     }

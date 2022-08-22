@@ -55,7 +55,7 @@ MonoBehaviour:
   _isInitial: 0
   structures:
   - {fileID: 6289007734667049888, guid: c61b2bcb6f7b0814d9a96df5f751703a, type: 3}
-  - {fileID: 6301173148542238624, guid: 29e178284199491479a236455e833293, type: 3}
+  - {fileID: 6301173148542238624, guid: 2775fe2559dc28c44bfcb129da52fc57, type: 3}
 --- !u!1 &9198115120467397839
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 575868673886408037}
   - component: {fileID: 4720759758583435700}
   m_Layer: 0
-  m_Name: PlatformerBaisc2
+  m_Name: PlatformerBaisc2 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a46d0784cc40493459ca85b627582edd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  side: 1
+  side: 0
 --- !u!1001 &1638017942839938691
 PrefabInstance:
   m_ObjectHideFlags: 0

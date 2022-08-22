@@ -54,7 +54,7 @@ MonoBehaviour:
   sharedGameState: {fileID: 11400000, guid: 0d26a4181eba90544928fcecacf35c1d, type: 2}
   _isInitial: 0
   structures:
-  - {fileID: 6301173148542238624, guid: 29e178284199491479a236455e833293, type: 3}
+  - {fileID: 3173672996164533418, guid: 0327e9f1388d97d4db3974d00e1c1117, type: 3}
   - {fileID: 3443451658174678954, guid: 8f3d1b603ba903542a9449f2e7da15be, type: 3}
 --- !u!1 &9198115120467397839
 GameObject:

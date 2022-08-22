@@ -86,7 +86,7 @@ MonoBehaviour:
   sharedGameState: {fileID: 11400000, guid: 0d26a4181eba90544928fcecacf35c1d, type: 2}
   _isInitial: 0
   structures:
-  - {fileID: 6301173148542238624, guid: 29e178284199491479a236455e833293, type: 3}
+  - {fileID: 3173672996164533418, guid: 0327e9f1388d97d4db3974d00e1c1117, type: 3}
   - {fileID: 3310035151888204409, guid: d9a2a6ce824de0e488a8ea170cd64ca9, type: 3}
 --- !u!1001 &2073600094940678047
 PrefabInstance:

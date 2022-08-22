@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Code.Views
 {
-    public class TrapeceView : BaseActionableView
+    public class TrapeceView : MonoBehaviour
     {
         [SerializeField, Range(-1,1)] private float maxRotationZ = 0.3f;
         [SerializeField, Range(-1, 1)] private float minRotationZ = 0.3f;
@@ -27,15 +27,6 @@ namespace Code.Views
             direction = -1;
             _trigger = GetComponent<BoxCollider2D>();
             _trigger.isTrigger = true;
-        }
-        public override void Execute()
-        {
-            return;
-        }
-
-        public override void Attach(PlayerPresenter playerPresenter)
-        {
-            _playerPresenter = playerPresenter;
         }
 
         private void FixedUpdate()

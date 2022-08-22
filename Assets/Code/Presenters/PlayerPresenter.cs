@@ -44,6 +44,7 @@ namespace Code.Presenters
             _view.DieFromKnife = DieFromKnife;
             _view.DieFromBanana = DieFromBanana;
             _view.DieFromBottle = DieFromBottle;
+            _view.DieBurnt = DieBurnt;
             playerDied = false;
             _view.Setup(audioCenter);
         }
@@ -104,7 +105,7 @@ namespace Code.Presenters
         public void DieBurnt()
         {
             sharedGameState.PlayerDied.OnNext(Unit.Default);
-            _view.DieBurnt().Subscribe(_ => _gamePlayView.Finish());
+            _view.DieFromFireRing().Subscribe(_ => _gamePlayView.Finish());
         }
 
         public void UpdatePlayerRotation(Vector3 position, Quaternion rotation)

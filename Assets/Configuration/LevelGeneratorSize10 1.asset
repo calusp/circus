@@ -21,6 +21,7 @@ MonoBehaviour:
   - {fileID: 399032840373576241, guid: 074fe12df27382942a5ec15c03e03b95, type: 3}
   - {fileID: 399032840373576241, guid: 476b24968fe6df9438254c36d99f5110, type: 3}
   - {fileID: 399032840373576241, guid: c6ab5cbab70c3844f988e96733ebea32, type: 3}
+  - {fileID: 399032840373576241, guid: f8cbafb3ffa7dc4498f5c8933ae37ada, type: 3}
   startChunk: {fileID: 2164564544986798677, guid: 8d3eba9d68e6da8488fd8758bdaa5c8a,
     type: 3}
   startChunkWith: 4

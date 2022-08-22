@@ -6123,6 +6123,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3028653010267268758, guid: 5b300161c27021248b5b0e120ee00e17,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.7
+      objectReference: {fileID: 0}
     - target: {fileID: 3590938321771570263, guid: 5b300161c27021248b5b0e120ee00e17,
         type: 3}
       propertyPath: changeTime
@@ -6357,5 +6362,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8193855565932922178, guid: 5b300161c27021248b5b0e120ee00e17,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3600451415036300751, guid: af4d91b757f5485429cd9bd482904aab,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b300161c27021248b5b0e120ee00e17, type: 3}

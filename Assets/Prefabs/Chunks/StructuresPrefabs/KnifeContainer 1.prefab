@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9112581037777975012}
   - component: {fileID: 5941582516185218131}
   m_Layer: 0
-  m_Name: KnifeContainer
+  m_Name: KnifeContainer 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a46d0784cc40493459ca85b627582edd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  side: 0
+  side: 1
 --- !u!1001 &2389377640840859903
 PrefabInstance:
   m_ObjectHideFlags: 0

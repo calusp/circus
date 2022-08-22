@@ -9,7 +9,6 @@ namespace Code.Presenters
     {
         private readonly PlayerInput _view;
         private readonly ISubject<float> _actionActivated;
-        private readonly ISubject<Unit> stopped;
         private readonly ISubject<float> moved;
 
         public PlayerInputPresenter(PlayerInput view, ISubject<float> actionActivated, ISubject<float> moved)

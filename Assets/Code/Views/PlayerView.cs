@@ -49,6 +49,7 @@ namespace Code.Views
         public Action<KnifeView> DieFromKnife { get; set; }
         public Action DieFromBanana { get;  set; }
         public Action DieFromBottle { get; set; }
+        public Action DieBurnt { get; set; }
         public float PositionX => transform.position.x;
 
        public void Setup(AudioCenter audioCenter)
@@ -144,7 +145,7 @@ namespace Code.Views
 
         }
 
-        public IObservable<Unit> DieBurnt()
+        public IObservable<Unit> DieFromFireRing()
         {
             audioCenter.PlaySoundFx(playerSounds.DieBurnt);
             animator.ResetTrigger(EnterTrapeceTrigger);
@@ -209,9 +210,9 @@ namespace Code.Views
 
         private List<RaycastHit2D> CreateRays(Vector3 position) => new List<RaycastHit2D>()
         {
-            Physics2D.Raycast(new Vector2(position.x - 0.5f, position.y), Vector2.down, 0.51f, layerMask),
+            Physics2D.Raycast(new Vector2(position.x - 0.1f, position.y), Vector2.down, 0.51f, layerMask),
             Physics2D.Raycast(new Vector2(position.x, position.y), Vector2.down,  0.51f,layerMask),
-            Physics2D.Raycast(new Vector2(position.x + 0.5f, position.y), Vector2.down,  0.51f, layerMask)
+            Physics2D.Raycast(new Vector2(position.x + 0.1f, position.y), Vector2.down,  0.51f, layerMask)
         };
 
 
