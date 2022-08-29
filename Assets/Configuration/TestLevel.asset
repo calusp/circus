@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 658395a18f46441f8a2b4b4ae93a9168, type: 3}
-  m_Name: LevelGeneratorSize10 2
+  m_Name: TestLevel
   m_EditorClassIdentifier: 
   chunks:
   - {fileID: 1181953987356912446, guid: 7b17754e137e3b345af1907d1fb25135, type: 3}

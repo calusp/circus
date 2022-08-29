@@ -1,6 +1,7 @@
 
 using Code.Presenters;
 using Code.ScriptableObjects;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,8 @@ namespace Code.Views
         [SerializeField] private Transform playerSpot;
 
         public Vector3 PlayerJumpDirection => playerSpot.position.normalized;
+
+        public Action<Vector2> EnterTrapece { get; set; }
 
         private int direction;
         private PlayerPresenter _playerPresenter;
@@ -50,7 +53,7 @@ namespace Code.Views
         {
             if (collision.gameObject.name.Contains("Player"))
             {
-                _playerPresenter.EnterTrapece(playerSpot.position);
+                EnterTrapece(playerSpot.position);
                 _trigger.enabled = false;
                 _startBounce = true;
             }
