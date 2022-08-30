@@ -12,18 +12,7 @@ public class StructureView : MonoBehaviour
 
     [SerializeField] private Side side;
 
-    public Side GetSide => side;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Side ChunkSide { get; set; }
 
     private void OnDrawGizmos()
     {

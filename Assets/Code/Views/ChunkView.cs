@@ -69,7 +69,7 @@ namespace Code.Views
             {
 
                 GameObject item = Instantiate(structure, transform);
-                var side = item.GetComponent<StructureView>().GetSide;
+                var side = item.GetComponent<StructureView>().ChunkSide;
                 item.transform.localPosition = side == StructureView.Side.Left ? new Vector2(-2.5f, -1.85f) : new Vector2(2.5f, -1.85f);
                 instancedStructures.Add(item) ;
             }
