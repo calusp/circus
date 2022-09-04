@@ -27,7 +27,7 @@ namespace Assets.Code.Editor
             view.ChunkSide = StructureView.Side.Right;
 
         }
-        private static void Create(GameObject structure)
+        public static void Create(GameObject structure)
         {
             if (!Directory.Exists("Assets/Prefabs"))
                 AssetDatabase.CreateFolder("Assets", "Prefabs");

@@ -2,6 +2,7 @@ using Code.Presenters;
 using Code.ScriptableObjects;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UniRx;
 using UnityEngine;
 
@@ -15,6 +16,44 @@ namespace Code.Views
         [SerializeField] private bool _hasActionable;
         [SerializeField] private bool _hasHazzard;
         [SerializeField] private float width = 20;
+
+#if UNITY_EDITOR
+        public void AddStructure(GameObject gameObject)
+        {
+            StructureView structureView = gameObject.GetComponent<StructureView>();
+            if (structureView == null)
+            {
+                Debug.LogError("There is no structure here");
+                return;
+            }
+            if (structures.Any(structure => structure.GetComponent<StructureView>().ChunkSide == structureView.ChunkSide))
+            {
+                Debug.LogError("Already Added structure for this side.");
+                return;
+            }
+            structures.Add(gameObject);
+        }
+
+        public void RemoveStructures()
+        {
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                Destroy(transform.GetChild(i));
+            }
+        }
+
+        public string[] GetStructureNames()
+        {
+            var names = new List<string>();
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                names.Add(transform.GetChild(i).name);
+            }
+            return names.ToArray();
+        }
+#endif
+
+
         [SerializeField] private DisplayableData distanceData;
         [SerializeField] private SharedGameState sharedGameState;
         [SerializeField] private bool _isInitial;
@@ -44,7 +83,7 @@ namespace Code.Views
 
         public float GetRightBound()
         {
-            return transform.position.x + width/2;
+            return transform.position.x + width / 2;
         }
 
         public void Activate()
@@ -71,7 +110,7 @@ namespace Code.Views
                 GameObject item = Instantiate(structure, transform);
                 var side = item.GetComponent<StructureView>().ChunkSide;
                 item.transform.localPosition = side == StructureView.Side.Left ? new Vector2(-2.5f, -1.85f) : new Vector2(2.5f, -1.85f);
-                instancedStructures.Add(item) ;
+                instancedStructures.Add(item);
             }
         }
 
