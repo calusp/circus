@@ -64,16 +64,18 @@ namespace Code.Views
 
         private void Update()
         {
-            List<RaycastHit2D> hits = CreateRays(transform.position);
-            bool isGrounded = CheckGrounded(hits);
-            IsGrounded(isGrounded);
 
-            CheckCollisionWithActivable(hits);
         }
 
         private void FixedUpdate()
         {
             if (StopMovement) return;
+
+            List<RaycastHit2D> hits = CreateRays(transform.position);
+            bool isGrounded = CheckGrounded(hits);
+            IsGrounded(isGrounded);
+
+            CheckCollisionWithActivable(hits);
 
             if (transform.position.y < _previousVelocityOnY)
                 transform.rotation = Quaternion.identity;
@@ -210,9 +212,9 @@ namespace Code.Views
 
         private List<RaycastHit2D> CreateRays(Vector3 position) => new List<RaycastHit2D>()
         {
-            Physics2D.Raycast(new Vector2(position.x - 0.1f, position.y), Vector2.down, 0.51f, layerMask),
+            Physics2D.Raycast(new Vector2(position.x - 0.25f, position.y), Vector2.down, 0.55f, layerMask),
             Physics2D.Raycast(new Vector2(position.x, position.y), Vector2.down,  0.51f,layerMask),
-            Physics2D.Raycast(new Vector2(position.x + 0.1f, position.y), Vector2.down,  0.51f, layerMask)
+            Physics2D.Raycast(new Vector2(position.x + 0.25f, position.y), Vector2.down,  0.55f, layerMask)
         };
 
 

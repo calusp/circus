@@ -15,7 +15,12 @@ public class StructureView : MonoBehaviour
 
     [SerializeField] private Side side;
 
-    public Side ChunkSide { get; set; }
+    public Side ChunkSide
+    {
+        get { return side; }
+        set => side = value;
+    }
+
 
     private void OnDrawGizmos()
     {

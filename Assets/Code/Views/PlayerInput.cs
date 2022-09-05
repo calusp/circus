@@ -20,6 +20,16 @@ namespace Code.Views
 
         private void ClickHandling()
         {
+            //JumpCharged();
+            if (Input.GetButtonDown("Jump"))
+            {
+                Action(curve.Evaluate(0.8f));
+            }
+
+        }
+
+        private void JumpCharged()
+        {
             if (startAccumulateEnery)
             {
                 _acc += Time.deltaTime * 4;
@@ -29,9 +39,9 @@ namespace Code.Views
             if (Input.GetButtonDown("Jump"))
             {
                 startAccumulateEnery = true;
-              
+
             }
-            if (Input.GetButtonUp("Jump") || _acc >= 1 )
+            if (Input.GetButtonUp("Jump") || _acc >= 1)
             {
                 startAccumulateEnery = false;
                 Action(curve.Evaluate(_acc));
