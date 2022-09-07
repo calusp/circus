@@ -1,5 +1,6 @@
 ﻿using Code.ScriptableObjects;
 using Code.Views;
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -9,10 +10,16 @@ namespace Assets.Code.Presenters
     {
         private SharedGameState _sharedGameState;
 
-        public void Initialize(TrapeceView view, SharedGameState sharedGameState)
+        public TrapecePresenter(TrapeceView view, SharedGameState sharedGameState)
         {
             _sharedGameState = sharedGameState;
             view.EnterTrapece = EnterTrapece;
+            view.TrapecePositionUpdated = UpdateTrapecePosition;
+        }
+
+        private void UpdateTrapecePosition(Vector2 position)
+        {
+            _sharedGameState.UpdateTrapecePosition.OnNext(position);
         }
 
         public void EnterTrapece(Vector2 position)

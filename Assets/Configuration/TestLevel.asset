@@ -13,11 +13,9 @@ MonoBehaviour:
   m_Name: TestLevel
   m_EditorClassIdentifier: 
   chunks:
-  - {fileID: 1181953987356912446, guid: 7b17754e137e3b345af1907d1fb25135, type: 3}
-  - {fileID: 1181953987356912446, guid: 7b17754e137e3b345af1907d1fb25135, type: 3}
-  - {fileID: 1181953987356912446, guid: 7b17754e137e3b345af1907d1fb25135, type: 3}
+  - {fileID: 3492330298623743668, guid: c7857bd2af1fe14488454189692c5176, type: 3}
   startChunk: {fileID: 2164564544986798677, guid: 8d3eba9d68e6da8488fd8758bdaa5c8a,
     type: 3}
   startChunkWith: 10
   chunkWidth: 10
-  amountOfChunks: 3
+  amountOfChunks: 1

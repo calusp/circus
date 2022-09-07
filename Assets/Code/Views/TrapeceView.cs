@@ -1,4 +1,5 @@
 
+using Assets.Code.Presenters;
 using Code.Presenters;
 using Code.ScriptableObjects;
 using System;
@@ -14,7 +15,7 @@ namespace Code.Views
         [SerializeField, Range(-1, 1)] private float minRotationZ = 0.3f;
         [SerializeField] private GameConfiguration gameConfiguration;
         [SerializeField] private Transform playerSpot;
-
+        [SerializeField] SharedGameState sharedGameState;
         public Vector3 PlayerJumpDirection => playerSpot.position.normalized;
 
         public Action<Vector2> EnterTrapece { get; set; }
@@ -56,6 +57,11 @@ namespace Code.Views
                 _trigger.enabled = false;
                 _startBounce = true;
             }
+        }
+
+        private void OnEnable()
+        {
+            var presenter = new TrapecePresenter(this, sharedGameState);
         }
     }
 }

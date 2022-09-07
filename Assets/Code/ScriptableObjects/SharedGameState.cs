@@ -15,7 +15,7 @@ namespace Code.ScriptableObjects
         private ISubject<Unit> _initializeGamePlay;
         private ISubject<Vector2> _onEnterTrapece;
         private ISubject<Vector2> _onExecuteTrapeceAction;
-
+        private ISubject<Vector2> _onUpdateTrapecePosition;
         public void Initialize()
         {
             _chunkDestroyed = new Subject<Unit>();
@@ -26,7 +26,7 @@ namespace Code.ScriptableObjects
             _initializeGamePlay = new Subject<Unit>();
             _onEnterTrapece = new Subject<Vector2>();
             _onExecuteTrapeceAction = new Subject<Vector2>();
-
+            _onUpdateTrapecePosition = new Subject<Vector2>();
         }
 
         public ISubject<Unit> ChunkDestroyed => _chunkDestroyed;
@@ -38,5 +38,6 @@ namespace Code.ScriptableObjects
         public ISubject<Unit> InitializeGameplay => _initializeGamePlay;
         public ISubject<Vector2> EnterTrapece => _onEnterTrapece;
         public ISubject<Vector2> ExecuteTrapeceAction => _onExecuteTrapeceAction;
+        public ISubject<Vector2> UpdateTrapecePosition => _onUpdateTrapecePosition;
     }
 }

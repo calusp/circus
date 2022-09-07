@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be40eed903736a548829b3132b4979e3, type: 3}
+  m_Name: Test Game Configuration
+  m_EditorClassIdentifier: 
+  playerSpeed: 7.3
+  cameraSpeed: 0
+  incrementalRatio: 1
+  distanceCap: 1
+  cannonSpeed: 1
+  trapeceSpeed: 0.061
+  jumpForce: {x: 0, y: 1}
+  trampoolineForce: {x: 0, y: 2}
+  cannonForce: {x: 2, y: 4}
+  seesawBallConfiguration:
+    maxCooldown: 4
+    throwForce: {x: -10.59, y: -20}
+    ballTimeToLive: 3
+  trapeceForce: {x: -3, y: -1}
+  _bagDropDistance: 1
+  incrementCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 11.00163
+      value: 1.8336635
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  distanceData: {fileID: 11400000, guid: b81ead8f0e9c1f54dbd52b182cc64f4e, type: 2}

@@ -1045,6 +1045,12 @@ PrefabInstance:
       propertyPath: startGameHudView
       value: 
       objectReference: {fileID: 803852566}
+    - target: {fileID: 2572777826628913411, guid: 1a39421c8d46d1a4a9cdaa55996dccdb,
+        type: 3}
+      propertyPath: gameConfiguration
+      value: 
+      objectReference: {fileID: 11400000, guid: 19e81f1aa381499489fe2281e7d4e87d,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a39421c8d46d1a4a9cdaa55996dccdb, type: 3}
 --- !u!1001 &5111677923013896865
@@ -1620,7 +1626,7 @@ PrefabInstance:
         type: 3}
       propertyPath: levelGenerator
       value: 
-      objectReference: {fileID: 11400000, guid: d537a86fbe4766b4fa4212b49c66d769,
+      objectReference: {fileID: 11400000, guid: bfd77c2afcdb02d4eaa4ed49ff15512b,
         type: 2}
     - target: {fileID: 1047154719892799652, guid: 5b300161c27021248b5b0e120ee00e17,
         type: 3}

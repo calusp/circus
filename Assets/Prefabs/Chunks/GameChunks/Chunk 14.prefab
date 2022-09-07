@@ -46,14 +46,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _actionableView: {fileID: 0}
   _hazardViewView: {fileID: 0}
-  gameConfiguration: {fileID: 0}
+  gameConfiguration: {fileID: 11400000, guid: 19e81f1aa381499489fe2281e7d4e87d, type: 2}
   _hasActionable: 0
   _hasHazzard: 0
   width: 20
-  distanceData: {fileID: 0}
-  sharedGameState: {fileID: 0}
+  distanceData: {fileID: 11400000, guid: b81ead8f0e9c1f54dbd52b182cc64f4e, type: 2}
+  sharedGameState: {fileID: 11400000, guid: 0d26a4181eba90544928fcecacf35c1d, type: 2}
   _isInitial: 0
-  structures: []
+  structures:
+  - {fileID: 223443508927804643, guid: 21fe7a16b79a55d4aa1bffc1c60f8f3a, type: 3}
 --- !u!1001 &6327086944740196497
 PrefabInstance:
   m_ObjectHideFlags: 0
