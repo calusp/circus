@@ -18,9 +18,9 @@ namespace Code.Views
         public Vector3 PlayerJumpDirection => playerSpot.position.normalized;
 
         public Action<Vector2> EnterTrapece { get; set; }
+        public Action<Vector2> TrapecePositionUpdated { get; set; }
 
         private int direction;
-        private PlayerPresenter _playerPresenter;
         private BoxCollider2D _trigger;
         private bool _startBounce = false;
 
@@ -45,8 +45,7 @@ namespace Code.Views
             if (transform.rotation.z < minRotationZ + gameConfiguration.TrapeceSpeed)
                 direction = 1;
 
-           
-            _playerPresenter.UpdatePlayerRotation(playerSpot.position, playerSpot.rotation);
+            TrapecePositionUpdated(transform.position);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
