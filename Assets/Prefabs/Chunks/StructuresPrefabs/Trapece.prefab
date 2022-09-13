@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6850752819923111183}
   - component: {fileID: 6806126079191917978}
   m_Layer: 0
-  m_Name: Structure Left
+  m_Name: Trapece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

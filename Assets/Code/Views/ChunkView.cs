@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UniRx;
+using UnityEditor;
 using UnityEngine;
 
 namespace Code.Views
@@ -16,6 +17,8 @@ namespace Code.Views
         [SerializeField] private bool _hasActionable;
         [SerializeField] private bool _hasHazzard;
         [SerializeField] private float width = 20;
+
+     
 
 #if UNITY_EDITOR
         public void AddStructure(GameObject gameObject)
@@ -36,20 +39,19 @@ namespace Code.Views
 
         public void RemoveStructures()
         {
-            for (int i = 0; i < transform.childCount; i++)
+            for (int i = 1; i < transform.childCount; i++)
             {
-                Destroy(transform.GetChild(i));
+                DestroyImmediate(transform.GetChild(i).gameObject,false);
             }
         }
 
-        public string[] GetStructureNames()
+    
+        public void AddStructuresToList()
         {
-            var names = new List<string>();
-            for (int i = 0; i < transform.childCount; i++)
+            for (int i = 1; i < transform.childCount; i++)
             {
-                names.Add(transform.GetChild(i).name);
-            }
-            return names.ToArray();
+                structures.Add(PrefabUtility.GetCorrespondingObjectFromOriginalSource(transform.GetChild(i).gameObject));
+            }  
         }
 #endif
 

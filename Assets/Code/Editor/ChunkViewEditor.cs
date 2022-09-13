@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 
 
-[CustomEditor(typeof(StructureView))]
+[CustomEditor(typeof(ChunkView))]
 public class ChunkViewEditor : Editor
 {
     public override void OnInspectorGUI()
@@ -20,7 +20,7 @@ public class ChunkViewEditor : Editor
         if (GUILayout.Button("Add Prefabs as structures"))
         {
             ChunkView view = (ChunkView)target;
-            var structureNames = view.GetStructureNames();
+            view.AddStructuresToList();
         }
     }
 }
